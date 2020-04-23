@@ -7,3 +7,30 @@
 //
 
 import Foundation
+import Moya
+import ReactiveSwift
+
+public extension TargetType {
+    
+    var sampleData: Data {
+        return Data()
+    }
+    
+    var baseURL: URL {
+        URL(string: "https://itunes.apple.com/")!
+    }
+    
+    var headers: [String: String]? {
+        nil
+    }
+    
+    func addContentType(_ type: ContentType,
+                        to headers: [String: String]?) -> [String: String]? {
+        var temp: [String: String] = [:]
+        if let existHeaders = headers {
+            temp = existHeaders
+        }
+        temp["Content-Type"] = type.contentType
+        return temp
+    }
+}
