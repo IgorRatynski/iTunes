@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ITunesResponseModel {
+struct ITunesResponseModel: Decodable {
     let resultCount: Int
     let results: [ITunesArtistModel]
 }
