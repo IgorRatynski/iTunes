@@ -2,7 +2,7 @@
 # platform :ios, '9.0'
 
 def reactivePods
-    pod 'ReactiveSwift', '~> 6.1'
+    pod 'ReactiveSwift', '~> 5.0'
     pod 'ReactiveCocoa', '~> 9.0.0'
     pod 'Moya/ReactiveSwift', '~> 13.0'
     pod 'Result', '~> 4.1' #,'~> 3.2.4'
