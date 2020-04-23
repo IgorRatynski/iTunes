@@ -17,6 +17,12 @@
 		473550E4245071A0001F4679 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473550E3245071A0001F4679 /* ContentViewModel.swift */; };
 		473550E7245072DC001F4679 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473550E6245072DC001F4679 /* BaseViewController.swift */; };
 		473550E9245072E6001F4679 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473550E8245072E6001F4679 /* BaseViewModel.swift */; };
+		473550EB24507473001F4679 /* ITunesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473550EA24507473001F4679 /* ITunesService.swift */; };
+		473550ED24507542001F4679 /* ITunesParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473550EC24507542001F4679 /* ITunesParams.swift */; };
+		473550F02450772A001F4679 /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473550EF2450772A001F4679 /* ContentType.swift */; };
+		4751F4D12451D3B000AD87D0 /* ITunesResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4751F4D02451D3B000AD87D0 /* ITunesResponseModel.swift */; };
+		4751F4D32451D40500AD87D0 /* ITunesArtistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4751F4D22451D40500AD87D0 /* ITunesArtistModel.swift */; };
+		4751F4D52451E30200AD87D0 /* Moya+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4751F4D42451E30200AD87D0 /* Moya+Request.swift */; };
 		5A848E85456DEE68B37F99DA /* Pods_iTunesTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 750E20D525F1AEF8F1DAD4C7 /* Pods_iTunesTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +40,12 @@
 		473550E3245071A0001F4679 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		473550E6245072DC001F4679 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		473550E8245072E6001F4679 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		473550EA24507473001F4679 /* ITunesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesService.swift; sourceTree = "<group>"; };
+		473550EC24507542001F4679 /* ITunesParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesParams.swift; sourceTree = "<group>"; };
+		473550EF2450772A001F4679 /* ContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
+		4751F4D02451D3B000AD87D0 /* ITunesResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesResponseModel.swift; sourceTree = "<group>"; };
+		4751F4D22451D40500AD87D0 /* ITunesArtistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesArtistModel.swift; sourceTree = "<group>"; };
+		4751F4D42451E30200AD87D0 /* Moya+Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Moya+Request.swift"; sourceTree = "<group>"; };
 		750E20D525F1AEF8F1DAD4C7 /* Pods_iTunesTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iTunesTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F080E4DB1C3E65FBC2F73D2 /* Pods-iTunesTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesTest.release.xcconfig"; path = "Target Support Files/Pods-iTunesTest/Pods-iTunesTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +124,9 @@
 		473550DA24506EC6001F4679 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				473550EE2450771A001F4679 /* Classes */,
+				473550EC24507542001F4679 /* ITunesParams.swift */,
+				473550EA24507473001F4679 /* ITunesService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -119,6 +134,8 @@
 		473550DB24506ECE001F4679 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4751F4D02451D3B000AD87D0 /* ITunesResponseModel.swift */,
+				4751F4D22451D40500AD87D0 /* ITunesArtistModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -127,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				473550DD245070D2001F4679 /* Moya+Predefined.swift */,
+				4751F4D42451E30200AD87D0 /* Moya+Request.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -164,6 +182,14 @@
 				473550E8245072E6001F4679 /* BaseViewModel.swift */,
 			);
 			path = "Base Class";
+			sourceTree = "<group>";
+		};
+		473550EE2450771A001F4679 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				473550EF2450772A001F4679 /* ContentType.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		97EC0B17B45A16D8EE51BAB9 /* Pods */ = {
@@ -290,13 +316,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4751F4D12451D3B000AD87D0 /* ITunesResponseModel.swift in Sources */,
+				473550ED24507542001F4679 /* ITunesParams.swift in Sources */,
 				473550D724506D3F001F4679 /* ContentViewController.swift in Sources */,
 				473550C3245067B5001F4679 /* AppDelegate.swift in Sources */,
 				473550C5245067B5001F4679 /* SceneDelegate.swift in Sources */,
+				4751F4D52451E30200AD87D0 /* Moya+Request.swift in Sources */,
 				473550E9245072E6001F4679 /* BaseViewModel.swift in Sources */,
+				4751F4D32451D40500AD87D0 /* ITunesArtistModel.swift in Sources */,
+				473550F02450772A001F4679 /* ContentType.swift in Sources */,
 				473550DE245070D2001F4679 /* Moya+Predefined.swift in Sources */,
 				473550E4245071A0001F4679 /* ContentViewModel.swift in Sources */,
 				473550E7245072DC001F4679 /* BaseViewController.swift in Sources */,
+				473550EB24507473001F4679 /* ITunesService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
