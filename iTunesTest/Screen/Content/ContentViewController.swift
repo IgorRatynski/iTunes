@@ -9,7 +9,12 @@
 import UIKit
 
 class ContentViewController: UIViewController {
-
+    
+    // MARK: Properties
+    @IBOutlet private weak var searchBar: UISearchBar!
+    @IBOutlet private weak var tableView: UITableView!
+    
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }
