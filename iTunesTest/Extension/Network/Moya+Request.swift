@@ -9,7 +9,7 @@
 import Moya
 import ReactiveSwift
 
-public extension MoyaProvider {
+extension MoyaProvider {
     func request(_ targetType: Target) -> SignalProducer<Response, MoyaError> {
         return reactive.request(targetType).observe(on: UIScheduler())
     }

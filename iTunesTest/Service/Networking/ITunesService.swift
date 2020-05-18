@@ -6,7 +6,6 @@
 //  Copyright © 2020 Igor Ratynski. All rights reserved.
 //
 
-import Foundation
 import Moya
 
 enum ITunesService: TargetType {
@@ -29,9 +28,7 @@ enum ITunesService: TargetType {
     var task: Task {
         switch self {
         case .search(let params):
-            #warning("check")
-            return .requestJSONEncodable(params)
-//            .requestPlain
+            return .requestParameters(parameters: ["term" : params], encoding: ITunesSearchEncoding.default)
         }
     }
 }
