@@ -8,24 +8,16 @@
 
 import Foundation
 
-public enum ContentType {
+enum ContentType {
     case json
-    case formData
-    case imagePng
-    case urlForm
+    case image
     
-    public var contentType: String {
+    var contentType: String {
         switch self {
         case .json:
             return "application/json"
-        case .formData:
-        #warning("check")
-            return "multipart/form-data"
-        case .imagePng:
-            return "image/png"
-        case .urlForm:
-        #warning("check")
-            return "application/x-www-form-urlencoded"
+        case .image:
+            return "image/*"
         }
     }
 }

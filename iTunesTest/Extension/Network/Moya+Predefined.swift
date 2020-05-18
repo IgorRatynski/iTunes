@@ -9,7 +9,7 @@
 import Moya
 import ReactiveSwift
 
-public extension TargetType {
+extension TargetType {
     
     var sampleData: Data {
         return Data()
@@ -20,16 +20,19 @@ public extension TargetType {
     }
     
     var headers: [String: String]? {
-        nil
+        addAdditionalHeaders(to: nil)
     }
     
-    func addContentType(_ type: ContentType,
-                        to headers: [String: String]?) -> [String: String]? {
+    func addContentType(_ type: ContentType, to headers: [String: String]?) -> [String: String]? {
         var temp: [String: String] = [:]
         if let existHeaders = headers {
             temp = existHeaders
         }
         temp["Content-Type"] = type.contentType
         return temp
+    }
+    
+    func addAdditionalHeaders(to headers: [String: String]?) -> [String: String]? {
+        addContentType(.json, to: headers)
     }
 }

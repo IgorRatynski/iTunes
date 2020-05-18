@@ -1,5 +1,5 @@
 //
-//  ITunesResponseModel.swift
+//  AgeService.swift
 //  iTunesTest
 //
 //  Created by Igor Ratynski on 23.04.2020.
@@ -8,7 +8,6 @@
 
 import Foundation
 
-struct ITunesResponseModel: Decodable {
-    let resultCount: Int
-    let results: [ITunesArtistModel]
+class AgeService {
+    static let isAdult: Bool = true
 }
