@@ -81,11 +81,16 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="MP0-ic-eV2">
+                                <rect key="frame" x="157" y="398" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="niH-hz-ezP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="22w-mH-n4A"/>
                             <constraint firstItem="niH-hz-ezP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2Rr-Zm-1dC"/>
+                            <constraint firstItem="MP0-ic-eV2" firstAttribute="centerX" secondItem="b4w-Rz-aBs" secondAttribute="centerX" id="IW7-4S-SpN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="b4w-Rz-aBs" secondAttribute="trailing" id="KUo-Dr-99E"/>
                             <constraint firstItem="niH-hz-ezP" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PKk-13-XT3"/>
                             <constraint firstItem="b4w-Rz-aBs" firstAttribute="top" secondItem="niH-hz-ezP" secondAttribute="bottom" id="mMf-wt-hcT"/>
@@ -96,6 +101,7 @@
                     </view>
                     <connections>
                         <outlet property="searchBar" destination="niH-hz-ezP" id="3Ez-H3-rgB"/>
+                        <outlet property="spinner" destination="MP0-ic-eV2" id="8cV-Tv-Sjq"/>
                         <outlet property="tableView" destination="b4w-Rz-aBs" id="95l-V9-qO1"/>
                     </connections>
                 </viewController>

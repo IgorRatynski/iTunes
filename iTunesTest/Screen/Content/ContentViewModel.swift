@@ -38,7 +38,6 @@ class ContentViewModel: BaseViewModel, ContentViewModelProtocol {
     private let networkProvider: MoyaProvider<ITunesService>
     
     // MARK: - Lifecycle
-    
     init(networkProvider: MoyaProvider<ITunesService> = MoyaProvider<ITunesService>(plugins: [NetworkLoggerPlugin(verbose: true)])) {
         self.networkProvider = networkProvider
         

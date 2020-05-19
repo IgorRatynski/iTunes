@@ -51,7 +51,7 @@ class APITests: XCTestCase {
             return .networkError(NSError(domain: "aaa", code: 1488, userInfo: [:]))
         }
     }
-
+    
     func testSuccessResponse() {
         let endpointClosure = test { () -> EndpointSampleResponse in
             self.response(type: .success)

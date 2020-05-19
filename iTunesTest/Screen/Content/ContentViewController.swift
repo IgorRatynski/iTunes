@@ -15,22 +15,16 @@ class ContentViewController: BaseViewController, ErrorActionController, UISearch
     // MARK: UI
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tableView: UITableView!
-    // TODO: Replace spinner by skeleton view
-    private var spinner: UIActivityIndicatorView!
+    @IBOutlet private weak var spinner: UIActivityIndicatorView!
     
-    // MARK: Properties
-    private var viewModel: ContentViewModelProtocol = ContentViewModel()
+    // MARK: Private properties
+    private let viewModel: ContentViewModelProtocol = ContentViewModel()
     
-    // MARK: Reactive
+    // MARK: Reactive properties
     private var searchPressed: Signal<(), NoError>
     private var searchPressedObserver: Signal<(), NoError>.Observer
     
-    // MARK: Lifecycle
-//    init(viewModel: ContentViewModelProtocol) {
-//        self.viewModel = viewModel
-//        super.init()
-//    }
-    
+    // MARK: Lifecycle    
     required init?(coder aDecoder: NSCoder) {
         (searchPressed, searchPressedObserver) = Signal.pipe()
         super.init(coder: aDecoder)
@@ -54,7 +48,7 @@ private extension ContentViewController {
     func setup() {
         setupSearchBar()
         setupTableView()
-//        setupSpinner()
+        setupSpinner()
         bind()
     }
     
@@ -70,8 +64,10 @@ private extension ContentViewController {
     }
     
     func setupSpinner() {
-        spinner = UIActivityIndicatorView(style: .medium)
         view.addToCenterSubview(spinner)
+        spinner.hidesWhenStopped = true
+        spinner.style = .large
+        spinner.color = .red
     }
 }
 
@@ -79,7 +75,7 @@ private extension ContentViewController {
 private extension ContentViewController {
     func bind() {
         // MARK: In
-//        spinner.reactive.isAnimating <~ viewModel.loading
+        spinner.reactive.isAnimating <~ viewModel.loading
         actionExecution <~ viewModel.errorDispatcher.action
         tableView.reactive.reloadData <~ viewModel.reloadTable
         

@@ -8,7 +8,7 @@
 
 import ReactiveSwift
 
-open class BaseViewController: UIViewController {
+class BaseViewController: UIViewController {
     // MARK: Reactive
     let (lifetime, token) = Lifetime.make()
 }
