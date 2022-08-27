@@ -1,5 +1,5 @@
 //
-//  ITunesArtistModel.swift
+//  ArtistModel.swift
 //  iTunesTest
 //
 //  Created by Igor Ratynski on 23.04.2020.
@@ -8,20 +8,26 @@
 
 import Foundation
 
-struct ITunesArtistModel: ITunesArtistModelProtocol {
-    
-    // MARK: Public
-    let artistName: String
-    var album: String? { AgeService.isAdult ? collectionName : collectionCensoredName }
-    var track: String? { AgeService.isAdult ? trackName : trackCensoredName }
-    var albumImageURL: URL { URL(string: artworkUrl100)! }
-    
-    // MARK: Private
-    private let artworkUrl100: String
-    private let collectionName: String?
-    private let collectionCensoredName: String?
-    private let trackName: String?
-    private let trackCensoredName: String?
+struct ArtistModel: ArtistModelProtocol {
+  
+  // MARK: Public
+  let artistName: String
+  var album: String? { AgeService.isAdult ? collectionName : collectionCensoredName }
+  var track: String? { AgeService.isAdult ? trackName : trackCensoredName }
+  let albumImageURL: URL
+  
+  // MARK: Private
+  private let collectionName: String?
+  private let collectionCensoredName: String?
+  private let trackName: String?
+  private let trackCensoredName: String?
+}
+
+// MARK: - CodingKeys
+private extension ArtistModel {
+  enum CodingKeys : String, CodingKey {
+    case artistName, albumImageURL = "artworkUrl100", collectionName, collectionCensoredName, trackName, trackCensoredName
+  }
 }
 
 //{"wrapperType":"audiobook", "artistId":273701554, "collectionId":281099279, "amgArtistId":647963, "artistName":"Ricky Gervais, Stephen Merchant & Karl Pilkington", "collectionName":"The Podfather Trilogy - Season Four of The Ricky Gervais Show (Unabridged)", "collectionCensoredName":"The Podfather Trilogy - Season Four of The Ricky Gervais Show (Unabridged)", "artistViewUrl":"https://itunes.apple.com/us/artist/ricky-gervais/273701554?uo=4", "collectionViewUrl":"https://books.apple.com/us/audiobook/podfather-trilogy-season-four-ricky-gervais-show-unabridged/id281099279?uo=4", "artworkUrl60":"https://is1-ssl.mzstatic.com/image/thumb/Music/0a/4d/60/mzi.ofwguzqk.jpg/60x60bb.jpg", "artworkUrl100":"https://is1-ssl.mzstatic.com/image/thumb/Music/0a/4d/60/mzi.ofwguzqk.jpg/100x100bb.jpg", "collectionPrice":2.99, "collectionExplicitness":"notExplicit", "trackCount":1, "copyright":"© 2008 Glyn Hughes", "country":"USA", "currency":"USD", "releaseDate":"2008-05-19T07:00:00Z", "primaryGenreName":"Comedy",

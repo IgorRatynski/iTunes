@@ -9,17 +9,17 @@
 import Foundation
 
 struct ITunesResponseModel: Decodable {
-    private let resultCount: Int?
-    private let results: [ITunesArtistModel]?
-    
-    var tableModels: [SettingsSection] {
-        results?.models ?? []
-    }
+  private let resultCount: Int?
+  private let results: [ArtistModel]?
+  
+  var tableModels: [SettingsSection] {
+    results?.models ?? []
+  }
 }
 
 // MARK: UITableViewDataSource Adapter
-extension Array where Element == ITunesArtistModel {
-    var models: [SettingsSection] {
-        return [SettingsSection(title: nil, cellData: self.map { SettingType.song(model: $0) })]
-    }
+extension Array where Element == ArtistModel {
+  var models: [SettingsSection] {
+    return [SettingsSection(title: nil, cellData: self.map { SettingType.song(model: $0) })]
+  }
 }

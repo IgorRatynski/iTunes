@@ -10,7 +10,9 @@ import UIKit
 
 extension UIView {
     func addToCenterSubview(_ subview: UIView) {
-        subview.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        subview.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+      NSLayoutConstraint.activate([
+        subview.centerXAnchor.constraint(equalTo: centerXAnchor),
+        subview.centerYAnchor.constraint(equalTo: centerYAnchor)
+      ])
     }
 }

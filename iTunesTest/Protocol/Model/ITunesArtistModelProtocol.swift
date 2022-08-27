@@ -1,5 +1,5 @@
 //
-//  ITunesArtistModelProtocol.swift
+//  ArtistModelProtocol.swift
 //  iTunesTest
 //
 //  Created by Igor Ratynski on 28.04.2020.
@@ -8,9 +8,9 @@
 
 import Foundation
 
-protocol ITunesArtistModelProtocol: Decodable {
-    var artistName: String {get}
-    var album: String? {get}
-    var track: String? {get}
-    var albumImageURL: URL {get}
+protocol ArtistModelProtocol: Decodable {
+  var artistName: String { get }
+  var album: String? { get }
+  var track: String? { get }
+  var albumImageURL: URL { get }
 }

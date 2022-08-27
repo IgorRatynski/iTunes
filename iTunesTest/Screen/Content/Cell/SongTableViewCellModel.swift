@@ -34,7 +34,7 @@ class SongTableViewCellModel: BaseViewModel, SongTableViewCellModelProtocol {
     }
     
     // MARK: Private properties
-    private var model: ITunesArtistModelProtocol?
+    private var model: ArtistModelProtocol?
     private var networkProvider: MoyaProvider<ImageService>
     
     // MARK: - Lifecycle
@@ -49,7 +49,7 @@ class SongTableViewCellModel: BaseViewModel, SongTableViewCellModelProtocol {
     }
     
     func setup(model: Any) {
-        guard let model = model as? ITunesArtistModel else {
+        guard let model = model as? ArtistModelProtocol else {
             clear()
             return
         }

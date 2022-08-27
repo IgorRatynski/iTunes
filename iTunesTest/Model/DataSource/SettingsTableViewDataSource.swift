@@ -12,7 +12,7 @@ private let songCellIdentifier = "SongCell"
 
 enum SettingType {
     
-    case song(model: ITunesArtistModel)
+    case song(model: ArtistModelProtocol)
 // TODO: case skeleton
     
     var identifier: String {
