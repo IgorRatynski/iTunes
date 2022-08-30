@@ -1,5 +1,5 @@
 //
-//  AlertConfig.swift
+//  AppService.swift
 //  iTunesTest
 //
 //  Created by Igor Ratynski on 24.04.2020.
@@ -8,7 +8,6 @@
 
 import Foundation
 
-struct AlertConfig {
-  let title: String?
-  let message: String?
+class AppService {
+//  TODO: AppCoordinator implementation!
 }

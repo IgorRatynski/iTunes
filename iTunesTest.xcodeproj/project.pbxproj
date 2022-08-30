@@ -58,7 +58,11 @@
 		4765EB69245AFF5900A8EED0 /* GroupErrorProposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4765EB68245AFF5900A8EED0 /* GroupErrorProposer.swift */; };
 		4765EB6B245AFF6E00A8EED0 /* GroupErrorExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4765EB6A245AFF6E00A8EED0 /* GroupErrorExtractor.swift */; };
 		4765EB6E245B2D9800A8EED0 /* SearchSuccessResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 4765EB6D245B2D9800A8EED0 /* SearchSuccessResponse.json */; };
-		47934355246AEBEB00095FDE /* UIView+AddToCanter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47934354246AEBEB00095FDE /* UIView+AddToCanter.swift */; };
+		4766BF5928BADC3700081145 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4766BF5828BADC3700081145 /* Constants.swift */; };
+		4766BF5C28BAE00100081145 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4766BF5B28BAE00100081145 /* String+Localization.swift */; };
+		4766BF5D28BAE00E00081145 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4766BF5B28BAE00100081145 /* String+Localization.swift */; };
+		4766BF6028BAE12E00081145 /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4766BF5F28BAE12E00081145 /* UserDefaultsWrapper.swift */; };
+		47934355246AEBEB00095FDE /* UIView+AddToCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47934354246AEBEB00095FDE /* UIView+AddToCenter.swift */; };
 		47ACADE12472A96100BAC089 /* LoadingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ACADE02472A96100BAC089 /* LoadingError.swift */; };
 		47ACADE32472ABE700BAC089 /* AppInternalErrorProposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ACADE22472ABE700BAC089 /* AppInternalErrorProposer.swift */; };
 		47ACADE52472ADF400BAC089 /* AppInternalErrorExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ACADE42472ADF400BAC089 /* AppInternalErrorExtractor.swift */; };
@@ -144,7 +148,10 @@
 		4765EB68245AFF5900A8EED0 /* GroupErrorProposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupErrorProposer.swift; sourceTree = "<group>"; };
 		4765EB6A245AFF6E00A8EED0 /* GroupErrorExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupErrorExtractor.swift; sourceTree = "<group>"; };
 		4765EB6D245B2D9800A8EED0 /* SearchSuccessResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = SearchSuccessResponse.json; path = iTunesTestTests/TestResponseData/SearchSuccessResponse.json; sourceTree = SOURCE_ROOT; };
-		47934354246AEBEB00095FDE /* UIView+AddToCanter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AddToCanter.swift"; sourceTree = "<group>"; };
+		4766BF5828BADC3700081145 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4766BF5B28BAE00100081145 /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
+		4766BF5F28BAE12E00081145 /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
+		47934354246AEBEB00095FDE /* UIView+AddToCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AddToCenter.swift"; sourceTree = "<group>"; };
 		47ACADE02472A96100BAC089 /* LoadingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingError.swift; sourceTree = "<group>"; };
 		47ACADE22472ABE700BAC089 /* AppInternalErrorProposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInternalErrorProposer.swift; sourceTree = "<group>"; };
 		47ACADE42472ADF400BAC089 /* AppInternalErrorExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInternalErrorExtractor.swift; sourceTree = "<group>"; };
@@ -214,13 +221,9 @@
 		473550C1245067B5001F4679 /* iTunesTest */ = {
 			isa = PBXGroup;
 			children = (
-				4751F4D8245219BE00AD87D0 /* Protocol */,
-				473550E5245072BF001F4679 /* Base Class */,
-				473550DC245070B3001F4679 /* Extension */,
+				4766BF5728BADC0B00081145 /* Core */,
 				473550DB24506ECE001F4679 /* Model */,
-				473550E12450714F001F4679 /* Screen */,
-				473550D924506D6B001F4679 /* Service */,
-				473550E024507102001F4679 /* Storyboard */,
+				473550E12450714F001F4679 /* UIModule */,
 				473550D824506D5C001F4679 /* Supporting Files */,
 			);
 			path = iTunesTest;
@@ -229,8 +232,6 @@
 		473550D824506D5C001F4679 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				473550C2245067B5001F4679 /* AppDelegate.swift */,
-				473550C4245067B5001F4679 /* SceneDelegate.swift */,
 				473550CB245067C1001F4679 /* Assets.xcassets */,
 				473550D0245067C1001F4679 /* Info.plist */,
 			);
@@ -261,9 +262,11 @@
 		473550DB24506ECE001F4679 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				475691982459F87600283D34 /* DataSource */,
 				4751F4E824523D0600AD87D0 /* Alert */,
+				475691982459F87600283D34 /* DataSource */,
+				4766BF5E28BAE11D00081145 /* Helper */,
 				4751F4E724523CFC00AD87D0 /* Network */,
+				473550D924506D6B001F4679 /* Service */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -271,8 +274,9 @@
 		473550DC245070B3001F4679 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				4766BF5A28BADFD300081145 /* Foundation */,
 				4751F4E624523BA700AD87D0 /* Network */,
-				4751F4E524523B8A00AD87D0 /* UI */,
+				4751F4E524523B8A00AD87D0 /* UIKit */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -286,12 +290,13 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
-		473550E12450714F001F4679 /* Screen */ = {
+		473550E12450714F001F4679 /* UIModule */ = {
 			isa = PBXGroup;
 			children = (
 				473550E224507166001F4679 /* Content */,
+				473550E024507102001F4679 /* Storyboard */,
 			);
-			path = Screen;
+			path = UIModule;
 			sourceTree = "<group>";
 		};
 		473550E224507166001F4679 /* Content */ = {
@@ -370,14 +375,14 @@
 			path = Age;
 			sourceTree = "<group>";
 		};
-		4751F4E524523B8A00AD87D0 /* UI */ = {
+		4751F4E524523B8A00AD87D0 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				4751F4E324523B7800AD87D0 /* UIViewController+Alert.swift */,
 				4751F4EB24523DC700AD87D0 /* UIAlertController+Config.swift */,
-				47934354246AEBEB00095FDE /* UIView+AddToCanter.swift */,
+				47934354246AEBEB00095FDE /* UIView+AddToCenter.swift */,
+				4751F4E324523B7800AD87D0 /* UIViewController+Alert.swift */,
 			);
-			path = UI;
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 		4751F4E624523BA700AD87D0 /* Network */ = {
@@ -523,6 +528,35 @@
 				4765EB6D245B2D9800A8EED0 /* SearchSuccessResponse.json */,
 			);
 			path = TestResponseData;
+			sourceTree = "<group>";
+		};
+		4766BF5728BADC0B00081145 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				473550C2245067B5001F4679 /* AppDelegate.swift */,
+				4766BF5828BADC3700081145 /* Constants.swift */,
+				473550C4245067B5001F4679 /* SceneDelegate.swift */,
+				473550E5245072BF001F4679 /* Base Class */,
+				473550DC245070B3001F4679 /* Extension */,
+				4751F4D8245219BE00AD87D0 /* Protocol */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		4766BF5A28BADFD300081145 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				4766BF5B28BAE00100081145 /* String+Localization.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		4766BF5E28BAE11D00081145 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				4766BF5F28BAE12E00081145 /* UserDefaultsWrapper.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		47ACADE62472AE5000BAC089 /* Error */ = {
@@ -723,6 +757,7 @@
 				47ACADE12472A96100BAC089 /* LoadingError.swift in Sources */,
 				4751F4DF24521A1600AD87D0 /* ITunesNetworkService.swift in Sources */,
 				4765EB5F245AEA1E00A8EED0 /* MoyaUnderlyingNSURLErrorExtractor.swift in Sources */,
+				4766BF6028BAE12E00081145 /* UserDefaultsWrapper.swift in Sources */,
 				4751F4D72451EE7400AD87D0 /* SettingsTableViewDataSource.swift in Sources */,
 				4751F4D32451D40500AD87D0 /* ITunesArtistModel.swift in Sources */,
 				4765EB65245AFC4C00A8EED0 /* NSURLErrorDomainExtractor.swift in Sources */,
@@ -736,8 +771,9 @@
 				4765EB4A245AE0ED00A8EED0 /* ReactiveErrorDispatcher.swift in Sources */,
 				4765EB61245AEAAB00A8EED0 /* MoyaErrorExtractor.swift in Sources */,
 				4765EB67245AFD0900A8EED0 /* DecodingErrorProposer.swift in Sources */,
+				4766BF5C28BAE00100081145 /* String+Localization.swift in Sources */,
 				4751F4EF24524CA400AD87D0 /* AppService.swift in Sources */,
-				47934355246AEBEB00095FDE /* UIView+AddToCanter.swift in Sources */,
+				47934355246AEBEB00095FDE /* UIView+AddToCenter.swift in Sources */,
 				4751F4EC24523DC700AD87D0 /* UIAlertController+Config.swift in Sources */,
 				4756918F24585D9400283D34 /* SongTableViewCellModel.swift in Sources */,
 				473550E4245071A0001F4679 /* ContentViewModel.swift in Sources */,
@@ -747,6 +783,7 @@
 				473550E7245072DC001F4679 /* BaseViewController.swift in Sources */,
 				473550EB24507473001F4679 /* ITunesService.swift in Sources */,
 				4765EB50245AE21E00A8EED0 /* DefaultErrorProposer.swift in Sources */,
+				4766BF5928BADC3700081145 /* Constants.swift in Sources */,
 				4765EB4E245AE1DB00A8EED0 /* ErrorExtractorProtocol.swift in Sources */,
 				4765EB63245AFA1800A8EED0 /* MoyaParseErrorExtractor.swift in Sources */,
 			);
@@ -756,6 +793,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4766BF5D28BAE00E00081145 /* String+Localization.swift in Sources */,
 				4765EB39245A4DF100A8EED0 /* iTunesTestTests.swift in Sources */,
 				4765EB45245A4F0500A8EED0 /* NetworkProviderMock.swift in Sources */,
 			);

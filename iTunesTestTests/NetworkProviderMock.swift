@@ -12,91 +12,91 @@ import Moya
 
 class APITests: XCTestCase {
     
-    // MARK: Supporting
-    typealias ResponseClosure = (_ target: ITunesService) -> Endpoint
-
-    enum EndpointResponses {
-        case success
-        case failure
+  // MARK: Supporting
+  typealias ResponseClosure = (_ target: ITunesService) -> Endpoint
+  
+  enum EndpointResponses {
+    case success
+    case failure
+  }
+  
+  // MARK: Properties
+  var mockProvider: MoyaProvider<ITunesService>!
+  
+  // MARK: Lifecycle
+  override func setUp() {
+//    mockProvider = MoyaProvider<ITunesService>(endpointClosure: customEndpointClosure, stubClosure: MoyaProvider.immediatelyStub)
+  }
+  
+  override func tearDown() {
+//    mockProvider = nil
+  }
+  
+  func test(response: @escaping Endpoint.SampleResponseClosure) -> ResponseClosure {
+    return { (target: ITunesService) -> Endpoint in
+      return Endpoint(url: URL(target: target).absoluteString,
+                      sampleResponseClosure: response,
+                      method: target.method,
+                      task: target.task,
+                      httpHeaderFields: target.headers)
+    }
+  }
+  
+  
+  func response(type: EndpointResponses) -> EndpointSampleResponse {
+    switch type {
+      case .success:
+        return .networkResponse(200, testSampleData)
+      case .failure:
+        return .networkError(NSError(domain: "aaa", code: 1488, userInfo: [:]))
+    }
+  }
+  
+  func testSuccessResponse() {
+    let endpointClosure = test { () -> EndpointSampleResponse in
+      self.response(type: .success)
+    }
+    mockProvider = MoyaProvider<ITunesService>(endpointClosure: endpointClosure,
+                                               stubClosure: MoyaProvider.immediatelyStub)
+    
+    let params = ITunesParams(term: "The Eminem show")
+    mockProvider
+      .request(.search(params))
+      .map(ITunesResponseModel.self)
+      .on(value: { [weak self] response in
+//        XCTAssert
+      })
+      .on(failed: { [weak self] error in
+//        XCTAssert
+      })
+      .start()
+  }
+  
+  func testFailureResponse() {
+    let endpointClosure = test { () -> EndpointSampleResponse in
+      self.response(type: .failure)
     }
     
-    // MARK: Properties
-    var mockProvider: MoyaProvider<ITunesService>!
-
-    // MARK: Lifecycle
-    override func setUp() {
-//        mockProvider = MoyaProvider<ITunesService>(endpointClosure: customEndpointClosure, stubClosure: MoyaProvider.immediatelyStub)
-    }
+    mockProvider = MoyaProvider<ITunesService>(endpointClosure: endpointClosure,
+                                               stubClosure: MoyaProvider.immediatelyStub)
     
-    override func tearDown() {
-//        mockProvider = nil
-    }
-    
-    func test(response: @escaping Endpoint.SampleResponseClosure) -> ResponseClosure {
-        return { (target: ITunesService) -> Endpoint in
-          return Endpoint(url: URL(target: target).absoluteString,
-                          sampleResponseClosure: response,
-                          method: target.method,
-                          task: target.task,
-                          httpHeaderFields: target.headers)
-        }
-    }
-    
-
-    func response(type: EndpointResponses) -> EndpointSampleResponse {
-        switch type {
-        case .success:
-            return .networkResponse(200, testSampleData)
-        case .failure:
-            return .networkError(NSError(domain: "aaa", code: 1488, userInfo: [:]))
-        }
-    }
-    
-    func testSuccessResponse() {
-        let endpointClosure = test { () -> EndpointSampleResponse in
-            self.response(type: .success)
-        }
-        mockProvider = MoyaProvider<ITunesService>(endpointClosure: endpointClosure,
-                                                   stubClosure: MoyaProvider.immediatelyStub)
-
-        let params = ITunesParams(term: "The Eminem show")
-        mockProvider
-            .request(.search(params))
-            .map(ITunesResponseModel.self)
-            .on(value: { [weak self] response in
-//                XCTAssert
-            })
-            .on(failed: { [weak self] error in
-//                XCTAssert
-            })
-            .start()
-    }
-
-    func testFailureResponse() {
-        let endpointClosure = test { () -> EndpointSampleResponse in
-            self.response(type: .failure)
-        }
-
-        mockProvider = MoyaProvider<ITunesService>(endpointClosure: endpointClosure,
-                                                   stubClosure: MoyaProvider.immediatelyStub)
-
-        let params = ITunesParams(term: "The Eminem show")
-        mockProvider
-            .request(.search(params))
-            .map(ITunesResponseModel.self)
-            .on(value: { [weak self] response in
-//                XCTAssert
-            })
-            .on(failed: { [weak self] error in
-//                XCTAssert
-            })
-            .start()
-    }
+    let params = ITunesParams(term: "The Eminem show")
+    mockProvider
+      .request(.search(params))
+      .map(ITunesResponseModel.self)
+      .on(value: { [weak self] response in
+//        XCTAssert
+      })
+      .on(failed: { [weak self] error in
+//        XCTAssert
+      })
+      .start()
+  }
 }
 
 private var testSampleData: Data {
-    let url = Bundle.main.url(forResource: "SearchSuccessResponse", withExtension: "json")!
-    return try! Data(contentsOf: url)
+  let url = Bundle.main.url(forResource: "SearchSuccessResponse", withExtension: "json")!
+  return try! Data(contentsOf: url)
 }
 // TODO: Rewrite to:
 

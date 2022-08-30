@@ -12,8 +12,8 @@ struct ArtistModel: ArtistModelProtocol {
   
   // MARK: Public
   let artistName: String
-  var album: String? { AgeService.isAdult ? collectionName : collectionCensoredName }
-  var track: String? { AgeService.isAdult ? trackName : trackCensoredName }
+  var album: String? { AgeService.isAdult ? collectionCensoredName : collectionName }
+  var track: String? { AgeService.isAdult ? trackCensoredName : trackName }
   let albumImageURL: URL
   
   // MARK: Private
