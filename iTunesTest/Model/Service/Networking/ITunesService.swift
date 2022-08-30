@@ -9,7 +9,7 @@
 import Moya
 
 enum ITunesService: TargetType {
-  case search(ITunesParams)
+  case search(ITunesParams, explicit: Bool)
   
   var path: String {
     switch self {
@@ -27,8 +27,14 @@ enum ITunesService: TargetType {
   
   var task: Task {
     switch self {
-      case .search(let params):
-        return .requestParameters(parameters: ["term" : params], encoding: ITunesSearchEncoding.default)
+      case .search(let params, explicit: let isExplicit):
+        return .requestParameters(parameters: ["term" : params, "explicit": isExplicit.string], encoding: ITunesSearchEncoding.default)
     }
+  }
+}
+
+private extension Bool {
+  var string: String {
+    self ? AlertStrings.yes.rawValue : AlertStrings.no.rawValue
   }
 }
