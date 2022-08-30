@@ -69,7 +69,6 @@
 		47ACADE82472AE6300BAC089 /* AppInternalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ACADE72472AE6300BAC089 /* AppInternalError.swift */; };
 		47ACADEB247313BC00BAC089 /* ErrorProposerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ACADEA247313BC00BAC089 /* ErrorProposerProtocol.swift */; };
 		47AF122C245383AD003760EC /* ContentViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AF122B245383AD003760EC /* ContentViewModelProtocol.swift */; };
-		47B8C48E28BEA4AB00107689 /* UIAlertAction+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B8C48D28BEA4AB00107689 /* UIAlertAction+Init.swift */; };
 		47B8C49228BEBEF600107689 /* AlertConfigProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B8C49128BEBEF600107689 /* AlertConfigProtocol.swift */; };
 		47B8C49528BEC30B00107689 /* AgeServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B8C49428BEC30B00107689 /* AgeServiceProtocol.swift */; };
 		47B8C49628BEC30B00107689 /* AgeServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B8C49428BEC30B00107689 /* AgeServiceProtocol.swift */; };
@@ -162,7 +161,6 @@
 		47ACADE72472AE6300BAC089 /* AppInternalError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInternalError.swift; sourceTree = "<group>"; };
 		47ACADEA247313BC00BAC089 /* ErrorProposerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorProposerProtocol.swift; sourceTree = "<group>"; };
 		47AF122B245383AD003760EC /* ContentViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModelProtocol.swift; sourceTree = "<group>"; };
-		47B8C48D28BEA4AB00107689 /* UIAlertAction+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertAction+Init.swift"; sourceTree = "<group>"; };
 		47B8C49128BEBEF600107689 /* AlertConfigProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlertConfigProtocol.swift; path = /Users/igor.ratynski/Code/itunestest/iTunesTest/Core/Protocol/Models/AlertConfigProtocol.swift; sourceTree = "<absolute>"; };
 		47B8C49428BEC30B00107689 /* AgeServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeServiceProtocol.swift; sourceTree = "<group>"; };
 		750E20D525F1AEF8F1DAD4C7 /* Pods_iTunesTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iTunesTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -386,7 +384,6 @@
 		4751F4E524523B8A00AD87D0 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				47B8C48D28BEA4AB00107689 /* UIAlertAction+Init.swift */,
 				4751F4EB24523DC700AD87D0 /* UIAlertController+Config.swift */,
 				47934354246AEBEB00095FDE /* UIView+AddToCenter.swift */,
 				4751F4E324523B7800AD87D0 /* UIViewController+Alert.swift */,
@@ -797,7 +794,6 @@
 				4765EB50245AE21E00A8EED0 /* DefaultErrorProposer.swift in Sources */,
 				4766BF5928BADC3700081145 /* Constants.swift in Sources */,
 				4765EB4E245AE1DB00A8EED0 /* ErrorExtractorProtocol.swift in Sources */,
-				47B8C48E28BEA4AB00107689 /* UIAlertAction+Init.swift in Sources */,
 				4765EB63245AFA1800A8EED0 /* MoyaParseErrorExtractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
