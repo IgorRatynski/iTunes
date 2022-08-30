@@ -12,6 +12,6 @@ protocol ErrorProposer {
   func proposeAction(for error: Error) -> PropositionAction?
 }
 
-protocol ErrorActionExecutor: class {
+protocol ErrorActionExecutor: AnyObject {
   func execute(action: PropositionAction)
 }

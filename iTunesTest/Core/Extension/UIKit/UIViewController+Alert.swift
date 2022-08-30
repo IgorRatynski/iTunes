@@ -9,11 +9,13 @@
 import UIKit
 
 extension UIViewController {
-  func showSystemAlert(with config: AlertConfig) {
+  func showSystemAlert(with config: AlertConfigProtocol) {
     let alertController = UIAlertController(configuration: config)
     view.endEditing(true)
-    let okAction = UIAlertAction(title: AlertStrings.ok.localized , style: .cancel, handler: nil)
-    alertController.addAction(okAction)
+    if config.actions == nil {
+      let okAction = UIAlertAction(title: AlertStrings.ok.localized , style: .cancel, handler: nil)
+      alertController.addAction(okAction)
+    }
     present(alertController, animated: true, completion: nil)
   }
 }

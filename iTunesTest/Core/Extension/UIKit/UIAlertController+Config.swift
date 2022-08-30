@@ -8,13 +8,11 @@
 
 import UIKit
 
-#warning("Comment all app or remove")
-// MARK: AlertController convience init
-/**
- Extension for UIAlertController for AlertControllerConfiguration configuration
- */
 extension UIAlertController {
-  convenience init(configuration: AlertConfig, dismissHandler: (() -> Void)? = nil) {
+  convenience init(configuration: AlertConfigProtocol, dismissHandler: (() -> Void)? = nil) {
     self.init(title: configuration.title, message: configuration.message, preferredStyle: .alert)
+    configuration.actions?.forEach {
+      addAction(.init(title: $0.title, style: $0.style, handler: $0.handler))
+    }
   }
 }

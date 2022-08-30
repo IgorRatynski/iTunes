@@ -6,9 +6,19 @@
 //  Copyright © 2020 Igor Ratynski. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-class AgeService {
-  static let isAdult: Bool = true
+class AgeService: AgeServiceProtocol {
+  @UserDefault(PersistentKeys.isAdult)
+  var isAdult: Bool?
+
+  var isNeedToAsk: Bool {
+    isAdult == nil
+  }
   
+  func setIsAdult(_ flag: Bool) -> (UIAlertAction) -> Void {
+    { [weak self] _ in
+      self?.isAdult = flag
+    }
+  }
 }

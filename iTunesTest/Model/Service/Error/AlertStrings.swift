@@ -15,7 +15,9 @@ enum AlertStrings: String {
   case yes = "Yes"
   case no = "No"
   
+  case areYouAdult = "Are u adult?"
+  
   var localized: String {
-    return NSLocalizedString(rawValue, comment: "Alert string")
+    NSLocalizedString(rawValue, comment: "Alert")
   }
 }

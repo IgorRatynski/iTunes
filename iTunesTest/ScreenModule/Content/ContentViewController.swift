@@ -19,6 +19,7 @@ class ContentViewController: BaseViewController, ErrorActionController, UISearch
   
   // MARK: Private properties
   private let viewModel: ContentViewModelProtocol = ContentViewModel()
+  private let ageService: AgeService = AgeService()
   
   // MARK: Reactive properties
   private var searchPressed: Signal<(), NoError>
@@ -33,6 +34,13 @@ class ContentViewController: BaseViewController, ErrorActionController, UISearch
   override func viewDidLoad() {
     super.viewDidLoad()
     setup()
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    if ageService.isNeedToAsk {
+      showSystemAlert(with: viewModel.adultAlertConfig)
+    }
   }
 }
 

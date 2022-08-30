@@ -6,9 +6,17 @@
 //  Copyright © 2020 Igor Ratynski. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-struct AlertConfig {
+struct AlertConfig: AlertConfigProtocol {
   let title: String?
   let message: String?
+  
+  let actions: [AlertAction]?
+  
+  init(title: String?, message: String?, actions: [AlertAction]? = nil) {
+    self.title = title
+    self.message = message
+    self.actions = actions
+  }
 }

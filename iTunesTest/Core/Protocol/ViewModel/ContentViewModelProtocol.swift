@@ -24,4 +24,6 @@ protocol ReactiveSearchDelegateProtocol {
 
 protocol ContentViewModelProtocol: ReactiveTableReloadable, ReactiveSearchDelegateProtocol, ReactiveLoadable, ReactiveErrorDispatcherProtocol {
   var tableViewDataSource: SettingsTableViewDataSourceProtocol { get }
+  var showIsAdultAlert: Bool { get }
+  var adultAlertConfig: AlertConfigProtocol { get }
 }

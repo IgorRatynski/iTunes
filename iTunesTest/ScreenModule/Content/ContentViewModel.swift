@@ -32,15 +32,26 @@ class ContentViewModel: BaseViewModel, ContentViewModelProtocol {
     })
   }
   
+  var showIsAdultAlert: Bool {
+    ageService.isNeedToAsk
+  }
+  
+  var adultAlertConfig: AlertConfigProtocol {
+    alertConfigForAgeService()
+  }
+  
   // MARK: - Private properties
   private var searchString: String?
   private let networkProvider: MoyaProvider<ITunesService>
+  private let ageService: AgeServiceProtocol
   
   // MARK: - Lifecycle
   init(networkProvider: MoyaProvider<ITunesService> = MoyaProvider<ITunesService>(plugins: [NetworkLoggerPlugin(verbose: true)]),
-       tableViewDataSource: SettingsTableViewDataSourceProtocol = SettingsTableViewDataSource()) {
+       tableViewDataSource: SettingsTableViewDataSourceProtocol = SettingsTableViewDataSource(),
+       ageService: AgeServiceProtocol = AgeService()) {
     self.networkProvider = networkProvider
     self.tableViewDataSource = tableViewDataSource
+    self.ageService = ageService
     
     (reloadTable, reloadTableObserver) = Signal.pipe()
     
@@ -48,7 +59,7 @@ class ContentViewModel: BaseViewModel, ContentViewModelProtocol {
   }
 }
 
-// MARK: Functions
+// MARK: - Functions
 private extension ContentViewModel {
   func search() {
     guard !loading.value,
@@ -89,5 +100,15 @@ private extension ContentViewModel {
         self?.errorDispatcher.handle(error: error)
       })
       .start()
+  }
+}
+
+// MARK: - Supporting
+private extension ContentViewModel {
+  func alertConfigForAgeService() -> AlertConfigProtocol {
+    AlertConfig(title: nil, message: AlertStrings.areYouAdult.localized, actions: [
+      (title: AlertStrings.yes.localized, style: .default, handler: ageService.setIsAdult(true)),
+      (title: AlertStrings.no.localized, style: .default, handler: ageService.setIsAdult(false))
+    ])
   }
 }

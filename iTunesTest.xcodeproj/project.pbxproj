@@ -69,6 +69,10 @@
 		47ACADE82472AE6300BAC089 /* AppInternalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ACADE72472AE6300BAC089 /* AppInternalError.swift */; };
 		47ACADEB247313BC00BAC089 /* ErrorProposerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ACADEA247313BC00BAC089 /* ErrorProposerProtocol.swift */; };
 		47AF122C245383AD003760EC /* ContentViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AF122B245383AD003760EC /* ContentViewModelProtocol.swift */; };
+		47B8C48E28BEA4AB00107689 /* UIAlertAction+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B8C48D28BEA4AB00107689 /* UIAlertAction+Init.swift */; };
+		47B8C49228BEBEF600107689 /* AlertConfigProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B8C49128BEBEF600107689 /* AlertConfigProtocol.swift */; };
+		47B8C49528BEC30B00107689 /* AgeServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B8C49428BEC30B00107689 /* AgeServiceProtocol.swift */; };
+		47B8C49628BEC30B00107689 /* AgeServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B8C49428BEC30B00107689 /* AgeServiceProtocol.swift */; };
 		5A848E85456DEE68B37F99DA /* Pods_iTunesTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 750E20D525F1AEF8F1DAD4C7 /* Pods_iTunesTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -158,6 +162,9 @@
 		47ACADE72472AE6300BAC089 /* AppInternalError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInternalError.swift; sourceTree = "<group>"; };
 		47ACADEA247313BC00BAC089 /* ErrorProposerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorProposerProtocol.swift; sourceTree = "<group>"; };
 		47AF122B245383AD003760EC /* ContentViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModelProtocol.swift; sourceTree = "<group>"; };
+		47B8C48D28BEA4AB00107689 /* UIAlertAction+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertAction+Init.swift"; sourceTree = "<group>"; };
+		47B8C49128BEBEF600107689 /* AlertConfigProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlertConfigProtocol.swift; path = /Users/igor.ratynski/Code/itunestest/iTunesTest/Core/Protocol/Models/AlertConfigProtocol.swift; sourceTree = "<absolute>"; };
+		47B8C49428BEC30B00107689 /* AgeServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeServiceProtocol.swift; sourceTree = "<group>"; };
 		750E20D525F1AEF8F1DAD4C7 /* Pods_iTunesTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iTunesTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F080E4DB1C3E65FBC2F73D2 /* Pods-iTunesTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesTest.release.xcconfig"; path = "Target Support Files/Pods-iTunesTest/Pods-iTunesTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -223,7 +230,7 @@
 			children = (
 				4766BF5728BADC0B00081145 /* Core */,
 				473550DB24506ECE001F4679 /* Model */,
-				473550E12450714F001F4679 /* UIModule */,
+				473550E12450714F001F4679 /* ScreenModule */,
 				473550D824506D5C001F4679 /* Supporting Files */,
 			);
 			path = iTunesTest;
@@ -290,13 +297,13 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
-		473550E12450714F001F4679 /* UIModule */ = {
+		473550E12450714F001F4679 /* ScreenModule */ = {
 			isa = PBXGroup;
 			children = (
 				473550E224507166001F4679 /* Content */,
 				473550E024507102001F4679 /* Storyboard */,
 			);
-			path = UIModule;
+			path = ScreenModule;
 			sourceTree = "<group>";
 		};
 		473550E224507166001F4679 /* Content */ = {
@@ -331,12 +338,13 @@
 		4751F4D8245219BE00AD87D0 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				47ACADE62472AE5000BAC089 /* Error */,
-				475691952459F73500283D34 /* Common */,
-				475691922459D13A00283D34 /* UITableViewDataSource */,
-				4756918B24585D3800283D34 /* Model */,
 				4751F4DB245219E200AD87D0 /* Cell */,
+				475691952459F73500283D34 /* Common */,
+				475691922459D13A00283D34 /* DataSource */,
+				47ACADE62472AE5000BAC089 /* Error */,
+				4756918B24585D3800283D34 /* Models */,
 				4751F4DD245219F400AD87D0 /* Network */,
+				47B8C49328BEC2F900107689 /* Service */,
 				4751F4DC245219EC00AD87D0 /* ViewModel */,
 			);
 			path = Protocol;
@@ -378,6 +386,7 @@
 		4751F4E524523B8A00AD87D0 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				47B8C48D28BEA4AB00107689 /* UIAlertAction+Init.swift */,
 				4751F4EB24523DC700AD87D0 /* UIAlertController+Config.swift */,
 				47934354246AEBEB00095FDE /* UIView+AddToCenter.swift */,
 				4751F4E324523B7800AD87D0 /* UIViewController+Alert.swift */,
@@ -428,20 +437,21 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		4756918B24585D3800283D34 /* Model */ = {
+		4756918B24585D3800283D34 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				47B8C49128BEBEF600107689 /* AlertConfigProtocol.swift */,
 				4756918C24585D4200283D34 /* ITunesArtistModelProtocol.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		475691922459D13A00283D34 /* UITableViewDataSource */ = {
+		475691922459D13A00283D34 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
 				475691932459D15600283D34 /* SettingsTableViewDataSourceProtocol.swift */,
 			);
-			path = UITableViewDataSource;
+			path = DataSource;
 			sourceTree = "<group>";
 		};
 		475691952459F73500283D34 /* Common */ = {
@@ -475,7 +485,6 @@
 		4765EB46245ADBC700A8EED0 /* Error */ = {
 			isa = PBXGroup;
 			children = (
-				47ACADE9247313A200BAC089 /* Protocol */,
 				4765EB5D245AEA1200A8EED0 /* Extractor */,
 				4765EB5A245AE90500A8EED0 /* Error */,
 				4765EB55245AE88700A8EED0 /* Proposer */,
@@ -563,17 +572,18 @@
 			isa = PBXGroup;
 			children = (
 				47ACADE72472AE6300BAC089 /* AppInternalError.swift */,
+				4765EB4D245AE1DB00A8EED0 /* ErrorExtractorProtocol.swift */,
+				47ACADEA247313BC00BAC089 /* ErrorProposerProtocol.swift */,
 			);
 			path = Error;
 			sourceTree = "<group>";
 		};
-		47ACADE9247313A200BAC089 /* Protocol */ = {
+		47B8C49328BEC2F900107689 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				4765EB4D245AE1DB00A8EED0 /* ErrorExtractorProtocol.swift */,
-				47ACADEA247313BC00BAC089 /* ErrorProposerProtocol.swift */,
+				47B8C49428BEC30B00107689 /* AgeServiceProtocol.swift */,
 			);
-			path = Protocol;
+			path = Service;
 			sourceTree = "<group>";
 		};
 		97EC0B17B45A16D8EE51BAB9 /* Pods */ = {
@@ -735,6 +745,7 @@
 				473550D724506D3F001F4679 /* ContentViewController.swift in Sources */,
 				47ACADE52472ADF400BAC089 /* AppInternalErrorExtractor.swift in Sources */,
 				4765EB69245AFF5900A8EED0 /* GroupErrorProposer.swift in Sources */,
+				47B8C49228BEBEF600107689 /* AlertConfigProtocol.swift in Sources */,
 				47ACADEB247313BC00BAC089 /* ErrorProposerProtocol.swift in Sources */,
 				473550C3245067B5001F4679 /* AppDelegate.swift in Sources */,
 				4751F4DA245219CB00AD87D0 /* CellProtocol.swift in Sources */,
@@ -777,6 +788,7 @@
 				4751F4EC24523DC700AD87D0 /* UIAlertController+Config.swift in Sources */,
 				4756918F24585D9400283D34 /* SongTableViewCellModel.swift in Sources */,
 				473550E4245071A0001F4679 /* ContentViewModel.swift in Sources */,
+				47B8C49528BEC30B00107689 /* AgeServiceProtocol.swift in Sources */,
 				475691972459F74200283D34 /* CommonProtocols.swift in Sources */,
 				47ACADE82472AE6300BAC089 /* AppInternalError.swift in Sources */,
 				475691942459D15600283D34 /* SettingsTableViewDataSourceProtocol.swift in Sources */,
@@ -785,6 +797,7 @@
 				4765EB50245AE21E00A8EED0 /* DefaultErrorProposer.swift in Sources */,
 				4766BF5928BADC3700081145 /* Constants.swift in Sources */,
 				4765EB4E245AE1DB00A8EED0 /* ErrorExtractorProtocol.swift in Sources */,
+				47B8C48E28BEA4AB00107689 /* UIAlertAction+Init.swift in Sources */,
 				4765EB63245AFA1800A8EED0 /* MoyaParseErrorExtractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -796,6 +809,7 @@
 				4766BF5D28BAE00E00081145 /* String+Localization.swift in Sources */,
 				4765EB39245A4DF100A8EED0 /* iTunesTestTests.swift in Sources */,
 				4765EB45245A4F0500A8EED0 /* NetworkProviderMock.swift in Sources */,
+				47B8C49628BEC30B00107689 /* AgeServiceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
