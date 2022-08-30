@@ -83,7 +83,7 @@ private extension ContentViewModel {
 private extension ContentViewModel {
   func searchRequest(_ params: ITunesParams) {
     networkProvider
-      .request(.search(params))
+      .request(.search(params, explicit: ageService.isAdult ?? false))
       .map(ITunesResponseModel.self)
       .on(starting: { [weak self] in
         self?.loading.value = true
@@ -92,7 +92,7 @@ private extension ContentViewModel {
         self?.loading.value = false
       })
       .on(value: { [weak self] response in
-        guard let self = self else {return}
+        guard let self = self else { return }
         self.tableViewDataSource.setup(model: response.tableModels)
         self.reloadTableObserver.send(value: ())
       })

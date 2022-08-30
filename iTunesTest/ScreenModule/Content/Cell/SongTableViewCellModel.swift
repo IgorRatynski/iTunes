@@ -48,9 +48,7 @@ class SongTableViewCellModel: BaseViewModel, SongTableViewCellModelProtocol {
   }
   
   func setup(model: Any) {
-    guard let model = model as? ArtistModelProtocol else {
-      return clear()
-    }
+    guard let model = model as? ArtistModelProtocol else { return clear() }
     self.model = model
     updateView()
   }
