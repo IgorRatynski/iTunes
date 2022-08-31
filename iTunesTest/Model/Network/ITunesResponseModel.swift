@@ -9,12 +9,12 @@
 import Foundation
 
 struct ITunesResponseModel: Decodable {
-  private let resultCount: Int?
-  private let results: [ArtistModel]?
+  let resultCount: Int?
+  let results: [ArtistModel]?
   
   var albums: [Album] {
     guard let results = results else { return [] }
-    var albums: [String:[ArtistModel]] = [:], tempArtists: [ArtistModel]
+    var albums: [String : [ArtistModel]] = [:], tempArtists: [ArtistModel]
 
     for artist in results {
       tempArtists = albums[artist.album] ?? []

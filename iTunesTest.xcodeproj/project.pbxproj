@@ -15,7 +15,16 @@
 		472A609A28BFFCCB00F614D7 /* iTunesTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472A609528BFFCCB00F614D7 /* iTunesTestTests.swift */; };
 		472A609B28BFFCCB00F614D7 /* NetworkProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472A609628BFFCCB00F614D7 /* NetworkProviderMock.swift */; };
 		472A609C28BFFCCB00F614D7 /* SearchSuccessResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 472A609828BFFCCB00F614D7 /* SearchSuccessResponse.json */; };
-		472A609D28BFFCCB00F614D7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 472A609928BFFCCB00F614D7 /* Info.plist */; };
+		472A609F28BFFEA200F614D7 /* ITunesArtistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4751F4D22451D40500AD87D0 /* ITunesArtistModel.swift */; };
+		472A60A028BFFEAC00F614D7 /* AgeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4751F4E124521F5C00AD87D0 /* AgeService.swift */; };
+		472A60A128BFFEB900F614D7 /* SettingsTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4751F4D62451EE7400AD87D0 /* SettingsTableViewDataSource.swift */; };
+		472A60A228BFFF9800F614D7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4766BF5828BADC3700081145 /* Constants.swift */; };
+		472A60A328BFFFEA00F614D7 /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4766BF5F28BAE12E00081145 /* UserDefaultsWrapper.swift */; };
+		472A60A428C0000300F614D7 /* LoadingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ACADE02472A96100BAC089 /* LoadingError.swift */; };
+		472A60A528C0001500F614D7 /* ArtistModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4756918C24585D4200283D34 /* ArtistModelProtocol.swift */; };
+		472A60A628C0001B00F614D7 /* SettingsTableViewDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475691932459D15600283D34 /* SettingsTableViewDataSourceProtocol.swift */; };
+		472A60A728C0002200F614D7 /* CommonProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475691962459F74200283D34 /* CommonProtocols.swift */; };
+		472A60A828C0002C00F614D7 /* AppInternalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ACADE72472AE6300BAC089 /* AppInternalError.swift */; };
 		473550C3245067B5001F4679 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473550C2245067B5001F4679 /* AppDelegate.swift */; };
 		473550C5245067B5001F4679 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473550C4245067B5001F4679 /* SceneDelegate.swift */; };
 		473550CA245067B6001F4679 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 473550C8245067B6001F4679 /* Main.storyboard */; };
@@ -703,7 +712,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				472A609C28BFFCCB00F614D7 /* SearchSuccessResponse.json in Resources */,
-				472A609D28BFFCCB00F614D7 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -822,12 +830,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				472A60A528C0001500F614D7 /* ArtistModelProtocol.swift in Sources */,
 				4766BF5D28BAE00E00081145 /* String+Localization.swift in Sources */,
+				472A60A628C0001B00F614D7 /* SettingsTableViewDataSourceProtocol.swift in Sources */,
+				472A60A228BFFF9800F614D7 /* Constants.swift in Sources */,
+				472A60A428C0000300F614D7 /* LoadingError.swift in Sources */,
 				472A609328BFFBBA00F614D7 /* ITunesResponseModel.swift in Sources */,
+				472A60A028BFFEAC00F614D7 /* AgeService.swift in Sources */,
+				472A60A328BFFFEA00F614D7 /* UserDefaultsWrapper.swift in Sources */,
+				472A60A128BFFEB900F614D7 /* SettingsTableViewDataSource.swift in Sources */,
+				472A609F28BFFEA200F614D7 /* ITunesArtistModel.swift in Sources */,
+				472A60A828C0002C00F614D7 /* AppInternalError.swift in Sources */,
 				472A609B28BFFCCB00F614D7 /* NetworkProviderMock.swift in Sources */,
 				472A609A28BFFCCB00F614D7 /* iTunesTestTests.swift in Sources */,
 				472A608E28BFF70A00F614D7 /* AlbumProtocol.swift in Sources */,
 				472A609228BFF94400F614D7 /* AlbumModel.swift in Sources */,
+				472A60A728C0002200F614D7 /* CommonProtocols.swift in Sources */,
 				47B8C49628BEC30B00107689 /* AgeServiceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

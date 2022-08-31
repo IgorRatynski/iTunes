@@ -64,7 +64,7 @@ class APITests: XCTestCase {
       .request(.search(params))
       .map(ITunesResponseModel.self)
       .on(value: { [weak self] response in
-        XCTAssertEqual(response.results.count ?? 0, 50, "true")
+        XCTAssertEqual(response.results?.count ?? 0, 50, "true")
       })
       .on(failed: { [weak self] error in
         XCTAssertNil(error, "error!")
