@@ -16,7 +16,6 @@
 		472A609B28BFFCCB00F614D7 /* NetworkProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472A609628BFFCCB00F614D7 /* NetworkProviderMock.swift */; };
 		472A609C28BFFCCB00F614D7 /* SearchSuccessResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 472A609828BFFCCB00F614D7 /* SearchSuccessResponse.json */; };
 		472A609D28BFFCCB00F614D7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 472A609928BFFCCB00F614D7 /* Info.plist */; };
-		472A609E28BFFDA100F614D7 /* NetworkProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472A609628BFFCCB00F614D7 /* NetworkProviderMock.swift */; };
 		473550C3245067B5001F4679 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473550C2245067B5001F4679 /* AppDelegate.swift */; };
 		473550C5245067B5001F4679 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473550C4245067B5001F4679 /* SceneDelegate.swift */; };
 		473550CA245067B6001F4679 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 473550C8245067B6001F4679 /* Main.storyboard */; };
@@ -760,7 +759,6 @@
 				472A609128BFF94400F614D7 /* AlbumModel.swift in Sources */,
 				4751F4D12451D3B000AD87D0 /* ITunesResponseModel.swift in Sources */,
 				473550D724506D3F001F4679 /* ContentViewController.swift in Sources */,
-				472A609E28BFFDA100F614D7 /* NetworkProviderMock.swift in Sources */,
 				47ACADE52472ADF400BAC089 /* AppInternalErrorExtractor.swift in Sources */,
 				4765EB69245AFF5900A8EED0 /* GroupErrorProposer.swift in Sources */,
 				47B8C49228BEBEF600107689 /* AlertConfigProtocol.swift in Sources */,
@@ -1033,7 +1031,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = iTunesTestTests;
+				PRODUCT_BUNDLE_IDENTIFIER = self.iTunesTestTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1054,7 +1052,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = iTunesTestTests;
+				PRODUCT_BUNDLE_IDENTIFIER = self.iTunesTestTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
