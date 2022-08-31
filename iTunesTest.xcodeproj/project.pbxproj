@@ -11,6 +11,12 @@
 		472A608E28BFF70A00F614D7 /* AlbumProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472A608C28BFF70500F614D7 /* AlbumProtocol.swift */; };
 		472A609128BFF94400F614D7 /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472A609028BFF94400F614D7 /* AlbumModel.swift */; };
 		472A609228BFF94400F614D7 /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472A609028BFF94400F614D7 /* AlbumModel.swift */; };
+		472A609328BFFBBA00F614D7 /* ITunesResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4751F4D02451D3B000AD87D0 /* ITunesResponseModel.swift */; };
+		472A609A28BFFCCB00F614D7 /* iTunesTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472A609528BFFCCB00F614D7 /* iTunesTestTests.swift */; };
+		472A609B28BFFCCB00F614D7 /* NetworkProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472A609628BFFCCB00F614D7 /* NetworkProviderMock.swift */; };
+		472A609C28BFFCCB00F614D7 /* SearchSuccessResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 472A609828BFFCCB00F614D7 /* SearchSuccessResponse.json */; };
+		472A609D28BFFCCB00F614D7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 472A609928BFFCCB00F614D7 /* Info.plist */; };
+		472A609E28BFFDA100F614D7 /* NetworkProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472A609628BFFCCB00F614D7 /* NetworkProviderMock.swift */; };
 		473550C3245067B5001F4679 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473550C2245067B5001F4679 /* AppDelegate.swift */; };
 		473550C5245067B5001F4679 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473550C4245067B5001F4679 /* SceneDelegate.swift */; };
 		473550CA245067B6001F4679 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 473550C8245067B6001F4679 /* Main.storyboard */; };
@@ -43,8 +49,6 @@
 		475691942459D15600283D34 /* SettingsTableViewDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475691932459D15600283D34 /* SettingsTableViewDataSourceProtocol.swift */; };
 		475691972459F74200283D34 /* CommonProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475691962459F74200283D34 /* CommonProtocols.swift */; };
 		4765EB2E245A1ACB00A8EED0 /* ITunesSearchEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4765EB2D245A1ACB00A8EED0 /* ITunesSearchEncoding.swift */; };
-		4765EB39245A4DF100A8EED0 /* iTunesTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4765EB38245A4DF100A8EED0 /* iTunesTestTests.swift */; };
-		4765EB45245A4F0500A8EED0 /* NetworkProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4765EB44245A4F0500A8EED0 /* NetworkProviderMock.swift */; };
 		4765EB48245ADBDD00A8EED0 /* PropositionAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4765EB47245ADBDD00A8EED0 /* PropositionAction.swift */; };
 		4765EB4A245AE0ED00A8EED0 /* ReactiveErrorDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4765EB49245AE0ED00A8EED0 /* ReactiveErrorDispatcher.swift */; };
 		4765EB4C245AE13A00A8EED0 /* ErrorDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4765EB4B245AE13A00A8EED0 /* ErrorDispatcher.swift */; };
@@ -61,7 +65,6 @@
 		4765EB67245AFD0900A8EED0 /* DecodingErrorProposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4765EB66245AFD0900A8EED0 /* DecodingErrorProposer.swift */; };
 		4765EB69245AFF5900A8EED0 /* GroupErrorProposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4765EB68245AFF5900A8EED0 /* GroupErrorProposer.swift */; };
 		4765EB6B245AFF6E00A8EED0 /* GroupErrorExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4765EB6A245AFF6E00A8EED0 /* GroupErrorExtractor.swift */; };
-		4765EB6E245B2D9800A8EED0 /* SearchSuccessResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 4765EB6D245B2D9800A8EED0 /* SearchSuccessResponse.json */; };
 		4766BF5928BADC3700081145 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4766BF5828BADC3700081145 /* Constants.swift */; };
 		4766BF5C28BAE00100081145 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4766BF5B28BAE00100081145 /* String+Localization.swift */; };
 		4766BF5D28BAE00E00081145 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4766BF5B28BAE00100081145 /* String+Localization.swift */; };
@@ -102,6 +105,10 @@
 		4723FF96245B449400DBAEDD /* Result.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Result.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		472A608C28BFF70500F614D7 /* AlbumProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumProtocol.swift; sourceTree = "<group>"; };
 		472A609028BFF94400F614D7 /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
+		472A609528BFFCCB00F614D7 /* iTunesTestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTunesTestTests.swift; sourceTree = "<group>"; };
+		472A609628BFFCCB00F614D7 /* NetworkProviderMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProviderMock.swift; sourceTree = "<group>"; };
+		472A609828BFFCCB00F614D7 /* SearchSuccessResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SearchSuccessResponse.json; sourceTree = "<group>"; };
+		472A609928BFFCCB00F614D7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		473550BF245067B5001F4679 /* iTunesTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		473550C2245067B5001F4679 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		473550C4245067B5001F4679 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,9 +144,6 @@
 		475691962459F74200283D34 /* CommonProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonProtocols.swift; sourceTree = "<group>"; };
 		4765EB2D245A1ACB00A8EED0 /* ITunesSearchEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesSearchEncoding.swift; sourceTree = "<group>"; };
 		4765EB36245A4DF100A8EED0 /* iTunesTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTunesTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4765EB38245A4DF100A8EED0 /* iTunesTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesTestTests.swift; sourceTree = "<group>"; };
-		4765EB3A245A4DF100A8EED0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4765EB44245A4F0500A8EED0 /* NetworkProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkProviderMock.swift; path = iTunesTestTests/NetworkProviderMock.swift; sourceTree = SOURCE_ROOT; };
 		4765EB47245ADBDD00A8EED0 /* PropositionAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropositionAction.swift; sourceTree = "<group>"; };
 		4765EB49245AE0ED00A8EED0 /* ReactiveErrorDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveErrorDispatcher.swift; sourceTree = "<group>"; };
 		4765EB4B245AE13A00A8EED0 /* ErrorDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorDispatcher.swift; sourceTree = "<group>"; };
@@ -156,7 +160,6 @@
 		4765EB66245AFD0900A8EED0 /* DecodingErrorProposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodingErrorProposer.swift; sourceTree = "<group>"; };
 		4765EB68245AFF5900A8EED0 /* GroupErrorProposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupErrorProposer.swift; sourceTree = "<group>"; };
 		4765EB6A245AFF6E00A8EED0 /* GroupErrorExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupErrorExtractor.swift; sourceTree = "<group>"; };
-		4765EB6D245B2D9800A8EED0 /* SearchSuccessResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = SearchSuccessResponse.json; path = iTunesTestTests/TestResponseData/SearchSuccessResponse.json; sourceTree = SOURCE_ROOT; };
 		4766BF5828BADC3700081145 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4766BF5B28BAE00100081145 /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
 		4766BF5F28BAE12E00081145 /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
@@ -217,11 +220,30 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		472A609428BFFCCB00F614D7 /* iTunesTestTests */ = {
+			isa = PBXGroup;
+			children = (
+				472A609528BFFCCB00F614D7 /* iTunesTestTests.swift */,
+				472A609628BFFCCB00F614D7 /* NetworkProviderMock.swift */,
+				472A609728BFFCCB00F614D7 /* TestResponseData */,
+				472A609928BFFCCB00F614D7 /* Info.plist */,
+			);
+			path = iTunesTestTests;
+			sourceTree = "<group>";
+		};
+		472A609728BFFCCB00F614D7 /* TestResponseData */ = {
+			isa = PBXGroup;
+			children = (
+				472A609828BFFCCB00F614D7 /* SearchSuccessResponse.json */,
+			);
+			path = TestResponseData;
+			sourceTree = "<group>";
+		};
 		473550B6245067B5001F4679 = {
 			isa = PBXGroup;
 			children = (
 				473550C1245067B5001F4679 /* iTunesTest */,
-				4765EB37245A4DF100A8EED0 /* iTunesTestTests */,
+				472A609428BFFCCB00F614D7 /* iTunesTestTests */,
 				473550C0245067B5001F4679 /* Products */,
 				97EC0B17B45A16D8EE51BAB9 /* Pods */,
 				37BB0DD8F5A2F5575A040C81 /* Frameworks */,
@@ -483,18 +505,6 @@
 			path = DataSource;
 			sourceTree = "<group>";
 		};
-		4765EB37245A4DF100A8EED0 /* iTunesTestTests */ = {
-			isa = PBXGroup;
-			children = (
-				4765EB6C245B2D5700A8EED0 /* TestResponseData */,
-				4765EB44245A4F0500A8EED0 /* NetworkProviderMock.swift */,
-				4765EB3A245A4DF100A8EED0 /* Info.plist */,
-				4765EB38245A4DF100A8EED0 /* iTunesTestTests.swift */,
-			);
-			name = iTunesTestTests;
-			path = "/Volumes/Macintosh SSD/Users/igor.ratynski/Code/iOS/iTunesTest/iTunesTestTests";
-			sourceTree = "<absolute>";
-		};
 		4765EB46245ADBC700A8EED0 /* Error */ = {
 			isa = PBXGroup;
 			children = (
@@ -542,14 +552,6 @@
 				47ACADE42472ADF400BAC089 /* AppInternalErrorExtractor.swift */,
 			);
 			path = Extractor;
-			sourceTree = "<group>";
-		};
-		4765EB6C245B2D5700A8EED0 /* TestResponseData */ = {
-			isa = PBXGroup;
-			children = (
-				4765EB6D245B2D9800A8EED0 /* SearchSuccessResponse.json */,
-			);
-			path = TestResponseData;
 			sourceTree = "<group>";
 		};
 		4766BF5728BADC0B00081145 /* Core */ = {
@@ -701,7 +703,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4765EB6E245B2D9800A8EED0 /* SearchSuccessResponse.json in Resources */,
+				472A609C28BFFCCB00F614D7 /* SearchSuccessResponse.json in Resources */,
+				472A609D28BFFCCB00F614D7 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -757,6 +760,7 @@
 				472A609128BFF94400F614D7 /* AlbumModel.swift in Sources */,
 				4751F4D12451D3B000AD87D0 /* ITunesResponseModel.swift in Sources */,
 				473550D724506D3F001F4679 /* ContentViewController.swift in Sources */,
+				472A609E28BFFDA100F614D7 /* NetworkProviderMock.swift in Sources */,
 				47ACADE52472ADF400BAC089 /* AppInternalErrorExtractor.swift in Sources */,
 				4765EB69245AFF5900A8EED0 /* GroupErrorProposer.swift in Sources */,
 				47B8C49228BEBEF600107689 /* AlertConfigProtocol.swift in Sources */,
@@ -821,9 +825,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4766BF5D28BAE00E00081145 /* String+Localization.swift in Sources */,
-				4765EB39245A4DF100A8EED0 /* iTunesTestTests.swift in Sources */,
+				472A609328BFFBBA00F614D7 /* ITunesResponseModel.swift in Sources */,
+				472A609B28BFFCCB00F614D7 /* NetworkProviderMock.swift in Sources */,
+				472A609A28BFFCCB00F614D7 /* iTunesTestTests.swift in Sources */,
 				472A608E28BFF70A00F614D7 /* AlbumProtocol.swift in Sources */,
-				4765EB45245A4F0500A8EED0 /* NetworkProviderMock.swift in Sources */,
 				472A609228BFF94400F614D7 /* AlbumModel.swift in Sources */,
 				47B8C49628BEC30B00107689 /* AgeServiceProtocol.swift in Sources */,
 			);
@@ -1020,7 +1025,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 93C5VCR5UY;
+				DEVELOPMENT_TEAM = 3R8784ZA8P;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods";
 				INFOPLIST_FILE = iTunesTestTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1028,7 +1033,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = self.iTunesTestTests;
+				PRODUCT_BUNDLE_IDENTIFIER = iTunesTestTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1041,7 +1046,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 93C5VCR5UY;
+				DEVELOPMENT_TEAM = 3R8784ZA8P;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods";
 				INFOPLIST_FILE = iTunesTestTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1049,7 +1054,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = self.iTunesTestTests;
+				PRODUCT_BUNDLE_IDENTIFIER = iTunesTestTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

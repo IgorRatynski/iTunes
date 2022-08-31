@@ -57,41 +57,41 @@ class APITests: XCTestCase {
       self.response(type: .success)
     }
     mockProvider = MoyaProvider<ITunesService>(endpointClosure: endpointClosure,
-                                               stubClosure: MoyaProvider.immediatelyStub)
+                                               stubClosure: MoyaProvider.delayedStub(.init(5)))
     
-    let params = ITunesParams(term: "The Eminem show")
+    let params = ITunesParams(term: "The Eminem show", explicit: "Yes", limit: 50)
     mockProvider
       .request(.search(params))
       .map(ITunesResponseModel.self)
       .on(value: { [weak self] response in
-//        XCTAssert
+        XCTAssertEqual(response.results.count ?? 0, 50, "true")
       })
       .on(failed: { [weak self] error in
-//        XCTAssert
+        XCTAssertNil(error, "error!")
       })
       .start()
   }
   
-  func testFailureResponse() {
-    let endpointClosure = test { () -> EndpointSampleResponse in
-      self.response(type: .failure)
-    }
-    
-    mockProvider = MoyaProvider<ITunesService>(endpointClosure: endpointClosure,
-                                               stubClosure: MoyaProvider.immediatelyStub)
-    
-    let params = ITunesParams(term: "The Eminem show")
-    mockProvider
-      .request(.search(params))
-      .map(ITunesResponseModel.self)
-      .on(value: { [weak self] response in
-//        XCTAssert
-      })
-      .on(failed: { [weak self] error in
-//        XCTAssert
-      })
-      .start()
-  }
+//  func testFailureResponse() {
+//    let endpointClosure = test { () -> EndpointSampleResponse in
+//      self.response(type: .failure)
+//    }
+//
+//    mockProvider = MoyaProvider<ITunesService>(endpointClosure: endpointClosure,
+//                                               stubClosure: MoyaProvider.delayedStub(.init(500)))
+//
+//    let params = ITunesParams(term: "The Eminem show", explicit: "Yes", limit: 50)
+//    mockProvider
+//      .request(.search(params))
+//      .map(ITunesResponseModel.self)
+//      .on(value: { [weak self] response in
+////        XCTAssert
+//      })
+//      .on(failed: { [weak self] error in
+////        XCTAssert
+//      })
+//      .start()
+//  }
 }
 
 private var testSampleData: Data {
