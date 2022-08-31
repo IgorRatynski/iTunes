@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		472A608D28BFF70500F614D7 /* AlbumProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472A608C28BFF70500F614D7 /* AlbumProtocol.swift */; };
 		472A608E28BFF70A00F614D7 /* AlbumProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472A608C28BFF70500F614D7 /* AlbumProtocol.swift */; };
+		472A609128BFF94400F614D7 /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472A609028BFF94400F614D7 /* AlbumModel.swift */; };
+		472A609228BFF94400F614D7 /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472A609028BFF94400F614D7 /* AlbumModel.swift */; };
 		473550C3245067B5001F4679 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473550C2245067B5001F4679 /* AppDelegate.swift */; };
 		473550C5245067B5001F4679 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473550C4245067B5001F4679 /* SceneDelegate.swift */; };
 		473550CA245067B6001F4679 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 473550C8245067B6001F4679 /* Main.storyboard */; };
@@ -99,6 +101,7 @@
 		4723FF94245B449400DBAEDD /* ReactiveSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ReactiveSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4723FF96245B449400DBAEDD /* Result.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Result.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		472A608C28BFF70500F614D7 /* AlbumProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumProtocol.swift; sourceTree = "<group>"; };
+		472A609028BFF94400F614D7 /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
 		473550BF245067B5001F4679 /* iTunesTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		473550C2245067B5001F4679 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		473550C4245067B5001F4679 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -206,6 +209,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		472A608F28BFF92F00F614D7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				472A609028BFF94400F614D7 /* AlbumModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		473550B6245067B5001F4679 = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +284,7 @@
 				4751F4E824523D0600AD87D0 /* Alert */,
 				475691982459F87600283D34 /* DataSource */,
 				4766BF5E28BAE11D00081145 /* Helper */,
+				472A608F28BFF92F00F614D7 /* Models */,
 				4751F4E724523CFC00AD87D0 /* Network */,
 				473550D924506D6B001F4679 /* Service */,
 			);
@@ -742,6 +754,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				472A609128BFF94400F614D7 /* AlbumModel.swift in Sources */,
 				4751F4D12451D3B000AD87D0 /* ITunesResponseModel.swift in Sources */,
 				473550D724506D3F001F4679 /* ContentViewController.swift in Sources */,
 				47ACADE52472ADF400BAC089 /* AppInternalErrorExtractor.swift in Sources */,
@@ -811,6 +824,7 @@
 				4765EB39245A4DF100A8EED0 /* iTunesTestTests.swift in Sources */,
 				472A608E28BFF70A00F614D7 /* AlbumProtocol.swift in Sources */,
 				4765EB45245A4F0500A8EED0 /* NetworkProviderMock.swift in Sources */,
+				472A609228BFF94400F614D7 /* AlbumModel.swift in Sources */,
 				47B8C49628BEC30B00107689 /* AgeServiceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

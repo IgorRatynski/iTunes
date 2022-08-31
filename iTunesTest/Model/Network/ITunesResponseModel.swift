@@ -30,17 +30,6 @@ struct ITunesResponseModel: Decodable {
   }
 }
 
-struct Album {
-
-  // MARK: Public
-  let name: String
-  let tracks: [ArtistModel]
-  let image: URL?
-
-  // Better via DI
-  static private let ageService: AgeServiceProtocol = AgeService()
-}
-
 // MARK: UITableViewDataSource Adapter
 extension Array where Element == ArtistModel {
   var models: [SettingsSection] {
