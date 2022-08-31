@@ -8,6 +8,9 @@
 
 import Moya
 
+// API link
+// https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/Searching.html
+
 enum ITunesService: TargetType {
   case search(ITunesParams)
   
