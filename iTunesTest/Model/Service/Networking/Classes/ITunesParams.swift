@@ -13,6 +13,8 @@ struct ITunesParams: Encodable {
   static private let filteringCharacters = NSCharacterSet(charactersIn: "!@#$%&*")
   
   let term: String
+  let explicit: String
+  let limit: Int
   
   var asString: String {
     term

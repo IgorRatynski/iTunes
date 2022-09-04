@@ -12,7 +12,6 @@ enum Constants {
   
 }
 
-
 // MARK: Persistent keys
 enum PersistentKeys {
   static let isAdult = "kIsAdult"

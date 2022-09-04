@@ -69,7 +69,7 @@ private extension ContentViewModel {
       return
     }
     
-    self.searchRequest(ITunesParams(term: searchString))
+    self.searchRequest(ITunesParams(term: searchString, explicit: (ageService.isAdult ?? false).string, limit: 50))
   }
   
   func clearResults() {
@@ -83,7 +83,7 @@ private extension ContentViewModel {
 private extension ContentViewModel {
   func searchRequest(_ params: ITunesParams) {
     networkProvider
-      .request(.search(params, explicit: ageService.isAdult ?? false))
+      .request(.search(params))
       .map(ITunesResponseModel.self)
       .on(starting: { [weak self] in
         self?.loading.value = true
@@ -110,5 +110,11 @@ private extension ContentViewModel {
       (title: AlertStrings.yes.localized, style: .default, handler: ageService.setIsAdult(true)),
       (title: AlertStrings.no.localized, style: .default, handler: ageService.setIsAdult(false))
     ])
+  }
+}
+
+private extension Bool {
+  var string: String {
+    self ? AlertStrings.yes.rawValue : AlertStrings.no.rawValue
   }
 }

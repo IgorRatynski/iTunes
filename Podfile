@@ -24,9 +24,12 @@ target 'iTunesTest' do
 #  end
 end
 
-#target 'iTunesTestTests' do
-#    inherit! :search_paths
-#end
+target 'iTunesTestTests' do
+    inherit! :search_paths
+    
+    externalPods
+    reactivePods
+end
 
 
 ##bitcode enable
