@@ -37,7 +37,7 @@
 		47DA3A3128C586FB0035D42C /* SettingsTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DA39D928C586FB0035D42C /* SettingsTableViewDataSource.swift */; };
 		47DA3A3528C586FB0035D42C /* AlertConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DA39E128C586FB0035D42C /* AlertConfig.swift */; };
 		47DA3A3628C586FB0035D42C /* ITunesResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DA39E328C586FB0035D42C /* ITunesResponseModel.swift */; };
-		47DA3A3728C586FB0035D42C /* ITunesArtistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DA39E428C586FB0035D42C /* ITunesArtistModel.swift */; };
+		47DA3A3728C586FB0035D42C /* ArtistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DA39E428C586FB0035D42C /* ArtistModel.swift */; };
 		47DA3A3828C586FB0035D42C /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DA39E628C586FB0035D42C /* AlbumModel.swift */; };
 		47DA3A3928C586FB0035D42C /* AppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DA39E928C586FB0035D42C /* AppService.swift */; };
 		47DA3A3A28C586FB0035D42C /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DA39EB28C586FB0035D42C /* ImageService.swift */; };
@@ -129,7 +129,7 @@
 		47DA39D928C586FB0035D42C /* SettingsTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewDataSource.swift; sourceTree = "<group>"; };
 		47DA39E128C586FB0035D42C /* AlertConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertConfig.swift; sourceTree = "<group>"; };
 		47DA39E328C586FB0035D42C /* ITunesResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITunesResponseModel.swift; sourceTree = "<group>"; };
-		47DA39E428C586FB0035D42C /* ITunesArtistModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITunesArtistModel.swift; sourceTree = "<group>"; };
+		47DA39E428C586FB0035D42C /* ArtistModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistModel.swift; sourceTree = "<group>"; };
 		47DA39E628C586FB0035D42C /* AlbumModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
 		47DA39E928C586FB0035D42C /* AppService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppService.swift; sourceTree = "<group>"; };
 		47DA39EB28C586FB0035D42C /* ImageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
@@ -233,13 +233,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		473557B428C5934200FB77DD /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				47DA39B128C586FA0035D42C /* UIAlertController+Config.swift */,
+				47DA39B228C586FA0035D42C /* UIViewController+Alert.swift */,
+				47DA39B328C586FA0035D42C /* UIView+AddToCenter.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		47DA39AC28C586FA0035D42C /* iTunes */ = {
 			isa = PBXGroup;
 			children = (
 				47DA39AD28C586FA0035D42C /* Core */,
 				47DA39D728C586FB0035D42C /* Model */,
+				47DA3A0B28C586FB0035D42C /* UI */,
 				47DA39D428C586FB0035D42C /* Supporting Files */,
-				47DA3A0B28C586FB0035D42C /* ScreenModule */,
 			);
 			path = iTunes;
 			sourceTree = "<group>";
@@ -250,7 +260,6 @@
 				47DA39D228C586FB0035D42C /* AppDelegate.swift */,
 				47DA39D328C586FB0035D42C /* SceneDelegate.swift */,
 				47DA39AE28C586FA0035D42C /* Constants.swift */,
-				47DA39AF28C586FA0035D42C /* Extension */,
 				47DA39B928C586FA0035D42C /* Base Class */,
 				47DA39BC28C586FA0035D42C /* Protocol */,
 			);
@@ -260,21 +269,10 @@
 		47DA39AF28C586FA0035D42C /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				47DA39B028C586FA0035D42C /* UIKit */,
 				47DA39B428C586FA0035D42C /* Network */,
 				47DA39B728C586FA0035D42C /* Foundation */,
 			);
 			path = Extension;
-			sourceTree = "<group>";
-		};
-		47DA39B028C586FA0035D42C /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-				47DA39B128C586FA0035D42C /* UIAlertController+Config.swift */,
-				47DA39B228C586FA0035D42C /* UIViewController+Alert.swift */,
-				47DA39B328C586FA0035D42C /* UIView+AddToCenter.swift */,
-			);
-			path = UIKit;
 			sourceTree = "<group>";
 		};
 		47DA39B428C586FA0035D42C /* Network */ = {
@@ -401,7 +399,7 @@
 			children = (
 				47DA39D828C586FB0035D42C /* DataSource */,
 				47DA39DA28C586FB0035D42C /* Entity */,
-				47DA39E528C586FB0035D42C /* Models */,
+				47DA39AF28C586FA0035D42C /* Extension */,
 				47DA39E728C586FB0035D42C /* Service */,
 				47DA3A0928C586FB0035D42C /* Helper */,
 			);
@@ -437,17 +435,10 @@
 			isa = PBXGroup;
 			children = (
 				47DA39E328C586FB0035D42C /* ITunesResponseModel.swift */,
-				47DA39E428C586FB0035D42C /* ITunesArtistModel.swift */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		47DA39E528C586FB0035D42C /* Models */ = {
-			isa = PBXGroup;
-			children = (
+				47DA39E428C586FB0035D42C /* ArtistModel.swift */,
 				47DA39E628C586FB0035D42C /* AlbumModel.swift */,
 			);
-			path = Models;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		47DA39E728C586FB0035D42C /* Service */ = {
@@ -554,13 +545,14 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
-		47DA3A0B28C586FB0035D42C /* ScreenModule */ = {
+		47DA3A0B28C586FB0035D42C /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				473557B428C5934200FB77DD /* Extension */,
 				47DA3A0C28C586FB0035D42C /* Storyboard */,
 				47DA3A1128C586FB0035D42C /* Content */,
 			);
-			path = ScreenModule;
+			path = UI;
 			sourceTree = "<group>";
 		};
 		47DA3A0C28C586FB0035D42C /* Storyboard */ = {
@@ -575,8 +567,8 @@
 		47DA3A1128C586FB0035D42C /* Content */ = {
 			isa = PBXGroup;
 			children = (
-				47DA3A1228C586FB0035D42C /* ContentViewController.swift */,
 				47DA3A1328C586FB0035D42C /* Cell */,
+				47DA3A1228C586FB0035D42C /* ContentViewController.swift */,
 				47DA3A1628C586FB0035D42C /* ContentViewModel.swift */,
 			);
 			path = Content;
@@ -839,7 +831,7 @@
 				47DA3A2B28C586FB0035D42C /* ErrorProposerProtocol.swift in Sources */,
 				47DA3A4628C586FB0035D42C /* NSURLErrorDomainExtractor.swift in Sources */,
 				47DA3A2C28C586FB0035D42C /* ErrorExtractorProtocol.swift in Sources */,
-				47DA3A3728C586FB0035D42C /* ITunesArtistModel.swift in Sources */,
+				47DA3A3728C586FB0035D42C /* ArtistModel.swift in Sources */,
 				47DA3A3128C586FB0035D42C /* SettingsTableViewDataSource.swift in Sources */,
 				47DA3A5628C586FB0035D42C /* SongTableViewCellModel.swift in Sources */,
 				47DA3A4928C586FB0035D42C /* DecodingErrorProposer.swift in Sources */,
