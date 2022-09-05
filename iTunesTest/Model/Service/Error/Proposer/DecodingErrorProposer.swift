@@ -28,6 +28,8 @@ class DecodingErrorProposer: ErrorProposer {
           .map({ $0.stringValue })
           .joined(separator: ", ")
         message = NSLocalizedString("Значения не найдены для:\n\(keys)", comment: "DecodingErrorProposer error")
+      @unknown default:
+        message = NSLocalizedString("Неизвестная ошибка декодинга", comment: "DecodingErrorProposer error")
     }
     
     let alertConfig = AlertConfig(title: nil, message: message)
