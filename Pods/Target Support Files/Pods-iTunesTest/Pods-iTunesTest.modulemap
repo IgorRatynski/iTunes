@@ -1,6 +1,0 @@
-framework module Pods_iTunesTest {
-  umbrella header "Pods-iTunesTest-umbrella.h"
-
-  export *
-  module * { export * }
-}
