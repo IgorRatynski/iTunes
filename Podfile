@@ -12,23 +12,24 @@ def externalPods
     pod 'Moya', '~> 13.0'
 end
 
-target 'iTunesTest' do
+target 'iTunes' do
   use_frameworks!
   inhibit_all_warnings!
   
   externalPods
   reactivePods
   
-#  target 'iTunesTestTests' do
+#  target 'iTunesTests' do
 #      inherit! :search_paths
 #  end
 end
 
-target 'iTunesTestTests' do
-    inherit! :search_paths
-    
-    externalPods
-    reactivePods
+target 'iTunesTests' do
+  use_frameworks!
+  inherit! :search_paths
+  
+  externalPods
+  reactivePods
 end
 
 
