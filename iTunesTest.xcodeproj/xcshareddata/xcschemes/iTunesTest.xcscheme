@@ -35,7 +35,7 @@
                BlueprintIdentifier = "4765EB35245A4DF100A8EED0"
                BuildableName = "iTunesTestTests.xctest"
                BlueprintName = "iTunesTestTests"
-               ReferencedContainer = "container:../../../../../Volumes/Macintosh SSD/Users/igor.ratynski/Code/iOS/iTunesTest/iTunesTest.xcodeproj">
+               ReferencedContainer = "container:iTunesTest.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>

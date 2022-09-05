@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1100"
+   LastUpgradeVersion = "1240"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -17,7 +17,7 @@
                BlueprintIdentifier = "4E26FC48FE44217966FD13B320BD2F92"
                BuildableName = "Pods_iTunesTest.framework"
                BlueprintName = "Pods-iTunesTest"
-               ReferencedContainer = "container:../../../../../../Volumes/Macintosh SSD/Users/igor.ratynski/Code/iOS/iTunesTest/Pods/Pods.xcodeproj">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -25,10 +25,11 @@ target 'iTunesTest' do
 end
 
 target 'iTunesTestTests' do
-    inherit! :search_paths
-    
-    externalPods
-    reactivePods
+  use_frameworks!
+  inherit! :search_paths
+  
+  externalPods
+  reactivePods
 end
 
 

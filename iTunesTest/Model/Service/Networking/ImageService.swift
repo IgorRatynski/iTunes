@@ -8,10 +8,12 @@
 
 import Moya
 
+// MARK: Methods
 enum ImageService {
   case getImage(url: URL)
 }
 
+// MARK: Request details
 extension ImageService: TargetType {
   var baseURL: URL {
     switch self {

@@ -11,9 +11,13 @@ import Moya
 // API link
 // https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/Searching.html
 
-enum ITunesService: TargetType {
+// MARK: Methods
+enum ITunesService {
   case search(ITunesParams)
-  
+}
+
+// MARK: Request details
+extension ITunesService: TargetType {
   var path: String {
     switch self {
       case .search:

@@ -12,8 +12,7 @@
 		472A609128BFF94400F614D7 /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472A609028BFF94400F614D7 /* AlbumModel.swift */; };
 		472A609228BFF94400F614D7 /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472A609028BFF94400F614D7 /* AlbumModel.swift */; };
 		472A609328BFFBBA00F614D7 /* ITunesResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4751F4D02451D3B000AD87D0 /* ITunesResponseModel.swift */; };
-		472A609A28BFFCCB00F614D7 /* iTunesTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472A609528BFFCCB00F614D7 /* iTunesTestTests.swift */; };
-		472A609B28BFFCCB00F614D7 /* NetworkProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472A609628BFFCCB00F614D7 /* NetworkProviderMock.swift */; };
+		472A609B28BFFCCB00F614D7 /* NetworkProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472A609628BFFCCB00F614D7 /* NetworkProviderTests.swift */; };
 		472A609C28BFFCCB00F614D7 /* SearchSuccessResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 472A609828BFFCCB00F614D7 /* SearchSuccessResponse.json */; };
 		472A609F28BFFEA200F614D7 /* ITunesArtistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4751F4D22451D40500AD87D0 /* ITunesArtistModel.swift */; };
 		472A60A028BFFEAC00F614D7 /* AgeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4751F4E124521F5C00AD87D0 /* AgeService.swift */; };
@@ -87,7 +86,9 @@
 		47B8C49228BEBEF600107689 /* AlertConfigProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B8C49128BEBEF600107689 /* AlertConfigProtocol.swift */; };
 		47B8C49528BEC30B00107689 /* AgeServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B8C49428BEC30B00107689 /* AgeServiceProtocol.swift */; };
 		47B8C49628BEC30B00107689 /* AgeServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B8C49428BEC30B00107689 /* AgeServiceProtocol.swift */; };
+		47E6036328C569AC00DECFA9 /* SearchSuccessResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 472A609828BFFCCB00F614D7 /* SearchSuccessResponse.json */; };
 		5A848E85456DEE68B37F99DA /* Pods_iTunesTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 750E20D525F1AEF8F1DAD4C7 /* Pods_iTunesTest.framework */; };
+		DD6F8C8C97B2D4E60CD11182 /* Pods_iTunesTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBED7FCCE0F82B3E80A69F38 /* Pods_iTunesTestTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,8 +114,7 @@
 		4723FF96245B449400DBAEDD /* Result.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Result.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		472A608C28BFF70500F614D7 /* AlbumProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumProtocol.swift; sourceTree = "<group>"; };
 		472A609028BFF94400F614D7 /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
-		472A609528BFFCCB00F614D7 /* iTunesTestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTunesTestTests.swift; sourceTree = "<group>"; };
-		472A609628BFFCCB00F614D7 /* NetworkProviderMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProviderMock.swift; sourceTree = "<group>"; };
+		472A609628BFFCCB00F614D7 /* NetworkProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProviderTests.swift; sourceTree = "<group>"; };
 		472A609828BFFCCB00F614D7 /* SearchSuccessResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SearchSuccessResponse.json; sourceTree = "<group>"; };
 		472A609928BFFCCB00F614D7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		473550BF245067B5001F4679 /* iTunesTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,8 +180,11 @@
 		47AF122B245383AD003760EC /* ContentViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModelProtocol.swift; sourceTree = "<group>"; };
 		47B8C49128BEBEF600107689 /* AlertConfigProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlertConfigProtocol.swift; path = /Users/igor.ratynski/Code/itunestest/iTunesTest/Core/Protocol/Models/AlertConfigProtocol.swift; sourceTree = "<absolute>"; };
 		47B8C49428BEC30B00107689 /* AgeServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeServiceProtocol.swift; sourceTree = "<group>"; };
+		6469CEE2EE371EFBC73357E5 /* Pods-iTunesTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesTestTests.debug.xcconfig"; path = "Target Support Files/Pods-iTunesTestTests/Pods-iTunesTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		750E20D525F1AEF8F1DAD4C7 /* Pods_iTunesTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iTunesTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F080E4DB1C3E65FBC2F73D2 /* Pods-iTunesTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesTest.release.xcconfig"; path = "Target Support Files/Pods-iTunesTest/Pods-iTunesTest.release.xcconfig"; sourceTree = "<group>"; };
+		963FF8F0EEFD5BFB771CF0CF /* Pods-iTunesTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesTestTests.release.xcconfig"; path = "Target Support Files/Pods-iTunesTestTests/Pods-iTunesTestTests.release.xcconfig"; sourceTree = "<group>"; };
+		EBED7FCCE0F82B3E80A69F38 /* Pods_iTunesTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iTunesTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +200,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD6F8C8C97B2D4E60CD11182 /* Pods_iTunesTestTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +220,7 @@
 				4723FF89245B443F00DBAEDD /* ReactiveCocoa.framework */,
 				4723FF8B245B443F00DBAEDD /* ReactiveSwift.framework */,
 				750E20D525F1AEF8F1DAD4C7 /* Pods_iTunesTest.framework */,
+				EBED7FCCE0F82B3E80A69F38 /* Pods_iTunesTestTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -231,8 +236,7 @@
 		472A609428BFFCCB00F614D7 /* iTunesTestTests */ = {
 			isa = PBXGroup;
 			children = (
-				472A609528BFFCCB00F614D7 /* iTunesTestTests.swift */,
-				472A609628BFFCCB00F614D7 /* NetworkProviderMock.swift */,
+				472A609628BFFCCB00F614D7 /* NetworkProviderTests.swift */,
 				472A609728BFFCCB00F614D7 /* TestResponseData */,
 				472A609928BFFCCB00F614D7 /* Info.plist */,
 			);
@@ -614,6 +618,8 @@
 			children = (
 				26E62B561296D8521119D59A /* Pods-iTunesTest.debug.xcconfig */,
 				7F080E4DB1C3E65FBC2F73D2 /* Pods-iTunesTest.release.xcconfig */,
+				6469CEE2EE371EFBC73357E5 /* Pods-iTunesTestTests.debug.xcconfig */,
+				963FF8F0EEFD5BFB771CF0CF /* Pods-iTunesTestTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -644,9 +650,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4765EB3D245A4DF100A8EED0 /* Build configuration list for PBXNativeTarget "iTunesTestTests" */;
 			buildPhases = (
+				2B353240554C24747C12D04D /* [CP] Check Pods Manifest.lock */,
 				4765EB32245A4DF100A8EED0 /* Sources */,
 				4765EB33245A4DF100A8EED0 /* Frameworks */,
 				4765EB34245A4DF100A8EED0 /* Resources */,
+				5C2FF66244C77F3F8F60A730 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -701,6 +709,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47E6036328C569AC00DECFA9 /* SearchSuccessResponse.json in Resources */,
 				473550CF245067C1001F4679 /* LaunchScreen.storyboard in Resources */,
 				473550CC245067C1001F4679 /* Assets.xcassets in Resources */,
 				473550CA245067B6001F4679 /* Main.storyboard in Resources */,
@@ -718,6 +727,45 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2B353240554C24747C12D04D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iTunesTestTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5C2FF66244C77F3F8F60A730 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iTunesTestTests/Pods-iTunesTestTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iTunesTestTests/Pods-iTunesTestTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iTunesTestTests/Pods-iTunesTestTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6A21C554A678637F58C61A4F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -841,8 +889,7 @@
 				472A60A128BFFEB900F614D7 /* SettingsTableViewDataSource.swift in Sources */,
 				472A609F28BFFEA200F614D7 /* ITunesArtistModel.swift in Sources */,
 				472A60A828C0002C00F614D7 /* AppInternalError.swift in Sources */,
-				472A609B28BFFCCB00F614D7 /* NetworkProviderMock.swift in Sources */,
-				472A609A28BFFCCB00F614D7 /* iTunesTestTests.swift in Sources */,
+				472A609B28BFFCCB00F614D7 /* NetworkProviderTests.swift in Sources */,
 				472A608E28BFF70A00F614D7 /* AlbumProtocol.swift in Sources */,
 				472A609228BFF94400F614D7 /* AlbumModel.swift in Sources */,
 				472A60A728C0002200F614D7 /* CommonProtocols.swift in Sources */,
@@ -1004,7 +1051,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 93C5VCR5UY;
+				DEVELOPMENT_TEAM = 3R8784ZA8P;
 				INFOPLIST_FILE = "iTunesTest/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1023,7 +1070,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 93C5VCR5UY;
+				DEVELOPMENT_TEAM = 3R8784ZA8P;
 				INFOPLIST_FILE = "iTunesTest/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1038,6 +1085,7 @@
 		};
 		4765EB3E245A4DF100A8EED0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6469CEE2EE371EFBC73357E5 /* Pods-iTunesTestTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1059,6 +1107,7 @@
 		};
 		4765EB3F245A4DF100A8EED0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 963FF8F0EEFD5BFB771CF0CF /* Pods-iTunesTestTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
