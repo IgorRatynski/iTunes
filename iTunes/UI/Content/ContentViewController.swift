@@ -69,6 +69,9 @@ private extension ContentViewController {
     tableView.allowsSelection = false
     tableView.keyboardDismissMode = .onDrag
     tableView.dataSource = viewModel.tableViewDataSource
+    tableView.estimatedRowHeight = UITableView.automaticDimension
+    
+    tableView.register(NoSearchResultsCell.self)
   }
   
   func setupSpinner() {

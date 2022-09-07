@@ -9,6 +9,7 @@
 import UIKit
 
 class AgeService: AgeServiceProtocol {
+  
   @UserDefault(PersistentKeys.isAdult)
   var isAdult: Bool?
 

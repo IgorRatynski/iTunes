@@ -14,7 +14,7 @@ import ReactiveSwift
 class ContentViewModel: BaseViewModel, ContentViewModelProtocol {
   
   // MARK: - Public properties
-  let tableViewDataSource: SettingsTableViewDataSourceProtocol
+  let tableViewDataSource: TableViewDataSourceProtocol
   private(set) var loading: MutableProperty<Bool> = MutableProperty(false)
   
   let reloadTable: Signal<(), NoError>
@@ -47,7 +47,7 @@ class ContentViewModel: BaseViewModel, ContentViewModelProtocol {
   
   // MARK: - Lifecycle
   init(networkProvider: MoyaProvider<ITunesService> = MoyaProvider<ITunesService>(plugins: [NetworkLoggerPlugin(verbose: true)]),
-       tableViewDataSource: SettingsTableViewDataSourceProtocol = SettingsTableViewDataSource(),
+       tableViewDataSource: TableViewDataSourceProtocol = TableViewDataSource(),
        ageService: AgeServiceProtocol = AgeService()) {
     self.networkProvider = networkProvider
     self.tableViewDataSource = tableViewDataSource
@@ -93,7 +93,14 @@ private extension ContentViewModel {
       })
       .on(value: { [weak self] response in
         guard let self = self else { return }
-        self.tableViewDataSource.setup(model: response.tableModels)
+        let model: [Section]
+        if response.resultCount ?? 0 == 0 {
+          model = self.noSearchResults()
+        } else {
+          model = response.tableModels
+        }
+        self.tableViewDataSource.setup(model: model)
+        
         self.reloadTableObserver.send(value: ())
       })
       .on(failed: { [weak self] error in
@@ -110,6 +117,12 @@ private extension ContentViewModel {
       (title: AlertStrings.yes.localized, style: .default, handler: ageService.setIsAdult(true)),
       (title: AlertStrings.no.localized, style: .default, handler: ageService.setIsAdult(false))
     ])
+  }
+  
+  func noSearchResults() -> [Section] {
+    let noSearchResultModel = NoSearchResultsModel(title: Text.noSearchResult, image: Image.noSearchResult)
+    let models = Section(title: nil, cellData: [.noSearchResults(model: noSearchResultModel)])
+    return [models]
   }
 }
 

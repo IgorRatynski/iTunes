@@ -9,6 +9,8 @@
 import Foundation
 
 enum Constants {
+  static let songCellIdentifier = "SongCell"
+  static let noSearchResultsCellIdentifier = "NoSearchResultsCell"
   
 }
 

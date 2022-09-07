@@ -8,21 +8,23 @@
 
 import UIKit
 
-private let songCellIdentifier = "SongCell"
 
 enum SettingType {
   
   case song(model: ArtistModelProtocol)
+//  case loading
+  case noSearchResults(model: NoSearchResultsModelProtocol)
 //  TODO: case skeleton
   
   var identifier: String {
     switch self {
-      case .song: return songCellIdentifier
+      case .song: return Constants.songCellIdentifier
+      case .noSearchResults: return Constants.noSearchResultsCellIdentifier
     }
   }
 }
 
-struct SettingsSection {
+struct Section {
   var title: String?
   var cellData: [SettingType]
 
@@ -32,16 +34,16 @@ struct SettingsSection {
   }
 }
 
-class SettingsTableViewDataSource: NSObject, SettingsTableViewDataSourceProtocol {
+class TableViewDataSource: NSObject, TableViewDataSourceProtocol {
 
-  private(set) var sections: [SettingsSection]
+  private(set) var sections: [Section]
 
-  init(sections: [SettingsSection] = []) {
+  init(sections: [Section] = []) {
     self.sections = sections
   }
 
   func setup(model: Any) {
-    guard let model = model as? [SettingsSection] else {
+    guard let model = model as? [Section] else {
       sections = []
       return
     }
@@ -69,6 +71,9 @@ class SettingsTableViewDataSource: NSObject, SettingsTableViewDataSourceProtocol
     
     switch setting {
       case .song(let model):
+        let cell = (cell as! Setupable)
+        cell.setup(model: model)
+      case .noSearchResults(model: let model):
         let cell = (cell as! Setupable)
         cell.setup(model: model)
     }
