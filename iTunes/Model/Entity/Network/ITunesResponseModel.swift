@@ -25,14 +25,14 @@ struct ITunesResponseModel: Decodable {
     return albums.compactMap { Album(name: $0.key, tracks: $0.value, image: $0.value.first?.albumImageURL) }
   }
   
-  var tableModels: [SettingsSection] {
+  var tableModels: [Section] {
     results?.models ?? []
   }
 }
 
 // MARK: UITableViewDataSource Adapter
 extension Array where Element == ArtistModel {
-  var models: [SettingsSection] {
-    return [SettingsSection(title: nil, cellData: self.map { SettingType.song(model: $0) })]
+  var models: [Section] {
+    return [Section(title: nil, cellData: self.map { SettingType.song(model: $0) })]
   }
 }

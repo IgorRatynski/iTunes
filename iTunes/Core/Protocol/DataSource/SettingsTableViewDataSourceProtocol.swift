@@ -1,5 +1,5 @@
 //
-//  SettingsTableViewDataSourceProtocol.swift
+//  TableViewDataSourceProtocol.swift
 //  iTunes
 //
 //  Created by Igor Ratynski on 29.04.2020.
@@ -8,4 +8,4 @@
 
 import UIKit
 
-protocol SettingsTableViewDataSourceProtocol: UITableViewDataSource, Setupable { }
+protocol TableViewDataSourceProtocol: UITableViewDataSource, Setupable { }
