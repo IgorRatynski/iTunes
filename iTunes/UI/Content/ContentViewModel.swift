@@ -93,14 +93,8 @@ private extension ContentViewModel {
       })
       .on(value: { [weak self] response in
         guard let self = self else { return }
-        let model: [Section]
-        if response.resultCount ?? 0 == 0 {
-          model = self.noSearchResults()
-        } else {
-          model = response.tableModels
-        }
+        let model = self.model(for: response)
         self.tableViewDataSource.setup(model: model)
-        
         self.reloadTableObserver.send(value: ())
       })
       .on(failed: { [weak self] error in
@@ -123,6 +117,18 @@ private extension ContentViewModel {
     let noSearchResultModel = NoSearchResultsModel(title: Text.noSearchResult, image: Image.noSearchResult)
     let models = Section(title: nil, cellData: [.noSearchResults(model: noSearchResultModel)])
     return [models]
+  }
+  
+  func content(from response: ITunesResponseModel) -> [Section] {
+    [Section(title: nil, cellData: response.results!.compactMap { SettingType.song(model: $0) })]
+  }
+  
+  func model(for response: ITunesResponseModel?) -> [Section] {
+    if response?.resultCount ?? 0 == 0 {
+      return noSearchResults()
+    } else {
+      return content(from: response!)
+    }
   }
 }
 

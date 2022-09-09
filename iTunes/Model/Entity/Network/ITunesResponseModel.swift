@@ -9,9 +9,12 @@
 import Foundation
 
 struct ITunesResponseModel: Decodable {
+  
+  // MARK: Public properties
   let resultCount: Int?
   let results: [ArtistModel]?
   
+  // MARK: Computed properties
   var albums: [Album] {
     guard let results = results else { return [] }
     var albums: [String : [ArtistModel]] = [:], tempArtists: [ArtistModel]
@@ -23,16 +26,5 @@ struct ITunesResponseModel: Decodable {
     }
 
     return albums.compactMap { Album(name: $0.key, tracks: $0.value, image: $0.value.first?.albumImageURL) }
-  }
-  
-  var tableModels: [Section] {
-    results?.models ?? []
-  }
-}
-
-// MARK: UITableViewDataSource Adapter
-extension Array where Element == ArtistModel {
-  var models: [Section] {
-    return [Section(title: nil, cellData: self.map { SettingType.song(model: $0) })]
   }
 }
