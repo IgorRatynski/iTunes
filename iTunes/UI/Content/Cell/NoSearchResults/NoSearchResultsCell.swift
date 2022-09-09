@@ -20,8 +20,6 @@ class NoSearchResultsCell: UITableViewCell, Setupable {
   // MARK: Properties
   private let viewModel: NoSearchResultsCellModelProtocol = NoSearchResultsCellModel()
   
-  private let (lifetime, token) = Lifetime.make()
-  
   // MARK: Lifecycle
   @available(*, unavailable)
   required init?(coder: NSCoder) {
