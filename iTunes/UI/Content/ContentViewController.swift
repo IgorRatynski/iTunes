@@ -10,7 +10,7 @@ import Result
 import ReactiveCocoa
 import ReactiveSwift
 
-class ContentViewController: BaseViewController, ErrorActionController, UISearchBarDelegate {
+class ContentViewController: BaseViewController, ErrorActionController, SkeletonDisplayable, UISearchBarDelegate {
   
   // MARK: UI
   @IBOutlet private weak var searchBar: UISearchBar!
@@ -24,6 +24,12 @@ class ContentViewController: BaseViewController, ErrorActionController, UISearch
   // MARK: Reactive properties
   private var searchPressed: Signal<(), NoError>
   private var searchPressedObserver: Signal<(), NoError>.Observer
+  
+  var loading: BindingTarget<Bool> {
+    BindingTarget(lifetime: lifetime) { [unowned self] next in
+      next ? self.showSkeleton() : self.hideSkeleton()
+    }
+  }
   
   // MARK: Lifecycle    
   required init?(coder aDecoder: NSCoder) {
@@ -87,6 +93,7 @@ private extension ContentViewController {
   func bind() {
     // MARK: In
     spinner.reactive.isAnimating <~ viewModel.loading
+    loading <~ viewModel.loading
     actionExecution <~ viewModel.errorDispatcher.action
     tableView.reactive.reloadData <~ viewModel.reloadTable
     
