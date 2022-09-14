@@ -33,8 +33,7 @@ class TableViewViewModel: BaseViewModel, TableViewViewModelProtocol {
   }
   
   // MARK: - Lifecycle
-  init(itunesService: ITunesServiceProtocol = ITunesService(),
-       tableViewDataSource: TableViewDataSourceProtocol = TableViewDataSource()) {
+  init(tableViewDataSource: TableViewDataSourceProtocol = TableViewDataSource()) {
     self.tableViewDataSource = tableViewDataSource
     
     (reloadTable, reloadTableObserver) = Signal.pipe()

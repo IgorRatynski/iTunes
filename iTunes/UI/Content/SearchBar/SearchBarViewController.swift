@@ -10,10 +10,6 @@ import Result
 import ReactiveCocoa
 import ReactiveSwift
 
-protocol SearchBarViewControllerProtocol: UISearchBarDelegate {
-  var viewModel: SearchBarViewModelProtocol { get }
-}
-
 class SearchBarViewController: BaseViewController, SearchBarViewControllerProtocol {
   
   // MARK: UI

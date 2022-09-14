@@ -10,10 +10,6 @@
 import Result
 import ReactiveSwift
 
-protocol TableViewViewControllerProtocol: SkeletonDisplayable {
-  var viewModel: TableViewViewModelProtocol { get }
-}
-
 class TableViewViewController: BaseViewController, TableViewViewControllerProtocol {
   
   // MARK: UI

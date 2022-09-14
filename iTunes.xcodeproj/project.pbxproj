@@ -31,6 +31,9 @@
 		47D3149228D216CA00CF813C /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D3149128D216CA00CF813C /* Section.swift */; };
 		47D3149428D2293500CF813C /* TableViewViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D3149328D2293400CF813C /* TableViewViewModelProtocol.swift */; };
 		47D3149628D2298D00CF813C /* SearchBarViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D3149528D2298D00CF813C /* SearchBarViewModelProtocol.swift */; };
+		47D3149928D22B5400CF813C /* SearchBarViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D3149828D22B5400CF813C /* SearchBarViewControllerProtocol.swift */; };
+		47D3149B28D22B6A00CF813C /* TableViewViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D3149A28D22B6A00CF813C /* TableViewViewControllerProtocol.swift */; };
+		47D3149F28D22C2100CF813C /* ITunesServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D3149E28D22C2100CF813C /* ITunesServiceProtocol.swift */; };
 		47DA3A1728C586FB0035D42C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DA39AE28C586FA0035D42C /* Constants.swift */; };
 		47DA3A1828C586FB0035D42C /* UIAlertController+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DA39B128C586FA0035D42C /* UIAlertController+Config.swift */; };
 		47DA3A1928C586FB0035D42C /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DA39B228C586FA0035D42C /* UIViewController+Alert.swift */; };
@@ -144,6 +147,9 @@
 		47D3149128D216CA00CF813C /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		47D3149328D2293400CF813C /* TableViewViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableViewViewModelProtocol.swift; path = /Users/igor.ratynski/Code/iTunes/iTunes/Core/Protocol/ViewModel/TableViewViewModelProtocol.swift; sourceTree = "<absolute>"; };
 		47D3149528D2298D00CF813C /* SearchBarViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewModelProtocol.swift; sourceTree = "<group>"; };
+		47D3149828D22B5400CF813C /* SearchBarViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewControllerProtocol.swift; sourceTree = "<group>"; };
+		47D3149A28D22B6A00CF813C /* TableViewViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewViewControllerProtocol.swift; sourceTree = "<group>"; };
+		47D3149E28D22C2100CF813C /* ITunesServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesServiceProtocol.swift; sourceTree = "<group>"; };
 		47DA39AE28C586FA0035D42C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		47DA39B128C586FA0035D42C /* UIAlertController+Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Config.swift"; sourceTree = "<group>"; };
 		47DA39B228C586FA0035D42C /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
@@ -345,6 +351,15 @@
 			path = TableView;
 			sourceTree = "<group>";
 		};
+		47D3149728D22B2200CF813C /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				47D3149828D22B5400CF813C /* SearchBarViewControllerProtocol.swift */,
+				47D3149A28D22B6A00CF813C /* TableViewViewControllerProtocol.swift */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
 		47DA39AC28C586FA0035D42C /* iTunes */ = {
 			isa = PBXGroup;
 			children = (
@@ -407,15 +422,16 @@
 		47DA39BC28C586FA0035D42C /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				4724E68828C833A6009DD73F /* UITableView */,
-				47DA39BD28C586FA0035D42C /* ViewModel */,
-				47DA39C028C586FA0035D42C /* DataSource */,
-				47DA39C228C586FA0035D42C /* Network */,
-				47DA39C428C586FA0035D42C /* Models */,
 				47DA39C828C586FB0035D42C /* Cell */,
 				47DA39CA28C586FB0035D42C /* Common */,
-				47DA39CC28C586FB0035D42C /* Service */,
+				47DA39C028C586FA0035D42C /* DataSource */,
 				47DA39CE28C586FB0035D42C /* Error */,
+				47DA39C228C586FA0035D42C /* Network */,
+				47DA39C428C586FA0035D42C /* Models */,
+				47DA39CC28C586FB0035D42C /* Service */,
+				47DA39BD28C586FA0035D42C /* ViewModel */,
+				47D3149728D22B2200CF813C /* UIViewController */,
+				4724E68828C833A6009DD73F /* UITableView */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -479,6 +495,7 @@
 			isa = PBXGroup;
 			children = (
 				47DA39CD28C586FB0035D42C /* AgeServiceProtocol.swift */,
+				47D3149E28D22C2100CF813C /* ITunesServiceProtocol.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -962,11 +979,13 @@
 				47DA3A1928C586FB0035D42C /* UIViewController+Alert.swift in Sources */,
 				47D3147E28CECA0F00CF813C /* SkeletonDisplayable.swift in Sources */,
 				47DA3A4428C586FB0035D42C /* MoyaParseErrorExtractor.swift in Sources */,
+				47D3149F28D22C2100CF813C /* ITunesServiceProtocol.swift in Sources */,
 				47DA3A4D28C586FB0035D42C /* ErrorDispatcher.swift in Sources */,
 				47DA3A4B28C586FB0035D42C /* AlertStrings.swift in Sources */,
 				47DA3A5828C586FB0035D42C /* ContentViewModel.swift in Sources */,
 				47DA3A1728C586FB0035D42C /* Constants.swift in Sources */,
 				47DA3A1B28C586FB0035D42C /* Moya+Predefined.swift in Sources */,
+				47D3149B28D22B6A00CF813C /* TableViewViewControllerProtocol.swift in Sources */,
 				47DA3A2728C586FB0035D42C /* CellProtocol.swift in Sources */,
 				47DA3A2028C586FB0035D42C /* ContentViewModelProtocol.swift in Sources */,
 				4724E68528C82FDD009DD73F /* NoSearchResultsModel.swift in Sources */,
@@ -975,6 +994,7 @@
 				47D3148E28D1CCD900CF813C /* SearchStringError.swift in Sources */,
 				47DA3A4528C586FB0035D42C /* MoyaErrorExtractor.swift in Sources */,
 				47DA3A1D28C586FB0035D42C /* String+Localization.swift in Sources */,
+				47D3149928D22B5400CF813C /* SearchBarViewControllerProtocol.swift in Sources */,
 				4724E68728C83073009DD73F /* TableViewResources.swift in Sources */,
 				47DA3A4128C586FB0035D42C /* ReactiveErrorDispatcher.swift in Sources */,
 				47DA3A3628C586FB0035D42C /* ITunesResponseModel.swift in Sources */,

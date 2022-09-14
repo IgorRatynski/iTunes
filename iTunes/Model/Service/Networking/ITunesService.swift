@@ -11,13 +11,6 @@ import Moya
 import Result
 import ReactiveSwift
 
-protocol ITunesServiceProtocol {
-  var response: Signal<ITunesResponseModel, NoError> { get }
-  var error: Signal<NoError, Error> { get }
-  var loading: Signal<Bool, NoError> { get }
-  var searchStringObserver: Signal<String, NoError>.Observer { get }
-}
-
 class ITunesService: ReactiveBase, ITunesServiceProtocol {
   
   // MARK: - Public properties
