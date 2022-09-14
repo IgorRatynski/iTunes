@@ -7,29 +7,22 @@
 //
 
 import Result
-import ReactiveCocoa
 import ReactiveSwift
 
-class ContentViewController: BaseViewController, ErrorActionController, SkeletonDisplayable, UISearchBarDelegate {
+class ContentViewController: BaseViewController, ErrorActionController {
   
   // MARK: UI
-  @IBOutlet private weak var searchBar: UISearchBar!
-  @IBOutlet private weak var tableView: UITableView!
-  @IBOutlet private weak var spinner: UIActivityIndicatorView!
+  @IBOutlet private var searchBarContainerView: UIView!
+  @IBOutlet private var tableViewContainerView: UIView!
   
   // MARK: Private properties
   private let viewModel: ContentViewModelProtocol = ContentViewModel()
-  private let ageService: AgeService = AgeService()
+  private var searchBarViewModel: SearchBarViewModelProtocol!
+  private var tableViewViewModel: TableViewViewModelProtocol!
   
   // MARK: Reactive properties
   private var searchPressed: Signal<(), NoError>
   private var searchPressedObserver: Signal<(), NoError>.Observer
-  
-  var loading: BindingTarget<Bool> {
-    BindingTarget(lifetime: lifetime) { [unowned self] next in
-      next ? self.showSkeleton() : self.hideSkeleton()
-    }
-  }
   
   // MARK: Lifecycle    
   required init?(coder aDecoder: NSCoder) {
@@ -44,61 +37,45 @@ class ContentViewController: BaseViewController, ErrorActionController, Skeleton
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    if ageService.isNeedToAsk {
+    // TODO: Refactoring: move 2 vm
+    if viewModel.showIsAdultAlert {
       showSystemAlert(with: viewModel.adultAlertConfig)
     }
-  }
-}
-
-// MARK: Actions
-extension ContentViewController  {
-  func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-    searchPressedObserver.send(value: ())
   }
 }
 
 // MARK: Setup
 private extension ContentViewController {
   func setup() {
-    setupSearchBar()
-    setupTableView()
-    setupSpinner()
     bind()
   }
   
-  func setupSearchBar() {
-    searchBar.delegate = self
-  }
-  
-  func setupTableView() {
-    tableView.separatorStyle = .none
-    tableView.allowsSelection = false
-    tableView.keyboardDismissMode = .onDrag
-    tableView.dataSource = viewModel.tableViewDataSource
-    tableView.estimatedRowHeight = UITableView.automaticDimension
+  func bind() {
+    // MARK: In
+    actionExecution <~ viewModel.errorDispatcher.action
     
-    tableView.register(NoSearchResultsCell.self)
-  }
-  
-  func setupSpinner() {
-    view.addToCenterSubview(spinner)
-    spinner.hidesWhenStopped = true
-    spinner.style = .large
-    spinner.color = .red
+    // MARK: Out
+    viewModel.searchStringChanged <~ searchBarViewModel.searchString
+    viewModel.searchAction <~ searchBarViewModel.searchAction
+    
+    // MARK: Mediator
+    tableViewViewModel.serverResponse <~ viewModel.serverResponse
+    tableViewViewModel.loading <~ viewModel.loading
   }
 }
 
-// MARK: Binding
-private extension ContentViewController {
-  func bind() {
-    // MARK: In
-    spinner.reactive.isAnimating <~ viewModel.loading
-    loading <~ viewModel.loading
-    actionExecution <~ viewModel.errorDispatcher.action
-    tableView.reactive.reloadData <~ viewModel.reloadTable
-    
-    // MARK: Out
-    viewModel.searchAction <~ searchPressed
-    viewModel.searchStringChanged <~ searchBar.reactive.continuousTextValues
+// MARK: Container supporting
+extension ContentViewController {
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    switch segue.identifier {
+      case "SearchBarSegue":
+        let vc = segue.destination as! SearchBarViewControllerProtocol
+        searchBarViewModel = vc.viewModel
+      case "TableViewSegue":
+        let vc = segue.destination as! TableViewViewControllerProtocol
+        tableViewViewModel = vc.viewModel
+      default:
+        assertionFailure("ContentViewController no case")
+    }
   }
 }

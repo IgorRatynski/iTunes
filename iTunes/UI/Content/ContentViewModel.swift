@@ -17,9 +17,14 @@ class ContentViewModel: BaseViewModel, ContentViewModelProtocol {
   let tableViewDataSource: TableViewDataSourceProtocol
   private(set) var loading: MutableProperty<Bool> = MutableProperty(false)
   
+  // Out
   let reloadTable: Signal<(), NoError>
   private let reloadTableObserver: Signal<(), NoError>.Observer
   
+  let serverResponse: Signal<ITunesResponseModel, NoError>
+  private let serverResponseObserver: Signal<ITunesResponseModel, NoError>.Observer
+  
+  // In
   var searchAction: BindingTarget<()> {
     BindingTarget(lifetime: lifetime) { [weak self] in
       self?.search()
@@ -29,6 +34,12 @@ class ContentViewModel: BaseViewModel, ContentViewModelProtocol {
   var searchStringChanged: BindingTarget<String?> {
     BindingTarget(lifetime: lifetime, action: { [weak self] value in
       self?.searchString = value
+    })
+  }
+  
+  var error: BindingTarget<Error> {
+    BindingTarget(lifetime: lifetime, action: { [weak self] value in
+      self?.errorDispatcher.handle(error: value)
     })
   }
   
@@ -42,34 +53,36 @@ class ContentViewModel: BaseViewModel, ContentViewModelProtocol {
   
   // MARK: - Private properties
   private var searchString: String?
-  private let networkProvider: MoyaProvider<ITunesService>
   private let ageService: AgeServiceProtocol
+  private let itunesService: ITunesServiceProtocol
   
   // MARK: - Lifecycle
-  init(networkProvider: MoyaProvider<ITunesService> = MoyaProvider<ITunesService>(plugins: [NetworkLoggerPlugin(verbose: true)]),
+  init(itunesService: ITunesServiceProtocol = ITunesService(),
        tableViewDataSource: TableViewDataSourceProtocol = TableViewDataSource(),
        ageService: AgeServiceProtocol = AgeService()) {
-    self.networkProvider = networkProvider
+    self.itunesService = itunesService
     self.tableViewDataSource = tableViewDataSource
     self.ageService = ageService
     
     (reloadTable, reloadTableObserver) = Signal.pipe()
+    (serverResponse, serverResponseObserver) = Signal.pipe()
     
     super.init()
+    
+    setup()
   }
 }
 
 // MARK: - Functions
 private extension ContentViewModel {
   func search() {
-    guard !loading.value,
-          let searchString = self.searchString
-    else {
-      self.errorDispatcher.handle(error: LoadingError())
-      return
+    guard !loading.value else {
+      return errorDispatcher.handle(error: LoadingError())
     }
-    
-    self.searchRequest(ITunesParams(term: searchString, explicit: (ageService.isAdult ?? false).string, limit: 50))
+    guard let searchString = self.searchString else {
+      return errorDispatcher.handle(error: SearchStringError())
+    }
+    itunesService.searchStringObserver.send(value: searchString)
   }
   
   func clearResults() {
@@ -81,26 +94,16 @@ private extension ContentViewModel {
 
 // MARK: - Networking
 private extension ContentViewModel {
-  func searchRequest(_ params: ITunesParams) {
-    networkProvider
-      .request(.search(params))
-      .map(ITunesResponseModel.self)
-      .on(starting: { [weak self] in
-        self?.loading.value = true
-      })
-      .on(event: { [weak self] _ in
-        self?.loading.value = false
-      })
-      .on(value: { [weak self] response in
-        guard let self = self else { return }
-        let model = self.model(for: response)
-        self.tableViewDataSource.setup(model: model)
-        self.reloadTableObserver.send(value: ())
-      })
-      .on(failed: { [weak self] error in
-        self?.errorDispatcher.handle(error: error)
-      })
-      .start()
+  func setup() {
+    bind()
+  }
+  
+  func bind() {
+    loading <~ itunesService.loading
+    
+    itunesService.response.producer.start { [weak self] signal in
+      self?.serverResponseObserver.send(value: signal.value!)
+    }
   }
 }
 
@@ -111,29 +114,5 @@ private extension ContentViewModel {
       (title: AlertStrings.yes.localized, style: .default, handler: ageService.setIsAdult(true)),
       (title: AlertStrings.no.localized, style: .default, handler: ageService.setIsAdult(false))
     ])
-  }
-  
-  func noSearchResults() -> [Section] {
-    let noSearchResultModel = NoSearchResultsModel(title: Text.noSearchResult, image: Image.noSearchResult)
-    let models = Section(title: nil, cellData: [.noSearchResults(model: noSearchResultModel)])
-    return [models]
-  }
-  
-  func content(from response: ITunesResponseModel) -> [Section] {
-    [Section(title: nil, cellData: response.results!.compactMap { SettingType.song(model: $0) })]
-  }
-  
-  func model(for response: ITunesResponseModel?) -> [Section] {
-    if response?.resultCount ?? 0 == 0 {
-      return noSearchResults()
-    } else {
-      return content(from: response!)
-    }
-  }
-}
-
-private extension Bool {
-  var string: String {
-    self ? AlertStrings.yes.rawValue : AlertStrings.no.rawValue
   }
 }

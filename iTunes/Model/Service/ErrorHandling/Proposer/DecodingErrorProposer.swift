@@ -10,7 +10,7 @@ import Foundation
 
 class DecodingErrorProposer: ErrorProposer {
   func proposeAction(for error: Error) -> PropositionAction? {
-    guard let decodingError = error as? DecodingError else {return nil}
+    guard let decodingError = error as? DecodingError else { return nil }
     
     var message = error.localizedDescription
     

@@ -10,7 +10,7 @@ import Alamofire
 
 class NSURLErrorProposer: ErrorProposer {
   func proposeAction(for error: Error) -> PropositionAction? {
-    guard let nsURLErrorDomainError = error as? NSURLDomainError else {return nil}
+    guard let nsURLErrorDomainError = error as? NSURLDomainError else { return nil }
     
     let nsUrlError = nsURLErrorDomainError.underlyingError
     

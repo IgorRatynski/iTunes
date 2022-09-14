@@ -10,7 +10,7 @@ import Foundation
 
 class AppInternalErrorExtractor: ErrorExtractor {
   func extractor(for error: Swift.Error) -> ErrorExtractor? {
-    guard appInternalError(for: error) != nil else {return nil}
+    guard appInternalError(for: error) != nil else { return nil }
     return self
   }
   

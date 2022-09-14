@@ -26,4 +26,5 @@ protocol ContentViewModelProtocol: ReactiveTableReloadable, ReactiveSearchDelega
   var tableViewDataSource: TableViewDataSourceProtocol { get }
   var showIsAdultAlert: Bool { get }
   var adultAlertConfig: AlertConfigProtocol { get }
+  var serverResponse: Signal<ITunesResponseModel, NoError> { get }
 }

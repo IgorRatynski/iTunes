@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/igor.ratynski/Code/iTunes/iTunes/Core/Protocol/ViewModel/TableViewViewModelProtocol.swift">
+   </FileRef>
+   <FileRef
       location = "group:iTunes.xcodeproj">
    </FileRef>
    <FileRef

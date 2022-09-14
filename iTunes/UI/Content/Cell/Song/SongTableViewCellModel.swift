@@ -35,10 +35,10 @@ class SongTableViewCellModel: BaseViewModel, SongTableViewCellModelProtocol {
   
   // MARK: Private properties
   private var model: ArtistModelProtocol?
-  private var networkProvider: MoyaProvider<ImageService>
+  private var networkProvider: MoyaProvider<ImageRequest>
   
   // MARK: - Lifecycle
-  init(networkProvider: MoyaProvider<ImageService> = MoyaProvider<ImageService>()) {
+  init(networkProvider: MoyaProvider<ImageRequest> = MoyaProvider<ImageRequest>()) {
     (artistName, artistNameObserver) = Signal.pipe()
     (albumName, albumNameObserver) = Signal.pipe()
     (trackName, trackNameObserver) = Signal.pipe()
@@ -86,7 +86,7 @@ private extension SongTableViewCellModel {
         self?.loading.value = false
       })
       .on(value: { [weak self] response in
-        guard let self = self else {return}
+        guard let self = self else { return }
         self.albumImageObserver.send(value: response)
       })
       .on(failed: { [weak self] error in

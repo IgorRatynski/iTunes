@@ -10,7 +10,7 @@ import Foundation
 
 class NSURLErrorDomainExtractor: ErrorExtractor {
   func extractor(for error: Swift.Error) -> ErrorExtractor? {
-    guard nsURLErrorDomainError(for: error) != nil else {return nil}
+    guard nsURLErrorDomainError(for: error) != nil else { return nil }
     return self
   }
   
@@ -23,7 +23,7 @@ class NSURLErrorDomainExtractor: ErrorExtractor {
 private extension NSURLErrorDomainExtractor {
   func nsURLErrorDomainError(for error: Swift.Error) -> NSURLDomainError? {
     let nsError = error as NSError
-    guard nsError.domain == NSURLErrorDomain else {return nil}
+    guard nsError.domain == NSURLErrorDomain else { return nil }
     return NSURLDomainError(underlyingError: nsError)
   }
 }
