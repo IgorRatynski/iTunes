@@ -1,1 +1,13 @@
+// MARK: Alert
+"Alert.error" = "Ошибка";
+"Alert.ok" = "Хорошо";
+"Alert.сancel" = "Отмена";
+"Alert.yes" = "Да";
+"Alert.no" = "Нет";
+"Alert.areYouAdult" = "Вы совершеннолетний?";
 
+// MARK: Search
+"SearchBar.placeholder" = "Введите строку поиска";
+
+// MARK: TableView
+"TableView.noSearchResult" = "Ничего не найдено";

@@ -12,12 +12,12 @@ class AppInternalErrorProposer: ErrorProposer {
   func proposeAction(for error: Error) -> PropositionAction? {
     switch error {
       case is LoadingError:
-        let message = "Error.dataIsLoading".localized
+        let message = "Error.dataIsLoading".localized(from: .error)
         let alertConfig = AlertConfig(title: nil, message: message)
         return .alert(alertConfig)
         
       case is SearchStringError:
-        let message = "Error.emptySearchString".localized
+        let message = "Error.emptySearchString".localized(from: .error)
         let alertConfig = AlertConfig(title: nil, message: message)
         return .alert(alertConfig)
         

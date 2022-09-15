@@ -10,7 +10,7 @@ import UIKit
 
 extension TableViewViewModel {
   enum Text {
-    static var noSearchResult: String { "Content.noSearchResult".localized }
+    static var noSearchResult: String { "TableView.noSearchResult".localized() }
   }
   
   enum Image {

@@ -18,6 +18,6 @@ enum AlertStrings: String {
   case areYouAdult = "Alert.areYouAdult"
   
   var localized: String {
-    rawValue.localized
+    rawValue.localized()
   }
 }
