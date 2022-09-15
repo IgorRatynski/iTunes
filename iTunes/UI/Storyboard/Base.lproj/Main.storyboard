@@ -127,6 +127,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="BKz-gf-7v6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="SkD-8p-bi7" secondAttribute="trailing" id="0ws-nZ-0Sb"/>
@@ -151,13 +152,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="51"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SGI-ht-IWF">
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="SGI-ht-IWF">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="djQ-iR-sEB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SGI-ht-IWF" firstAttribute="trailing" secondItem="djQ-iR-sEB" secondAttribute="trailing" id="Jwm-NR-QFl"/>
+                            <constraint firstItem="SGI-ht-IWF" firstAttribute="top" secondItem="enC-DH-Oo2" secondAttribute="top" id="R3I-sY-xpc"/>
+                            <constraint firstItem="SGI-ht-IWF" firstAttribute="bottom" secondItem="djQ-iR-sEB" secondAttribute="bottom" id="ara-Z0-NbV"/>
+                            <constraint firstItem="SGI-ht-IWF" firstAttribute="leading" secondItem="djQ-iR-sEB" secondAttribute="leading" id="omg-tW-iAg"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="searchBar" destination="SGI-ht-IWF" id="cgZ-02-rm4"/>
