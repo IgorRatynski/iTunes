@@ -9,15 +9,15 @@
 import Foundation
 
 enum AlertStrings: String {
-  case error = "Error"
-  case ok = "OK"
-  case cancel = "Cancel"
-  case yes = "Yes"
-  case no = "No"
+  case error = "Alert.error"
+  case ok = "Alert.ok"
+  case cancel = "Alert.сancel"
+  case yes = "Alert.yes"
+  case no = "Alert.no"
   
-  case areYouAdult = "Are u adult?"
+  case areYouAdult = "Alert.areYouAdult"
   
   var localized: String {
-    NSLocalizedString(rawValue, comment: "Alert")
+    rawValue.localized
   }
 }

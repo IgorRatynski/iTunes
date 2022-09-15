@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension ContentViewModel {
+extension TableViewViewModel {
   enum Text {
     static var noSearchResult: String { "Content.noSearchResult".localized }
   }

@@ -11,8 +11,7 @@ import UIKit
 class DefaultErrorProposer: ErrorProposer {
   
   // MARK: properties
-  var message: String = NSLocalizedString("Этого не должно было произойти, но произошло",
-                                          comment: "Error")
+  var message = "Error.shouldNotHaveHappened".localized
   
   func proposeAction(for error: Error) -> PropositionAction? {
     let title = AlertStrings.error.localized
@@ -20,7 +19,5 @@ class DefaultErrorProposer: ErrorProposer {
     return .alert(alertConfig)
   }
   
-  init() {
-    
-  }
+  init() { }
 }

@@ -8,11 +8,12 @@
 
 import ReactiveSwift
 
-open class BaseViewModel {
-  var (lifetime, token) = Lifetime.make()
+open class BaseViewModel: ReactiveBase {
   
+  // MARK: Properties
   private(set) var errorDispatcher: ReactiveErrorDispatcher
   
+  // MARK: Lifecycle
   init(dispatcher: ReactiveErrorDispatcher = ReactiveErrorDispatcher(proposer: Config.proposers, extractor: Config.extractors)) {
     self.errorDispatcher = dispatcher
   }

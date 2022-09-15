@@ -1,5 +1,5 @@
 //
-//  ImageService.swift
+//  ImageRequest.swift
 //  iTunes
 //
 //  Created by Igor Ratynski on 28.04.2020.
@@ -9,12 +9,12 @@
 import Moya
 
 // MARK: Methods
-enum ImageService {
+enum ImageRequest {
   case getImage(url: URL)
 }
 
 // MARK: Request details
-extension ImageService: TargetType {
+extension ImageRequest: TargetType {
   var baseURL: URL {
     switch self {
       case .getImage(let url):

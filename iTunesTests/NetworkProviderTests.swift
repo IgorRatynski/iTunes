@@ -13,7 +13,7 @@ import Moya
 class APITests: XCTestCase {
     
   // MARK: Supporting
-  typealias ResponseClosure = (_ target: ITunesService) -> Endpoint
+  typealias ResponseClosure = (_ target: ITunesRequest) -> Endpoint
   
   enum EndpointResponses {
     case success
@@ -21,7 +21,7 @@ class APITests: XCTestCase {
   }
   
   // MARK: Properties
-  var mockProvider: MoyaProvider<ITunesService>!
+  var mockProvider: MoyaProvider<ITunesRequest>!
 }
   // MARK: Tests
 extension APITests {
@@ -29,7 +29,7 @@ extension APITests {
     let endpointClosure = test { [unowned self] () -> EndpointSampleResponse in
       self.response(type: .success)
     }
-    mockProvider = MoyaProvider<ITunesService>(endpointClosure: endpointClosure,
+    mockProvider = MoyaProvider<ITunesRequest>(endpointClosure: endpointClosure,
                                                stubClosure: MoyaProvider.immediatelyStub)
     
     let params = ITunesParams(term: "The Eminem show", explicit: "Yes", limit: 50)
@@ -50,7 +50,7 @@ extension APITests {
       self.response(type: .failure)
     }
 
-    mockProvider = MoyaProvider<ITunesService>(endpointClosure: endpointClosure,
+    mockProvider = MoyaProvider<ITunesRequest>(endpointClosure: endpointClosure,
                                                stubClosure: MoyaProvider.immediatelyStub)
 
     let params = ITunesParams(term: "The Eminem show", explicit: "Yes", limit: 50)
@@ -75,7 +75,7 @@ private extension APITests {
   }
   
   func test(response: @escaping Endpoint.SampleResponseClosure) -> ResponseClosure {
-    return { (target: ITunesService) -> Endpoint in
+    return { (target: ITunesRequest) -> Endpoint in
       return Endpoint(url: URL(target: target).absoluteString,
                       sampleResponseClosure: response,
                       method: target.method,
@@ -95,7 +95,7 @@ private extension APITests {
 }
 
 //// TODO: Rewrite to:
-// extension ITunesService {
+// extension ITunesRequest {
 //    var sampleData: Data {
 //        switch self {
 //        case .search:

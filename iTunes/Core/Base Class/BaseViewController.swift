@@ -21,7 +21,7 @@ protocol ErrorActionController: UIViewController {
 extension ErrorActionController where Self: BaseViewController {
   var actionExecution: BindingTarget<PropositionAction> {
     return BindingTarget(lifetime: lifetime, action: { [weak self] action in
-      guard let self = self else {return}
+      guard let self = self else { return }
       
       switch action {
         case .alert(let type):
