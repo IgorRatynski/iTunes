@@ -25,8 +25,8 @@ extension SkeletonDisplayable where Self: UIViewController {
   
   func showSkeleton() {
     let skeletons = skeletonViews(in: view)
-    let backgroundColor = UIColor(red: 210.0/255.0, green: 210.0/255.0, blue: 210.0/255.0, alpha: 1.0).cgColor
-    let highlightColor = UIColor(red: 235.0/255.0, green: 235.0/255.0, blue: 235.0/255.0, alpha: 1.0).cgColor
+    let backgroundColor = UIColor(named: "skeleton-first")!.cgColor
+    let highlightColor = UIColor(named: "skeleton-second")!.cgColor
     
     let skeletonLayer = CALayer()
     skeletonLayer.backgroundColor = backgroundColor
@@ -36,23 +36,22 @@ extension SkeletonDisplayable where Self: UIViewController {
     
     skeletons.forEach {
       let gradientLayer = CAGradientLayer()
-      gradientLayer.colors = [backgroundColor, highlightColor, backgroundColor]
+      gradientLayer.colors = [backgroundColor, highlightColor, backgroundColor, highlightColor, backgroundColor]
       gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
       gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
-      gradientLayer.frame = .init(x: 0, y: 0, width: UIScreen.main.bounds.width * 2, height: UIScreen.main.bounds.height - 150)//UIScreen.main.bounds
-//      gradientLayer.frame = UIScreen.main.bounds
+      gradientLayer.frame = UIScreen.main.bounds
       gradientLayer.name = skeletonGradientName
       
       $0.layer.mask = skeletonLayer
       $0.layer.addSublayer(skeletonLayer)
       $0.layer.addSublayer(gradientLayer)
       $0.clipsToBounds = true
-      let widht = UIScreen.main.bounds.width// * 2
+      let widht = UIScreen.main.bounds.width
       
       let animation = CABasicAnimation(keyPath: "transform.translation.x")
       animation.duration = 1
       animation.fromValue = -widht * 0.25
-      animation.toValue = 0 // widht
+      animation.toValue = 0
       animation.repeatCount = .infinity
       animation.autoreverses = true
       animation.fillMode = CAMediaTimingFillMode.forwards
