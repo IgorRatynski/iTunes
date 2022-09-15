@@ -10,7 +10,7 @@ import Moya
 
 class MoyaParseErrorExtractor: ErrorExtractor {
   func extractor(for error: Error) -> ErrorExtractor? {
-    guard mappingOrDecodeError(for: error) != nil else {return nil}
+    guard mappingOrDecodeError(for: error) != nil else { return nil }
     return self
   }
   
@@ -22,13 +22,13 @@ class MoyaParseErrorExtractor: ErrorExtractor {
 // MARK: Supporting methods
 private extension MoyaParseErrorExtractor {
   func mappingOrDecodeError(for error: Swift.Error) -> Error? {
-    guard let moyaError = error as? Moya.MoyaError else {return nil}
+    guard let moyaError = error as? Moya.MoyaError else { return nil }
     
     switch moyaError {
       case .imageMapping, .jsonMapping, .stringMapping:
         return moyaError
       case .underlying(let underlyingError, _):
-        guard underlyingError is DecodingError else {return nil}
+        guard underlyingError is DecodingError else { return nil }
         return moyaError
       case .objectMapping(let objMappingError, _):
         return objMappingError

@@ -8,36 +8,12 @@
 
 import UIKit
 
-
-enum SettingType {
-  
-  case song(model: ArtistModelProtocol)
-//  case loading
-  case noSearchResults(model: NoSearchResultsModelProtocol)
-//  TODO: case skeleton
-  
-  var identifier: String {
-    switch self {
-      case .song: return Constants.songCellIdentifier
-      case .noSearchResults: return Constants.noSearchResultsCellIdentifier
-    }
-  }
-}
-
-struct Section {
-  var title: String?
-  var cellData: [SettingType]
-
-  init(title: String?, cellData: [SettingType]) {
-    self.title = title
-    self.cellData = cellData
-  }
-}
-
 class TableViewDataSource: NSObject, TableViewDataSourceProtocol {
 
+  // MARK: Properties
   private(set) var sections: [Section]
 
+  // MARK: Lifecycle
   init(sections: [Section] = []) {
     self.sections = sections
   }
@@ -49,7 +25,10 @@ class TableViewDataSource: NSObject, TableViewDataSourceProtocol {
     }
     self.sections = model
   }
-  
+}
+
+// MARK: UITableViewDataSource
+extension TableViewDataSource {
   func numberOfSectionsInTableView(tableView: UITableView) -> Int {
     sections.count
   }
@@ -67,7 +46,11 @@ class TableViewDataSource: NSObject, TableViewDataSourceProtocol {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let setting: SettingType = sections[indexPath.section].cellData[indexPath.row]
     
-    guard let cell = tableView.dequeueReusableCell(withIdentifier: setting.identifier) else { fatalError("Unknown identifier") }
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: setting.identifier) else {
+      // TODO: Mock analytics loger
+      assertionFailure("Unknown identifier")
+      return UITableViewCell()
+    }
     
     switch setting {
       case .song(let model):

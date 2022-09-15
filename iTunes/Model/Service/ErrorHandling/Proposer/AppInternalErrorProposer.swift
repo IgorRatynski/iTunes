@@ -10,10 +10,19 @@ import Foundation
 
 class AppInternalErrorProposer: ErrorProposer {
   func proposeAction(for error: Error) -> PropositionAction? {
-    guard error is LoadingError else {return nil}
-    let message = NSLocalizedString("Данные в процессе загрузки...", comment: "AppInternalErrorProposer error")
-    let alertConfig = AlertConfig(title: nil, message: message)
-    
-    return .alert(alertConfig)
+    switch error {
+      case is LoadingError:
+        let message = "Error.dataIsLoading".localized
+        let alertConfig = AlertConfig(title: nil, message: message)
+        return .alert(alertConfig)
+        
+      case is SearchStringError:
+        let message = "Error.emptySearchString".localized
+        let alertConfig = AlertConfig(title: nil, message: message)
+        return .alert(alertConfig)
+        
+      default:
+        return nil
+    }
   }
 }

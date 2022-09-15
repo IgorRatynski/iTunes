@@ -14,10 +14,10 @@ import ReactiveCocoa
 class SongTableViewCell: UITableViewCell, Setupable {
   
   // MARK: Outlets
-  @IBOutlet private(set) weak var artistLabel: UILabel!
-  @IBOutlet private(set) weak var albumLabel: UILabel!
-  @IBOutlet private(set) weak var trackLabel: UILabel!
-  @IBOutlet private(set) weak var albumImageView: UIImageView!
+  @IBOutlet private var artistLabel: UILabel!
+  @IBOutlet private var albumLabel: UILabel!
+  @IBOutlet private var trackLabel: UILabel!
+  @IBOutlet private var albumImageView: UIImageView!
   
   // MARK: Reactive
   private var prepareForReuseInvolved: Signal<(), NoError>!

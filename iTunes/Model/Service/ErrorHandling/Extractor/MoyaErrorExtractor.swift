@@ -10,7 +10,7 @@ import Moya
 
 class MoyaErrorExtractor: ErrorExtractor {
   func extractor(for error: Error) -> ErrorExtractor? {
-    guard let moyaError = MoyaErrorExtractor.moyaError(from: error) else {return nil}
+    guard let moyaError = MoyaErrorExtractor.moyaError(from: error) else { return nil }
     
     switch moyaError {
       case .statusCode, .underlying, .objectMapping:
@@ -21,13 +21,13 @@ class MoyaErrorExtractor: ErrorExtractor {
   }
   
   func extract(error: Error) -> Error? {
-    guard let moyaError = MoyaErrorExtractor.moyaError(from: error) else {return nil}
+    guard let moyaError = MoyaErrorExtractor.moyaError(from: error) else { return nil }
     
     switch moyaError {
       case .underlying(let underlyingError, _):
         let nsError = underlyingError as NSError
         
-        guard nsError.domain == NSURLErrorDomain else {return nil}
+        guard nsError.domain == NSURLErrorDomain else { return nil }
         
         return NSURLDomainError(underlyingError: nsError)
       case .objectMapping(let error, _):
