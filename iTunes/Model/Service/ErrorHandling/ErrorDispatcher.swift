@@ -31,6 +31,7 @@ class ErrorDispatcher {
     let error = extractor?.extract(error: error) ?? error
     
     guard let action = proposer.proposeAction(for: error) else {
+      // TODO: Mock analytics logger
       print("Unhandled error: \(error)")
       return
     }

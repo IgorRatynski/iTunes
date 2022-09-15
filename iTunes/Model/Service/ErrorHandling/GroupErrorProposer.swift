@@ -19,7 +19,7 @@ class GroupErrorProposer: ErrorProposer {
   
   func proposeAction(for error: Error) -> PropositionAction? {
     for proposer in proposers {
-      guard let action = proposer.proposeAction(for: error) else {continue}
+      guard let action = proposer.proposeAction(for: error) else { continue }
       return action
     }
     return nil

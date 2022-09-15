@@ -92,7 +92,7 @@ private extension ContentViewModel {
   }
 }
 
-// MARK: - Networking
+// MARK: - Setup
 private extension ContentViewModel {
   func setup() {
     bind()

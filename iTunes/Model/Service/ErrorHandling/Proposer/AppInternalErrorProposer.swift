@@ -12,12 +12,12 @@ class AppInternalErrorProposer: ErrorProposer {
   func proposeAction(for error: Error) -> PropositionAction? {
     switch error {
       case is LoadingError:
-        let message = NSLocalizedString("Данные в процессе загрузки...", comment: "AppInternalErrorProposer error")
+        let message = "Error.dataIsLoading".localized
         let alertConfig = AlertConfig(title: nil, message: message)
         return .alert(alertConfig)
         
       case is SearchStringError:
-        let message = NSLocalizedString("Строка поиска не может быть пустой", comment: "AppInternalErrorProposer error")
+        let message = "Error.emptySearchString".localized
         let alertConfig = AlertConfig(title: nil, message: message)
         return .alert(alertConfig)
         

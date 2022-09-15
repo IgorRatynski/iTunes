@@ -18,18 +18,18 @@ class DecodingErrorProposer: ErrorProposer {
       case .dataCorrupted(let context):
         message = context.debugDescription
       case .keyNotFound(let key, _):
-        message = NSLocalizedString("Ключ не найден: \(key)", comment: "DecodingErrorProposer error")
+        message = "Error.keyNotFound".localized(key.stringValue)
       case .typeMismatch(_, let context):
         let keys = context.codingPath.map({ $0.stringValue })
           .joined(separator: ", ")
-        message = NSLocalizedString("Тип не соответствует для:\n\(keys)", comment: "DecodingErrorProposer error")
+        message = "Error.typeDoesNotMatch".localized(keys)
       case .valueNotFound(_, let context):
         let keys = context.codingPath
-          .map({ $0.stringValue })
+          .map { $0.stringValue }
           .joined(separator: ", ")
-        message = NSLocalizedString("Значения не найдены для:\n\(keys)", comment: "DecodingErrorProposer error")
+        message = "Error.valuesNotFound".localized(keys)
       @unknown default:
-        message = NSLocalizedString("Неизвестная ошибка декодинга", comment: "DecodingErrorProposer error")
+        message = "Error.unknownDecoding".localized
     }
     
     let alertConfig = AlertConfig(title: nil, message: message)

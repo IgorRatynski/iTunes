@@ -1,0 +1,21 @@
+// MARK: Error
+"Error.unknownDecoding" = "Unknown decoding error";
+"Error.valuesNotFound" = "Values not found for:\n%@";
+"Error.typeDoesNotMatch" = "Type does not match for:\n%@";
+"Error.keyNotFound" = "Key not found: %@";
+"Error.dataIsLoading" = "Data is loading...";
+"Error.emptySearchString" = "Search string can't be empty";
+"Error.serverNotAvailable" = "We're sorry, the apple.com server is not available right now";
+"Error.noConnection" = "No connection. Please check your Internet connection and try again.";
+"Error.shouldNotHaveHappened" = "It shouldn't have happened, but it did.";
+
+// MARK: Alert
+"Alert.error" = "Error";
+"Alert.ok" = "Ok";
+"Alert.сancel" = "Cancel";
+"Alert.yes" = "Yes";
+"Alert.no" = "No";
+"Alert.areYouAdult" = "Are u an adult?";
+
+// MARK: Search
+"SearchBar.placeholder" = "Enter a search string";

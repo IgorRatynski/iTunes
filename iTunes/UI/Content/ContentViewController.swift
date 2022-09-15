@@ -53,12 +53,10 @@ private extension ContentViewController {
   func bind() {
     // MARK: In
     actionExecution <~ viewModel.errorDispatcher.action
-    
-    // MARK: Out
     viewModel.searchStringChanged <~ searchBarViewModel.searchString
     viewModel.searchAction <~ searchBarViewModel.searchAction
     
-    // MARK: Mediator
+    // MARK: Out
     tableViewViewModel.serverResponse <~ viewModel.serverResponse
     tableViewViewModel.loading <~ viewModel.loading
   }
