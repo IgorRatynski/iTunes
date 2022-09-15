@@ -1,1 +1,13 @@
+// MARK: Alert
+"Alert.error" = "Error";
+"Alert.ok" = "Ok";
+"Alert.сancel" = "Cancel";
+"Alert.yes" = "Yes";
+"Alert.no" = "No";
+"Alert.areYouAdult" = "Are u an adult?";
 
+// MARK: Search
+"SearchBar.placeholder" = "Enter a search string";
+
+// MARK: TableView
+"TableView.noSearchResult" = "No search results";

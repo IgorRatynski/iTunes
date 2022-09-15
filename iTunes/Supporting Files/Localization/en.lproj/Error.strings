@@ -8,14 +8,3 @@
 "Error.serverNotAvailable" = "We're sorry, the apple.com server is not available right now";
 "Error.noConnection" = "No connection. Please check your Internet connection and try again.";
 "Error.shouldNotHaveHappened" = "It shouldn't have happened, but it did.";
-
-// MARK: Alert
-"Alert.error" = "Error";
-"Alert.ok" = "Ok";
-"Alert.сancel" = "Cancel";
-"Alert.yes" = "Yes";
-"Alert.no" = "No";
-"Alert.areYouAdult" = "Are u an adult?";
-
-// MARK: Search
-"SearchBar.placeholder" = "Enter a search string";
