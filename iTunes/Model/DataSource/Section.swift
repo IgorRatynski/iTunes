@@ -10,9 +10,11 @@ import Foundation
 
 enum SettingType {
   
-  case song(model: ArtistModelProtocol)
+  // MARK: Cases
+  case song(model: ArtistModelProtocol?)
   case noSearchResults(model: NoSearchResultsModelProtocol)
   
+  // MARK: Properties
   var identifier: String {
     switch self {
       case .song: return Constants.songCellIdentifier
@@ -21,11 +23,11 @@ enum SettingType {
   }
 }
 
-struct Section {
+struct Section: SectionProtocol {
   var title: String?
   var cellData: [SettingType]
 
-  init(title: String?, cellData: [SettingType]) {
+  init(title: String? = nil, cellData: [SettingType]) {
     self.title = title
     self.cellData = cellData
   }

@@ -8,8 +8,7 @@
 import Foundation
 import ReactiveSwift
 
-protocol TableViewViewModelProtocol: ReactiveTableReloadable, ReactiveLoadable {
+protocol TableViewViewModelProtocol: AnyObject, ReactiveTableReloadable, ReactiveLoadable {
   var serverResponse: BindingTarget<ITunesResponseModel> { get }
-  var error: BindingTarget<Error> { get }
   var tableViewDataSource: TableViewDataSourceProtocol { get }
 }

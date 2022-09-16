@@ -20,56 +20,72 @@ class TableViewViewModel: BaseViewModel, TableViewViewModelProtocol {
   private let reloadTableObserver: Signal<(), NoError>.Observer
   
   // MARK: - Private properties
+  private let screenHeight: Int
+  private let skeletonCellHeight: Int
+  
   var serverResponse: BindingTarget<ITunesResponseModel> {
     BindingTarget(lifetime: lifetime, action: { [weak self] value in
       self?.handle(response: value)
     })
   }
   
-  var error: BindingTarget<Error> {
-    BindingTarget(lifetime: lifetime, action: { [weak self] value in
-      self?.errorDispatcher.handle(error: value)
-    })
-  }
-  
   // MARK: - Lifecycle
-  init(tableViewDataSource: TableViewDataSourceProtocol = TableViewDataSource()) {
+  init(tableViewDataSource: TableViewDataSourceProtocol = TableViewDataSource(),
+       screenHeight: CGFloat, skeletonCellHeight: CGFloat) {
     self.tableViewDataSource = tableViewDataSource
+    self.screenHeight = Int(screenHeight)
+    self.skeletonCellHeight = Int(skeletonCellHeight)
     
     (reloadTable, reloadTableObserver) = Signal.pipe()
     
     super.init()
+    subscribe()
+  }
+}
+
+// MARK: - Setup
+private extension TableViewViewModel {
+  func subscribe() {
+    loading.producer.start { [weak self] value in
+      guard value.value ?? false, let self = self else { return }
+      self.set(sections: self.loadingCells())
+    }
+    set(sections: loadingCells())
   }
 }
 
 // MARK: - Supporting
 private extension TableViewViewModel {
+  func set(sections: [SectionProtocol]) {
+    tableViewDataSource.setup(model: sections)
+    reloadTableObserver.send(value: ())
+  }
+  
   func clearResults() {
-    tableViewDataSource.setup(model: [])
-    self.reloadTableObserver.send(value: ())
+    set(sections: [])
+  }
+  
+  func loadingCells() -> [Section] {
+    let count = screenHeight / skeletonCellHeight + 1
+    let cellData = Array(repeating: SettingType.song(model: nil), count: count)
+    return [Section(cellData:  cellData)]
   }
   
   func handle(response: ITunesResponseModel) {
-    let model = self.model(for: response)
-    self.tableViewDataSource.setup(model: model)
-    self.reloadTableObserver.send(value: ())
+    if response.resultCount == 0 {
+      set(sections: noSearchResults())
+    } else {
+      set(sections: content(from: response))
+    }
   }
   
   func noSearchResults() -> [Section] {
     let noSearchResultModel = NoSearchResultsModel(title: Text.noSearchResult, image: Image.noSearchResult)
-    let models = Section(title: nil, cellData: [.noSearchResults(model: noSearchResultModel)])
+    let models = Section(cellData: [.noSearchResults(model: noSearchResultModel)])
     return [models]
   }
   
   func content(from response: ITunesResponseModel) -> [Section] {
-    [Section(title: nil, cellData: response.results!.compactMap { SettingType.song(model: $0) })]
-  }
-  
-  func model(for response: ITunesResponseModel?) -> [Section] {
-    if response?.resultCount ?? 0 == 0 {
-      return noSearchResults()
-    } else {
-      return content(from: response!)
-    }
+    [Section(cellData: response.results!.compactMap { SettingType.song(model: $0) })]
   }
 }
