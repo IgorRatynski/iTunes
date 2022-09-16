@@ -59,9 +59,9 @@ private extension SongTableViewCellModel {
   func clear() {
     model = nil
     albumImageObserver.send(value: nil)
-    artistNameObserver.send(value: nil)
-    albumNameObserver.send(value: nil)
-    trackNameObserver.send(value: nil)
+    artistNameObserver.send(value: " ")
+    albumNameObserver.send(value: " ")
+    trackNameObserver.send(value: " ")
     loading = MutableProperty(false)
   }
   

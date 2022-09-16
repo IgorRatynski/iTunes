@@ -16,12 +16,12 @@ class TableViewViewController: BaseViewController, TableViewViewControllerProtoc
   @IBOutlet private var tableView: UITableView!
   
   // MARK: Private properties
-  let viewModel: TableViewViewModelProtocol = TableViewViewModel()
+  let viewModel: TableViewViewModelProtocol = TableViewViewModel(screenHeight: UIScreen.main.bounds.height, skeletonCellHeight: SongTableViewCell().frame.height)
   
   // MARK: Reactive properties
   var loading: BindingTarget<Bool> {
     BindingTarget(lifetime: lifetime) { [unowned self] next in
-      next ? self.showSkeleton() : self.hideSkeleton()
+      updateState(by: next)
     }
   }
   
@@ -47,6 +47,13 @@ private extension TableViewViewController {
     tableView.estimatedRowHeight = UITableView.automaticDimension
     
     tableView.register(NoSearchResultsCell.self)
+  }
+  
+  func updateState(by loading: Bool) {
+    loading ? showSkeleton() : hideSkeleton()
+    tableView.setContentOffset(.zero, animated: false)
+    tableView.isScrollEnabled = !loading
+    tableView.showsVerticalScrollIndicator = !loading
   }
 }
 
