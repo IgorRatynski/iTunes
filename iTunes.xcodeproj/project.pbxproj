@@ -184,7 +184,7 @@
 		47DA39D128C586FB0035D42C /* ErrorExtractorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorExtractorProtocol.swift; sourceTree = "<group>"; };
 		47DA39D228C586FB0035D42C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47DA39D328C586FB0035D42C /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		47DA39D528C586FB0035D42C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		47DA39D528C586FB0035D42C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "iTunes/Supporting Files/Assets.xcassets"; sourceTree = SOURCE_ROOT; };
 		47DA39D628C586FB0035D42C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47DA39D928C586FB0035D42C /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		47DA39E128C586FB0035D42C /* AlertConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertConfig.swift; sourceTree = "<group>"; };
@@ -1223,6 +1223,7 @@
 			baseConfigurationReference = 4A880C64C265AC5FCD104F19 /* Pods-iTunes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3R8784ZA8P;
 				INFOPLIST_FILE = "$(SRCROOT)/iTunes/Supporting Files/Info.plist";
@@ -1242,6 +1243,7 @@
 			baseConfigurationReference = A43D0B816DD634D58B7FC0F2 /* Pods-iTunes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3R8784ZA8P;
 				INFOPLIST_FILE = "$(SRCROOT)/iTunes/Supporting Files/Info.plist";
