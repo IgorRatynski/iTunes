@@ -35,7 +35,7 @@ enum Size {
     // MARK: Cell
     enum Cell {
       static var imageCornerRadius: CGFloat { 8 }
-      static var textCornerRadius: CGFloat { 8 }
+      static var textCornerRadius: CGFloat { 4 }
     }
   }
   
