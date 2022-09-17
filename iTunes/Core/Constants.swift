@@ -7,11 +7,11 @@
 //
 
 import Foundation
+import CoreGraphics
 
 enum Constants {
   static let songCellIdentifier = "SongCell"
   static let noSearchResultsCellIdentifier = "NoSearchResultsCell"
-  
 }
 
 // MARK: Persistent keys
@@ -25,4 +25,18 @@ enum Urls {
   enum Endpoint {
       static let baseURL = URL(string: base)!
   }
+}
+
+enum Size {
+  
+  // MARK: TableView
+  enum TableView {
+    
+    // MARK: Cell
+    enum Cell {
+      static var imageCornerRadius: CGFloat { 8 }
+      static var textCornerRadius: CGFloat { 8 }
+    }
+  }
+  
 }

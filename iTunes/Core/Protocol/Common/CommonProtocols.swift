@@ -7,9 +7,10 @@
 //
 
 import ReactiveSwift
+import Result
 
 protocol ReactiveLoadable {
-  var loading: MutableProperty<Bool> { get }
+  var loading: MutableProperty<Bool?> { get }
 }
 
 protocol Setupable {
