@@ -13,30 +13,33 @@ import ReactiveCocoa
 
 class SongTableViewCell: UITableViewCell, Setupable {
   
+  // MARK: Typealias
+  private typealias Sizes = Size.TableView.Cell
+  
   // MARK: Outlets
   @IBOutlet private var artistLabel: UILabel!
   @IBOutlet private var albumLabel: UILabel!
   @IBOutlet private var trackLabel: UILabel!
   @IBOutlet private var albumImageView: UIImageView!
-  
+
   // MARK: Reactive
   private var prepareForReuseInvolved: Signal<(), NoError>!
   private var prepareForReuseObserver: Signal<(), NoError>.Observer!
-  
+
   // MARK: Properties
   private let viewModel: SongTableViewCellModelProtocol = SongTableViewCellModel()
-  
+
   // MARK: Lifecycle
   override func awakeFromNib() {
     (prepareForReuseInvolved, prepareForReuseObserver) = Signal.pipe()
     super.awakeFromNib()
-    bind()
+    setup()
   }
-  
+
   override func prepareForReuse() {
     prepareForReuseObserver.send(value: ())
   }
-  
+
   func setup(model: Any) {
     viewModel.setup(model: model)
   }
@@ -44,12 +47,25 @@ class SongTableViewCell: UITableViewCell, Setupable {
 
 // MARK: - Setup
 private extension SongTableViewCell {
+  func setup() {
+    setupViews()
+    bind()
+  }
+
+  func setupViews() {
+    albumImageView.layer.cornerRadius = Sizes.imageCornerRadius
+    [artistLabel, albumLabel, trackLabel].forEach { $0?.layer.cornerRadius = Sizes.textCornerRadius }
+  }
+}
+
+// MARK: - Reactive
+private extension SongTableViewCell {
   func bind() {
     artistLabel.reactive.text <~ viewModel.artistName
     albumLabel.reactive.text <~ viewModel.albumName
     trackLabel.reactive.text <~ viewModel.trackName
     albumImageView.reactive.image <~ viewModel.albumImage
-    
+
     viewModel.prepareForReuse <~ prepareForReuseInvolved
   }
 }
