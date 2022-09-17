@@ -55,7 +55,7 @@ extension TableViewDataSource {
     switch setting {
       case .song(let model):
         let cell = (cell as! Setupable)
-        cell.setup(model: model)
+        cell.setup(model: model as Any)
       case .noSearchResults(model: let model):
         let cell = (cell as! Setupable)
         cell.setup(model: model)

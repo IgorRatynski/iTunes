@@ -378,7 +378,7 @@
 		9C74626DA72CCE807B4BBC779139D31F /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Sources/Moya/MultipartFormData.swift; sourceTree = "<group>"; };
 		9C79A14466324E9FCCF5FD22F0E84594 /* Image.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Image.swift; path = Sources/Moya/Image.swift; sourceTree = "<group>"; };
 		9CDC7FD0B8CADE42800DB0B06EA85753 /* UIRefreshControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIRefreshControl.swift; path = ReactiveCocoa/UIKit/iOS/UIRefreshControl.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E648C6BED218EC9ACACF2ECEC918D3E /* Result-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Result-umbrella.h"; sourceTree = "<group>"; };
 		A037EA4BC37FC54FD8C2D65AA1A92F52 /* ReactiveSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReactiveSwift.debug.xcconfig; sourceTree = "<group>"; };
 		A05E0B164CF4FB8E10DDE7EB3ECAEADD /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
@@ -567,7 +567,6 @@
 				B91565DCA8FBC62B3AEA4A10DC732D2E /* ValidatingProperty.swift */,
 				C390951785EAAE3F9D428F890C020761 /* Support Files */,
 			);
-			name = ReactiveSwift;
 			path = ReactiveSwift;
 			sourceTree = "<group>";
 		};
@@ -593,7 +592,6 @@
 				A05E0B164CF4FB8E10DDE7EB3ECAEADD /* Validation.swift */,
 				DAF2FEC44D14181C46778FE721859002 /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -681,7 +679,6 @@
 				875146896807A3CEFBCD72AA27A29F40 /* ReactiveSwift */,
 				C3F0226FD3EBC3A2E2F530143BDB298F /* Support Files */,
 			);
-			name = Moya;
 			path = Moya;
 			sourceTree = "<group>";
 		};
@@ -771,7 +768,6 @@
 				1CAFB42DEC5335F9647228E3DA728EF1 /* UIViewController.swift */,
 				66B02D916DBCA20DB2B66EB560955280 /* Support Files */,
 			);
-			name = ReactiveCocoa;
 			path = ReactiveCocoa;
 			sourceTree = "<group>";
 		};
@@ -826,7 +822,6 @@
 				A25533F2DE402874134A8036B9C6913B /* ResultProtocol.swift */,
 				044C639C7B9B816C0E8D83468C00E95C /* Support Files */,
 			);
-			name = Result;
 			path = Result;
 			sourceTree = "<group>";
 		};
@@ -1077,6 +1072,17 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					07B5C6907D09E767CDC5954A9468CA2E = {
+						LastSwiftMigration = 1310;
+					};
+					08B8EF1A02DE30CBEFB370FFE1C123C0 = {
+						LastSwiftMigration = 1310;
+					};
+					E163AC315AD24CFBD60C178D602BFC83 = {
+						LastSwiftMigration = 1310;
+					};
+				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 10.0";
