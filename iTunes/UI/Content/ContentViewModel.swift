@@ -15,7 +15,7 @@ class ContentViewModel: BaseViewModel, ContentViewModelProtocol {
   
   // MARK: - Public properties
   let tableViewDataSource: TableViewDataSourceProtocol
-  private(set) var loading: MutableProperty<Bool> = MutableProperty(false)
+  let loading: MutableProperty<Bool?> = MutableProperty(nil)
   
   // Out
   let reloadTable: Signal<(), NoError>
@@ -76,7 +76,7 @@ class ContentViewModel: BaseViewModel, ContentViewModelProtocol {
 // MARK: - Functions
 private extension ContentViewModel {
   func search() {
-    guard !loading.value else {
+    guard !(loading.value ?? false) else {
       return errorDispatcher.handle(error: LoadingError())
     }
     guard let searchString = self.searchString else {

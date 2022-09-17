@@ -16,11 +16,13 @@ class TableViewViewController: BaseViewController, TableViewViewControllerProtoc
   @IBOutlet private var tableView: UITableView!
   
   // MARK: Private properties
-  let viewModel: TableViewViewModelProtocol = TableViewViewModel(screenHeight: UIScreen.main.bounds.height, skeletonCellHeight: SongTableViewCell().frame.height)
+  let viewModel: TableViewViewModelProtocol = TableViewViewModel(screenHeight: UIScreen.main.bounds.height,
+                                                                 skeletonCellHeight: SongTableViewCell().frame.height)
   
   // MARK: Reactive properties
-  var loading: BindingTarget<Bool> {
+  var loading: BindingTarget<Bool?> {
     BindingTarget(lifetime: lifetime) { [unowned self] next in
+      guard let next = next else { return }
       updateState(by: next)
     }
   }
@@ -45,22 +47,25 @@ private extension TableViewViewController {
     tableView.keyboardDismissMode = .onDrag
     tableView.dataSource = viewModel.tableViewDataSource
     tableView.estimatedRowHeight = UITableView.automaticDimension
+    tableView.isScrollEnabled = false
     
     tableView.register(NoSearchResultsCell.self)
   }
   
   func updateState(by loading: Bool) {
     loading ? showSkeleton() : hideSkeleton()
+    tableView.beginUpdates()
     tableView.setContentOffset(.zero, animated: false)
-    tableView.isScrollEnabled = !loading
+    tableView.endUpdates()
     tableView.showsVerticalScrollIndicator = !loading
+    tableView.isScrollEnabled = !loading
   }
 }
 
 // MARK: Binding
 private extension TableViewViewController {
   func bind() {
-    tableView.reactive.reloadData <~ viewModel.reloadTable
     loading <~ viewModel.loading
+    tableView.reactive.reloadData <~ viewModel.reloadTable
   }
 }

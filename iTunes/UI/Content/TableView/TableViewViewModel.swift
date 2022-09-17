@@ -14,7 +14,7 @@ class TableViewViewModel: BaseViewModel, TableViewViewModelProtocol {
   
   // MARK: - Public properties
   let tableViewDataSource: TableViewDataSourceProtocol
-  private(set) var loading: MutableProperty<Bool> = MutableProperty(false)
+  let loading: MutableProperty<Bool?> = MutableProperty(nil)
   
   let reloadTable: Signal<(), NoError>
   private let reloadTableObserver: Signal<(), NoError>.Observer
@@ -46,9 +46,10 @@ class TableViewViewModel: BaseViewModel, TableViewViewModelProtocol {
 // MARK: - Setup
 private extension TableViewViewModel {
   func subscribe() {
-    loading.producer.start { [weak self] value in
-      guard value.value ?? false, let self = self else { return }
-      self.set(sections: self.loadingCells())
+    loading.producer
+      .filter { $0 == true }
+      .start { [unowned self] next in
+      set(sections: self.loadingCells())
     }
     set(sections: loadingCells())
   }

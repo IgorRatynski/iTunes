@@ -13,7 +13,7 @@ import ReactiveSwift
 class SongTableViewCellModel: BaseViewModel, SongTableViewCellModelProtocol {
   
   // MARK: properties
-  private(set) var loading: MutableProperty<Bool> = MutableProperty(false)
+  private(set) var loading: MutableProperty<Bool?> = MutableProperty(false)
   
   let artistName: Signal<String?, NoError>!
   private var artistNameObserver: Signal<String?, NoError>.Observer!
