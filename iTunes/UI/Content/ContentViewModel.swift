@@ -110,9 +110,9 @@ private extension ContentViewModel {
 // MARK: - Supporting
 private extension ContentViewModel {
   func alertConfigForAgeService() -> AlertConfigProtocol {
-    AlertConfig(title: nil, message: AlertStrings.areYouAdult.localized, actions: [
-      (title: AlertStrings.yes.localized, style: .default, handler: ageService.setIsAdult(true)),
-      (title: AlertStrings.no.localized, style: .default, handler: ageService.setIsAdult(false))
+    AlertConfig(title: nil, message: R.string.localization.alertAreYouAdult(), actions: [
+      (title: R.string.localization.alertYes(), style: .default, handler: ageService.setIsAdult(true)),
+      (title: R.string.localization.alertNo(), style: .default, handler: ageService.setIsAdult(false))
     ])
   }
 }

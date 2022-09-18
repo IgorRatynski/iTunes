@@ -39,19 +39,23 @@ class TableViewViewModel: BaseViewModel, TableViewViewModelProtocol {
     (reloadTable, reloadTableObserver) = Signal.pipe()
     
     super.init()
-    subscribe()
+    setup()
   }
 }
 
 // MARK: - Setup
 private extension TableViewViewModel {
+  func setup() {
+    set(sections: loadingCells())
+    subscribe()
+  }
+  
   func subscribe() {
     loading.producer
       .filter { $0 == true }
       .start { [unowned self] next in
-      set(sections: self.loadingCells())
-    }
-    set(sections: loadingCells())
+        set(sections: self.loadingCells())
+      }
   }
 }
 

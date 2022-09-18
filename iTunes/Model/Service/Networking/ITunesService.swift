@@ -94,6 +94,6 @@ private extension ITunesService {
 
 private extension Bool {
   var string: String {
-    self ? AlertStrings.yes.rawValue : AlertStrings.no.rawValue
+    self ? R.string.localization.alertYes() : R.string.localization.alertNo()
   }
 }

@@ -10,10 +10,10 @@ import UIKit
 
 extension TableViewViewModel {
   enum Text {
-    static var noSearchResult: String { "TableView.noSearchResult".localized() }
+    static var noSearchResult: String { R.string.localization.tableViewNoSearchResult() }
   }
   
   enum Image {
-    static var noSearchResult: UIImage { UIImage(named: "no-search-results")! }
+    static var noSearchResult: UIImage { R.image.noSearchResults()! }
   }
 }
