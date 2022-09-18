@@ -19,6 +19,6 @@
 "Error.keyNotFound" = "Ключ не найден: %@";
 "Error.dataIsLoading" = "Данные в процессе загрузки...";
 "Error.emptySearchString" = "Строка поиска не может быть пустой";
-"Error.Error.noConnection" = "Нет соединения. Пожалуйста проверьте своё интернет соединение и попытайтесь ещё раз.";
-"Error.Error.serverNotAvailable" = "Приносим свои извинения, сервер компании apple.com сейчас не доступен";
-"Error.Error.shouldNotHaveHappened" = "Этого не должно было произойти, но произошло";
+"Error.noConnection" = "Нет соединения. Пожалуйста проверьте своё интернет соединение и попытайтесь ещё раз.";
+"Error.serverNotAvailable" = "Приносим свои извинения, сервер компании apple.com сейчас не доступен";
+"Error.shouldNotHaveHappened" = "Этого не должно было произойти, но произошло";
