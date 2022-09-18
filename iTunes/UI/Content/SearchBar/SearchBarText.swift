@@ -10,6 +10,6 @@ import Foundation
 
 extension SearchBarViewController {
   enum Text {
-    static var searchPlaceholder: String { "SearchBar.placeholder".localized() }
+    static var searchPlaceholder: String { R.string.localization.searchBarPlaceholder() }
   }
 }

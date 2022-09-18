@@ -13,7 +13,7 @@ extension UIViewController {
     let alertController = UIAlertController(configuration: config)
     view.endEditing(true)
     if config.actions == nil {
-      let okAction = UIAlertAction(title: AlertStrings.ok.localized , style: .cancel, handler: nil)
+      let okAction = UIAlertAction(title: R.string.localization.alertOk() , style: .cancel, handler: nil)
       alertController.addAction(okAction)
     }
     present(alertController, animated: true, completion: nil)

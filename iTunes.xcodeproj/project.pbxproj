@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,7 +19,6 @@
 		4724E69428CC09D4009DD73F /* UITableViewCell+ReuseIdentifying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4724E69328CC09D4009DD73F /* UITableViewCell+ReuseIdentifying.swift */; };
 		4724E69628CC0E71009DD73F /* ReuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4724E69528CC0E71009DD73F /* ReuseIdentifier.swift */; };
 		473557B328C58C0A00FB77DD /* NetworkProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DA3A5A28C587090035D42C /* NetworkProviderTests.swift */; };
-		473DBC1228D36346008094F6 /* Localiztion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473DBC1128D36346008094F6 /* Localiztion.swift */; };
 		473DBC1428D363E3008094F6 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473DBC1328D363E3008094F6 /* Logger.swift */; };
 		473DBC1628D48B4D008094F6 /* SectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473DBC1528D48B4D008094F6 /* SectionProtocol.swift */; };
 		47D3147E28CECA0F00CF813C /* SkeletonDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D3147D28CECA0F00CF813C /* SkeletonDisplayable.swift */; };
@@ -38,7 +37,6 @@
 		47D3149B28D22B6A00CF813C /* TableViewViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D3149A28D22B6A00CF813C /* TableViewViewControllerProtocol.swift */; };
 		47D3149F28D22C2100CF813C /* ITunesServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D3149E28D22C2100CF813C /* ITunesServiceProtocol.swift */; };
 		47D314A228D22CFB00CF813C /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 47D314A428D22CFB00CF813C /* Localization.strings */; };
-		47D314B128D22DBC00CF813C /* Error.strings in Resources */ = {isa = PBXBuildFile; fileRef = 47D314B328D22DBC00CF813C /* Error.strings */; };
 		47DA3A1728C586FB0035D42C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DA39AE28C586FA0035D42C /* Constants.swift */; };
 		47DA3A1828C586FB0035D42C /* UIAlertController+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DA39B128C586FA0035D42C /* UIAlertController+Config.swift */; };
 		47DA3A1928C586FB0035D42C /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DA39B228C586FA0035D42C /* UIViewController+Alert.swift */; };
@@ -86,7 +84,6 @@
 		47DA3A4828C586FB0035D42C /* AppInternalErrorProposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DA39FE28C586FB0035D42C /* AppInternalErrorProposer.swift */; };
 		47DA3A4928C586FB0035D42C /* DecodingErrorProposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DA39FF28C586FB0035D42C /* DecodingErrorProposer.swift */; };
 		47DA3A4A28C586FB0035D42C /* DefaultErrorProposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DA3A0028C586FB0035D42C /* DefaultErrorProposer.swift */; };
-		47DA3A4B28C586FB0035D42C /* AlertStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DA3A0128C586FB0035D42C /* AlertStrings.swift */; };
 		47DA3A4C28C586FB0035D42C /* GroupErrorProposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DA3A0228C586FB0035D42C /* GroupErrorProposer.swift */; };
 		47DA3A4D28C586FB0035D42C /* ErrorDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DA3A0328C586FB0035D42C /* ErrorDispatcher.swift */; };
 		47DA3A4E28C586FB0035D42C /* LoadingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DA3A0528C586FB0035D42C /* LoadingError.swift */; };
@@ -101,6 +98,7 @@
 		47DA3A5728C586FB0035D42C /* SongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DA3A1528C586FB0035D42C /* SongTableViewCell.swift */; };
 		47DA3A5828C586FB0035D42C /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DA3A1628C586FB0035D42C /* ContentViewModel.swift */; };
 		47DA3A5F28C587090035D42C /* SearchSuccessResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 47DA3A5C28C587090035D42C /* SearchSuccessResponse.json */; };
+		47FF0D6A28D629B400B210DC /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FF0D6928D629B400B210DC /* R.generated.swift */; };
 		B0935EACFBBECC086A6678F7 /* Pods_iTunes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 934126BF9EC6B8925A055F03 /* Pods_iTunes.framework */; };
 /* End PBXBuildFile section */
 
@@ -138,7 +136,6 @@
 		4724E69328CC09D4009DD73F /* UITableViewCell+ReuseIdentifying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+ReuseIdentifying.swift"; sourceTree = "<group>"; };
 		4724E69528CC0E71009DD73F /* ReuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifier.swift; sourceTree = "<group>"; };
 		473550BF245067B5001F4679 /* iTunes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunes.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		473DBC1128D36346008094F6 /* Localiztion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localiztion.swift; sourceTree = "<group>"; };
 		473DBC1328D363E3008094F6 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		473DBC1528D48B4D008094F6 /* SectionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionProtocol.swift; sourceTree = "<group>"; };
 		4765EB36245A4DF100A8EED0 /* iTunesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTunesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,8 +156,6 @@
 		47D3149E28D22C2100CF813C /* ITunesServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesServiceProtocol.swift; sourceTree = "<group>"; };
 		47D314A328D22CFB00CF813C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
 		47D314A828D22D5600CF813C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localization.strings; sourceTree = "<group>"; };
-		47D314B228D22DBC00CF813C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Error.strings; sourceTree = "<group>"; };
-		47D314B428D22DBD00CF813C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Error.strings; sourceTree = "<group>"; };
 		47DA39AE28C586FA0035D42C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		47DA39B128C586FA0035D42C /* UIAlertController+Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Config.swift"; sourceTree = "<group>"; };
 		47DA39B228C586FA0035D42C /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
@@ -209,7 +204,6 @@
 		47DA39FE28C586FB0035D42C /* AppInternalErrorProposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInternalErrorProposer.swift; sourceTree = "<group>"; };
 		47DA39FF28C586FB0035D42C /* DecodingErrorProposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodingErrorProposer.swift; sourceTree = "<group>"; };
 		47DA3A0028C586FB0035D42C /* DefaultErrorProposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultErrorProposer.swift; sourceTree = "<group>"; };
-		47DA3A0128C586FB0035D42C /* AlertStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertStrings.swift; sourceTree = "<group>"; };
 		47DA3A0228C586FB0035D42C /* GroupErrorProposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupErrorProposer.swift; sourceTree = "<group>"; };
 		47DA3A0328C586FB0035D42C /* ErrorDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorDispatcher.swift; sourceTree = "<group>"; };
 		47DA3A0528C586FB0035D42C /* LoadingError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingError.swift; sourceTree = "<group>"; };
@@ -226,6 +220,7 @@
 		47DA3A5A28C587090035D42C /* NetworkProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProviderTests.swift; sourceTree = "<group>"; };
 		47DA3A5C28C587090035D42C /* SearchSuccessResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SearchSuccessResponse.json; sourceTree = "<group>"; };
 		47DA3A5D28C587090035D42C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47FF0D6928D629B400B210DC /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		4A880C64C265AC5FCD104F19 /* Pods-iTunes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunes.debug.xcconfig"; path = "Target Support Files/Pods-iTunes/Pods-iTunes.debug.xcconfig"; sourceTree = "<group>"; };
 		6469CEE2EE371EFBC73357E5 /* Pods-iTunesTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesTestTests.debug.xcconfig"; path = "Target Support Files/Pods-iTunesTestTests/Pods-iTunesTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		692C947627FF64182A8316FE /* Pods_iTunesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iTunesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -375,7 +370,6 @@
 		47D314A528D22D0B00CF813C /* Localization */ = {
 			isa = PBXGroup;
 			children = (
-				47D314B328D22DBC00CF813C /* Error.strings */,
 				47D314A428D22CFB00CF813C /* Localization.strings */,
 			);
 			path = Localization;
@@ -526,6 +520,7 @@
 			isa = PBXGroup;
 			children = (
 				47DA39D528C586FB0035D42C /* Assets.xcassets */,
+				47FF0D6928D629B400B210DC /* R.generated.swift */,
 				47DA39D628C586FB0035D42C /* Info.plist */,
 				47D314A528D22D0B00CF813C /* Localization */,
 			);
@@ -588,7 +583,6 @@
 				47DA39E828C586FB0035D42C /* App */,
 				47DA39F328C586FB0035D42C /* ErrorHandling */,
 				47DA39EA28C586FB0035D42C /* Networking */,
-				473DBC1128D36346008094F6 /* Localiztion.swift */,
 				473DBC1328D363E3008094F6 /* Logger.swift */,
 			);
 			path = Service;
@@ -637,7 +631,6 @@
 				47DA3A0428C586FB0035D42C /* Error */,
 				47DA39F628C586FB0035D42C /* Extractor */,
 				47DA39FC28C586FB0035D42C /* Proposer */,
-				47DA3A0128C586FB0035D42C /* AlertStrings.swift */,
 				47DA3A0828C586FB0035D42C /* ErrorConfig.swift */,
 				47DA3A0328C586FB0035D42C /* ErrorDispatcher.swift */,
 				47DA3A0728C586FB0035D42C /* GroupErrorExtractor.swift */,
@@ -769,6 +762,7 @@
 			buildConfigurationList = 473550D3245067C1001F4679 /* Build configuration list for PBXNativeTarget "iTunes" */;
 			buildPhases = (
 				6A21C554A678637F58C61A4F /* [CP] Check Pods Manifest.lock */,
+				47FF0D6828D628EB00B210DC /* R.swift */,
 				473550BB245067B5001F4679 /* Sources */,
 				473550BC245067B5001F4679 /* Frameworks */,
 				473550BD245067B5001F4679 /* Resources */,
@@ -847,7 +841,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47D314B128D22DBC00CF813C /* Error.strings in Resources */,
 				47DA3A5F28C587090035D42C /* SearchSuccessResponse.json in Resources */,
 				47DA3A5428C586FB0035D42C /* Main.storyboard in Resources */,
 				47D314A228D22CFB00CF813C /* Localization.strings in Resources */,
@@ -887,6 +880,26 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		47FF0D6828D628EB00B210DC /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = R.swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
 		};
 		5C2FF66244C77F3F8F60A730 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -962,6 +975,7 @@
 				47D3148C28D1B14F00CF813C /* ReactiveBase.swift in Sources */,
 				47DA3A5128C586FB0035D42C /* ErrorConfig.swift in Sources */,
 				47D3149228D216CA00CF813C /* Section.swift in Sources */,
+				47FF0D6A28D629B400B210DC /* R.generated.swift in Sources */,
 				47DA3A2D28C586FB0035D42C /* AppDelegate.swift in Sources */,
 				47DA3A2628C586FB0035D42C /* AlertConfigProtocol.swift in Sources */,
 				47DA3A5728C586FB0035D42C /* SongTableViewCell.swift in Sources */,
@@ -995,13 +1009,11 @@
 				47DA3A3128C586FB0035D42C /* TableViewDataSource.swift in Sources */,
 				47DA3A5628C586FB0035D42C /* SongTableViewCellModel.swift in Sources */,
 				47DA3A4928C586FB0035D42C /* DecodingErrorProposer.swift in Sources */,
-				473DBC1228D36346008094F6 /* Localiztion.swift in Sources */,
 				47DA3A1928C586FB0035D42C /* UIViewController+Alert.swift in Sources */,
 				47D3147E28CECA0F00CF813C /* SkeletonDisplayable.swift in Sources */,
 				47DA3A4428C586FB0035D42C /* MoyaParseErrorExtractor.swift in Sources */,
 				47D3149F28D22C2100CF813C /* ITunesServiceProtocol.swift in Sources */,
 				47DA3A4D28C586FB0035D42C /* ErrorDispatcher.swift in Sources */,
-				47DA3A4B28C586FB0035D42C /* AlertStrings.swift in Sources */,
 				47DA3A5828C586FB0035D42C /* ContentViewModel.swift in Sources */,
 				47DA3A1728C586FB0035D42C /* Constants.swift in Sources */,
 				47DA3A1B28C586FB0035D42C /* Moya+Predefined.swift in Sources */,
@@ -1066,15 +1078,6 @@
 				47D314A828D22D5600CF813C /* ru */,
 			);
 			name = Localization.strings;
-			sourceTree = "<group>";
-		};
-		47D314B328D22DBC00CF813C /* Error.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				47D314B228D22DBC00CF813C /* en */,
-				47D314B428D22DBD00CF813C /* ru */,
-			);
-			name = Error.strings;
 			sourceTree = "<group>";
 		};
 		47DA3A0D28C586FB0035D42C /* LaunchScreen.storyboard */ = {

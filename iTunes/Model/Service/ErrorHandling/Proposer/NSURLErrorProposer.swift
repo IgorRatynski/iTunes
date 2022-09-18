@@ -19,10 +19,10 @@ class NSURLErrorProposer: ErrorProposer {
       case NSURLErrorCancelled:
         return .nothing
       case NSURLErrorCannotFindHost, NSURLErrorDNSLookupFailed, NSURLErrorTimedOut, NSURLErrorResourceUnavailable, NSURLErrorCannotConnectToHost:
-        message = "Error.serverNotAvailable".localized(from: .error)
+        message = R.string.localization.errorServerNotAvailable()
       case NSURLErrorNetworkConnectionLost, NSURLErrorResourceUnavailable,
         NSURLErrorNotConnectedToInternet, NSURLErrorRedirectToNonExistentLocation:
-        message = "Error.noConnection".localized(from: .error)
+        message = R.string.localization.errorNoConnection()
       default:
         return nil
     }

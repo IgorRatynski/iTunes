@@ -1,5 +1,4 @@
-# Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '13.2'
 
 def reactivePods
     pod 'ReactiveSwift', '~> 5.0'
@@ -10,6 +9,7 @@ end
 
 def externalPods
     pod 'Moya', '~> 13.0'
+    pod 'R.swift' '~> 6.1.0'
 end
 
 target 'iTunes' do
