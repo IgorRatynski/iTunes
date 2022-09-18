@@ -179,7 +179,7 @@
 		47DA39D128C586FB0035D42C /* ErrorExtractorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorExtractorProtocol.swift; sourceTree = "<group>"; };
 		47DA39D228C586FB0035D42C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47DA39D328C586FB0035D42C /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		47DA39D528C586FB0035D42C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "iTunes/Supporting Files/Assets.xcassets"; sourceTree = SOURCE_ROOT; };
+		47DA39D528C586FB0035D42C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = iTunes/Core/Resourses/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		47DA39D628C586FB0035D42C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47DA39D928C586FB0035D42C /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		47DA39E128C586FB0035D42C /* AlertConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertConfig.swift; sourceTree = "<group>"; };
@@ -220,7 +220,7 @@
 		47DA3A5A28C587090035D42C /* NetworkProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProviderTests.swift; sourceTree = "<group>"; };
 		47DA3A5C28C587090035D42C /* SearchSuccessResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SearchSuccessResponse.json; sourceTree = "<group>"; };
 		47DA3A5D28C587090035D42C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		47FF0D6928D629B400B210DC /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		47FF0D6928D629B400B210DC /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = iTunes/Core/Resourses/R.generated.swift; sourceTree = SOURCE_ROOT; };
 		4A880C64C265AC5FCD104F19 /* Pods-iTunes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunes.debug.xcconfig"; path = "Target Support Files/Pods-iTunes/Pods-iTunes.debug.xcconfig"; sourceTree = "<group>"; };
 		6469CEE2EE371EFBC73357E5 /* Pods-iTunesTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesTestTests.debug.xcconfig"; path = "Target Support Files/Pods-iTunesTestTests/Pods-iTunesTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		692C947627FF64182A8316FE /* Pods_iTunesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iTunesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -329,6 +329,17 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		477DB07128D786540007533C /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				47DA39D528C586FB0035D42C /* Assets.xcassets */,
+				47DA39D628C586FB0035D42C /* Info.plist */,
+				47FF0D6928D629B400B210DC /* R.generated.swift */,
+				47D314A428D22CFB00CF813C /* Localization.strings */,
+			);
+			path = Resourses;
+			sourceTree = "<group>";
+		};
 		47D3147C28CECA0100CF813C /* SkeletonDisplayable */ = {
 			isa = PBXGroup;
 			children = (
@@ -367,14 +378,6 @@
 			path = UIViewController;
 			sourceTree = "<group>";
 		};
-		47D314A528D22D0B00CF813C /* Localization */ = {
-			isa = PBXGroup;
-			children = (
-				47D314A428D22CFB00CF813C /* Localization.strings */,
-			);
-			path = Localization;
-			sourceTree = "<group>";
-		};
 		47DA39AC28C586FA0035D42C /* iTunes */ = {
 			isa = PBXGroup;
 			children = (
@@ -394,6 +397,7 @@
 				47DA39AE28C586FA0035D42C /* Constants.swift */,
 				47DA39B928C586FA0035D42C /* Base Class */,
 				47DA39BC28C586FA0035D42C /* Protocol */,
+				477DB07128D786540007533C /* Resourses */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -519,10 +523,6 @@
 		47DA39D428C586FB0035D42C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				47DA39D528C586FB0035D42C /* Assets.xcassets */,
-				47FF0D6928D629B400B210DC /* R.generated.swift */,
-				47DA39D628C586FB0035D42C /* Info.plist */,
-				47D314A528D22D0B00CF813C /* Localization */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -1229,7 +1229,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3R8784ZA8P;
-				INFOPLIST_FILE = "$(SRCROOT)/iTunes/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/iTunes/Core/Resourses/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1249,7 +1249,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3R8784ZA8P;
-				INFOPLIST_FILE = "$(SRCROOT)/iTunes/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/iTunes/Core/Resourses/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
