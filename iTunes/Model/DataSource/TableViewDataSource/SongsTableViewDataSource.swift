@@ -1,5 +1,5 @@
 //
-//  UsersTableViewDataSource.swift
+//  SongsTableViewDataSource.swift
 //  iTunes
 //
 //  Created by Igor Ratynski on 27.09.2022.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UsersTableViewDataSource: TableViewDataSource {
+class SongsTableViewDataSource: TableViewDataSource {
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let setting: CellType = sections[indexPath.section].cellData[indexPath.row] as! CellType
     

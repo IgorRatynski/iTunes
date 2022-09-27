@@ -30,7 +30,7 @@ class TableViewViewModel: BaseViewModel, TableViewViewModelProtocol {
   }
   
   // MARK: - Lifecycle
-  init(tableViewDataSource: TableViewDataSourceProtocol = UsersTableViewDataSource(),
+  init(tableViewDataSource: TableViewDataSourceProtocol = SongsTableViewDataSource(),
        screenHeight: CGFloat, skeletonCellHeight: CGFloat) {
     self.tableViewDataSource = tableViewDataSource
     self.screenHeight = Int(screenHeight)

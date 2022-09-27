@@ -21,7 +21,7 @@
 		473557B328C58C0A00FB77DD /* NetworkProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DA3A5A28C587090035D42C /* NetworkProviderTests.swift */; };
 		473DBC1428D363E3008094F6 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473DBC1328D363E3008094F6 /* Logger.swift */; };
 		473DBC1628D48B4D008094F6 /* SectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473DBC1528D48B4D008094F6 /* SectionProtocol.swift */; };
-		4756EA3728E391A10045CD25 /* UsersTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4756EA3628E391A10045CD25 /* UsersTableViewDataSource.swift */; };
+		4756EA3728E391A10045CD25 /* SongsTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4756EA3628E391A10045CD25 /* SongsTableViewDataSource.swift */; };
 		4756EA3928E392420045CD25 /* CellTypeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4756EA3828E392420045CD25 /* CellTypeProtocol.swift */; };
 		47D3147E28CECA0F00CF813C /* SkeletonDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D3147D28CECA0F00CF813C /* SkeletonDisplayable.swift */; };
 		47D3148128D1A87600CF813C /* SearchBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D3148028D1A87600CF813C /* SearchBarViewController.swift */; };
@@ -140,7 +140,7 @@
 		473550BF245067B5001F4679 /* iTunes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		473DBC1328D363E3008094F6 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		473DBC1528D48B4D008094F6 /* SectionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionProtocol.swift; sourceTree = "<group>"; };
-		4756EA3628E391A10045CD25 /* UsersTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewDataSource.swift; sourceTree = "<group>"; };
+		4756EA3628E391A10045CD25 /* SongsTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsTableViewDataSource.swift; sourceTree = "<group>"; };
 		4756EA3828E392420045CD25 /* CellTypeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTypeProtocol.swift; sourceTree = "<group>"; };
 		4765EB36245A4DF100A8EED0 /* iTunesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTunesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		47D3147D28CECA0F00CF813C /* SkeletonDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonDisplayable.swift; sourceTree = "<group>"; };
@@ -338,7 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				47DA39D928C586FB0035D42C /* TableViewDataSource.swift */,
-				4756EA3628E391A10045CD25 /* UsersTableViewDataSource.swift */,
+				4756EA3628E391A10045CD25 /* SongsTableViewDataSource.swift */,
 			);
 			path = TableViewDataSource;
 			sourceTree = "<group>";
@@ -1019,7 +1019,7 @@
 				47DA3A2B28C586FB0035D42C /* ErrorProposerProtocol.swift in Sources */,
 				47DA3A4628C586FB0035D42C /* NSURLErrorDomainExtractor.swift in Sources */,
 				47DA3A2C28C586FB0035D42C /* ErrorExtractorProtocol.swift in Sources */,
-				4756EA3728E391A10045CD25 /* UsersTableViewDataSource.swift in Sources */,
+				4756EA3728E391A10045CD25 /* SongsTableViewDataSource.swift in Sources */,
 				47DA3A3728C586FB0035D42C /* ArtistModel.swift in Sources */,
 				47DA3A3128C586FB0035D42C /* TableViewDataSource.swift in Sources */,
 				47DA3A5628C586FB0035D42C /* SongTableViewCellModel.swift in Sources */,
