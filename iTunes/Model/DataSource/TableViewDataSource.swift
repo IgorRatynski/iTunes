@@ -11,15 +11,15 @@ import UIKit
 class TableViewDataSource: NSObject, TableViewDataSourceProtocol {
 
   // MARK: Properties
-  private(set) var sections: [Section]
+  private(set) var sections: [SectionProtocol]
 
   // MARK: Lifecycle
-  init(sections: [Section] = []) {
+  init(sections: [SectionProtocol] = []) {
     self.sections = sections
   }
 
   func setup(model: Any) {
-    guard let model = model as? [Section] else {
+    guard let model = model as? [SectionProtocol] else {
       sections = []
       return
     }
@@ -44,10 +44,10 @@ extension TableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let setting: SettingType = sections[indexPath.section].cellData[indexPath.row]
+    let setting: CellType = sections[indexPath.section].cellData[indexPath.row]
     
     guard let cell = tableView.dequeueReusableCell(withIdentifier: setting.identifier) else {
-      // TODO: Mock analytics loger
+      // TODO: Mock analytics logger
       assertionFailure("Unknown identifier")
       return UITableViewCell()
     }

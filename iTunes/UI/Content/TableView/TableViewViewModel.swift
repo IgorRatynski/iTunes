@@ -72,7 +72,7 @@ private extension TableViewViewModel {
   
   func loadingCells() -> [Section] {
     let count = screenHeight / skeletonCellHeight + 1
-    let cellData = Array(repeating: SettingType.song(model: nil), count: count)
+    let cellData = Array(repeating: CellType.song(model: nil), count: count)
     return [Section(cellData:  cellData)]
   }
   
@@ -91,6 +91,6 @@ private extension TableViewViewModel {
   }
   
   func content(from response: ITunesResponseModel) -> [Section] {
-    [Section(cellData: response.results!.compactMap { SettingType.song(model: $0) })]
+    [Section(cellData: response.results!.compactMap { CellType.song(model: $0) })]
   }
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum SettingType {
+enum CellType {
   
   // MARK: Cases
   case song(model: ArtistModelProtocol?)
@@ -25,9 +25,9 @@ enum SettingType {
 
 struct Section: SectionProtocol {
   var title: String?
-  var cellData: [SettingType]
+  var cellData: [CellType]
 
-  init(title: String? = nil, cellData: [SettingType]) {
+  init(title: String? = nil, cellData: [CellType]) {
     self.title = title
     self.cellData = cellData
   }

@@ -17,4 +17,3 @@ extension UITableView {
     register(cellClass, forCellReuseIdentifier: cellClass.reuseIdentifier)
   }
 }
-
