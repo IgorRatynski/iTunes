@@ -40,7 +40,6 @@ class ITunesService: ReactiveBase, ITunesServiceProtocol {
   
   // MARK: - Lifecycle
   init(networkProvider: MoyaProvider<ITunesRequest> = MoyaProvider<ITunesRequest>(plugins: [NetworkLoggerPlugin(verbose: true)]),
-       tableViewDataSource: TableViewDataSourceProtocol = TableViewDataSource(),
        ageService: AgeServiceProtocol = AgeService()) {
     self.networkProvider = networkProvider
     self.ageService = ageService

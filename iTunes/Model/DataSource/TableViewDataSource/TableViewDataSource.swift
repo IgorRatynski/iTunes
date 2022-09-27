@@ -44,22 +44,7 @@ extension TableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let setting: CellType = sections[indexPath.section].cellData[indexPath.row]
-    
-    guard let cell = tableView.dequeueReusableCell(withIdentifier: setting.identifier) else {
-      // TODO: Mock analytics logger
-      assertionFailure("Unknown identifier")
-      return UITableViewCell()
-    }
-    
-    switch setting {
-      case .song(let model):
-        let cell = (cell as! Setupable)
-        cell.setup(model: model as Any)
-      case .noSearchResults(model: let model):
-        let cell = (cell as! Setupable)
-        cell.setup(model: model)
-    }
-    return cell
+    assertionFailure("Not implemented cellForRowAt in TableViewDataSource: \(self)")
+    return UITableViewCell()
   }
 }

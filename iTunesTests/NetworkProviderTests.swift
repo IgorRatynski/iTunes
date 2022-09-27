@@ -27,7 +27,7 @@ class APITests: XCTestCase {
 extension APITests {
   func testStubSuccessResponse() {
     let endpointClosure = test { [unowned self] () -> EndpointSampleResponse in
-      self.response(type: .success)
+      response(type: .success)
     }
     mockProvider = MoyaProvider<ITunesRequest>(endpointClosure: endpointClosure,
                                                stubClosure: MoyaProvider.immediatelyStub)
@@ -47,7 +47,7 @@ extension APITests {
   
   func testStubFailureResponse() {
     let endpointClosure = test { [unowned self] () -> EndpointSampleResponse in
-      self.response(type: .failure)
+      response(type: .failure)
     }
 
     mockProvider = MoyaProvider<ITunesRequest>(endpointClosure: endpointClosure,

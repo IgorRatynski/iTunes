@@ -10,5 +10,5 @@ import Foundation
 
 protocol SectionProtocol {
   var title: String? { get }
-  var cellData: [CellType] { get }
+  var cellData: [CellTypeProtocol] { get }
 }

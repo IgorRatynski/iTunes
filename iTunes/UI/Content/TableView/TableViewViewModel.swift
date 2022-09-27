@@ -30,7 +30,7 @@ class TableViewViewModel: BaseViewModel, TableViewViewModelProtocol {
   }
   
   // MARK: - Lifecycle
-  init(tableViewDataSource: TableViewDataSourceProtocol = TableViewDataSource(),
+  init(tableViewDataSource: TableViewDataSourceProtocol = UsersTableViewDataSource(),
        screenHeight: CGFloat, skeletonCellHeight: CGFloat) {
     self.tableViewDataSource = tableViewDataSource
     self.screenHeight = Int(screenHeight)
@@ -54,7 +54,7 @@ private extension TableViewViewModel {
     loading.producer
       .filter { $0 == true }
       .start { [unowned self] next in
-        set(sections: self.loadingCells())
+        set(sections: loadingCells())
       }
   }
 }
@@ -70,7 +70,7 @@ private extension TableViewViewModel {
     set(sections: [])
   }
   
-  func loadingCells() -> [Section] {
+  func loadingCells() -> [SectionProtocol] {
     let count = screenHeight / skeletonCellHeight + 1
     let cellData = Array(repeating: CellType.song(model: nil), count: count)
     return [Section(cellData:  cellData)]
@@ -84,9 +84,9 @@ private extension TableViewViewModel {
     }
   }
   
-  func noSearchResults() -> [Section] {
+  func noSearchResults() -> [SectionProtocol] {
     let noSearchResultModel = NoSearchResultsModel(title: Text.noSearchResult, image: Image.noSearchResult)
-    let models = Section(cellData: [.noSearchResults(model: noSearchResultModel)])
+    let models = Section(cellData: [CellType.noSearchResults(model: noSearchResultModel)])
     return [models]
   }
   

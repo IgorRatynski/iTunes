@@ -70,7 +70,8 @@ private extension NoSearchResultsCell {
   func bind() {
     titleLabel.reactive.text <~ viewModel.title
     
-    noSearchResultsImageView.reactive.image <~ viewModel.image.map {
-      [unowned self] in $0.resizeImage(to: .init(width: self.contentView.frame.width, height: self.contentView.frame.width)) }
+    noSearchResultsImageView.reactive.image <~ viewModel.image.map { [unowned self] in
+      $0.resizeImage(to: .init(width: contentView.frame.width, height: contentView.frame.width))
+    }
   }
 }

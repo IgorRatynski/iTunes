@@ -14,7 +14,6 @@ import ReactiveSwift
 class ContentViewModel: BaseViewModel, ContentViewModelProtocol {
   
   // MARK: - Public properties
-  let tableViewDataSource: TableViewDataSourceProtocol
   let loading: MutableProperty<Bool?> = MutableProperty(nil)
   
   // Out
@@ -58,10 +57,8 @@ class ContentViewModel: BaseViewModel, ContentViewModelProtocol {
   
   // MARK: - Lifecycle
   init(itunesService: ITunesServiceProtocol = ITunesService(),
-       tableViewDataSource: TableViewDataSourceProtocol = TableViewDataSource(),
        ageService: AgeServiceProtocol = AgeService()) {
     self.itunesService = itunesService
-    self.tableViewDataSource = tableViewDataSource
     self.ageService = ageService
     
     (reloadTable, reloadTableObserver) = Signal.pipe()
@@ -87,8 +84,7 @@ private extension ContentViewModel {
   
   func clearResults() {
     searchString = nil
-    tableViewDataSource.setup(model: [])
-    self.reloadTableObserver.send(value: ())
+    reloadTableObserver.send(value: ())
   }
 }
 
