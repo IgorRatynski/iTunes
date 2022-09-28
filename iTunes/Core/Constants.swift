@@ -34,8 +34,20 @@ enum Size {
     
     // MARK: Cell
     enum Cell {
-      static var imageCornerRadius: CGFloat { 8 }
-      static var textCornerRadius: CGFloat { 4 }
+      
+      enum Size {
+        static var image: CGFloat { 100 }
+      }
+      
+      enum Offset {
+        static var `default`: CGFloat { 16 }
+        static var halfDefault: CGFloat { 16 }
+      }
+      
+      enum CornerRadius {
+        static var image: CGFloat { 8 }
+        static var text: CGFloat { 4 }
+      }
     }
   }
   
