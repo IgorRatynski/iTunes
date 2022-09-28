@@ -398,7 +398,6 @@
 				47DA39AD28C586FA0035D42C /* Core */,
 				47DA39D728C586FB0035D42C /* Model */,
 				47DA3A0B28C586FB0035D42C /* UI */,
-				47DA39D428C586FB0035D42C /* Supporting Files */,
 			);
 			path = iTunes;
 			sourceTree = "<group>";
@@ -532,13 +531,6 @@
 				47DA39D128C586FB0035D42C /* ErrorExtractorProtocol.swift */,
 			);
 			path = Error;
-			sourceTree = "<group>";
-		};
-		47DA39D428C586FB0035D42C /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		47DA39D728C586FB0035D42C /* Model */ = {
