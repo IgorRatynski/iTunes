@@ -9,10 +9,6 @@
 import UIKit
 
 extension UITableView {
-  func register<T: UITableViewCell>(cells: [T.Type]) {
-    cells.forEach { register($0) }
-  }
-  
   func register<T: UITableViewCell>(_ cellClass: T.Type) {
     register(cellClass, forCellReuseIdentifier: cellClass.reuseIdentifier)
   }
