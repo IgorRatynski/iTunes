@@ -51,6 +51,7 @@ private extension SearchBarViewController {
   func setupSearchBar() {
     searchBar.delegate = self
     searchBar.placeholder = Text.searchPlaceholder
+    searchBar.becomeFirstResponder()
   }
 }
 
