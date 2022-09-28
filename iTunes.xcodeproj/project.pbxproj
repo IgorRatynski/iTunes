@@ -21,6 +21,8 @@
 		473557B328C58C0A00FB77DD /* NetworkProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DA3A5A28C587090035D42C /* NetworkProviderTests.swift */; };
 		473DBC1428D363E3008094F6 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473DBC1328D363E3008094F6 /* Logger.swift */; };
 		473DBC1628D48B4D008094F6 /* SectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473DBC1528D48B4D008094F6 /* SectionProtocol.swift */; };
+		4756EA3728E391A10045CD25 /* SongsTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4756EA3628E391A10045CD25 /* SongsTableViewDataSource.swift */; };
+		4756EA3928E392420045CD25 /* CellTypeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4756EA3828E392420045CD25 /* CellTypeProtocol.swift */; };
 		47D3147E28CECA0F00CF813C /* SkeletonDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D3147D28CECA0F00CF813C /* SkeletonDisplayable.swift */; };
 		47D3148128D1A87600CF813C /* SearchBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D3148028D1A87600CF813C /* SearchBarViewController.swift */; };
 		47D3148328D1A87E00CF813C /* SearchBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D3148228D1A87E00CF813C /* SearchBarViewModel.swift */; };
@@ -138,6 +140,8 @@
 		473550BF245067B5001F4679 /* iTunes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		473DBC1328D363E3008094F6 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		473DBC1528D48B4D008094F6 /* SectionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionProtocol.swift; sourceTree = "<group>"; };
+		4756EA3628E391A10045CD25 /* SongsTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsTableViewDataSource.swift; sourceTree = "<group>"; };
+		4756EA3828E392420045CD25 /* CellTypeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTypeProtocol.swift; sourceTree = "<group>"; };
 		4765EB36245A4DF100A8EED0 /* iTunesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTunesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		47D3147D28CECA0F00CF813C /* SkeletonDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonDisplayable.swift; sourceTree = "<group>"; };
 		47D3148028D1A87600CF813C /* SearchBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewController.swift; sourceTree = "<group>"; };
@@ -179,7 +183,7 @@
 		47DA39D128C586FB0035D42C /* ErrorExtractorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorExtractorProtocol.swift; sourceTree = "<group>"; };
 		47DA39D228C586FB0035D42C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47DA39D328C586FB0035D42C /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		47DA39D528C586FB0035D42C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "iTunes/Supporting Files/Assets.xcassets"; sourceTree = SOURCE_ROOT; };
+		47DA39D528C586FB0035D42C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = iTunes/Core/Resourses/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		47DA39D628C586FB0035D42C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47DA39D928C586FB0035D42C /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		47DA39E128C586FB0035D42C /* AlertConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertConfig.swift; sourceTree = "<group>"; };
@@ -220,7 +224,7 @@
 		47DA3A5A28C587090035D42C /* NetworkProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProviderTests.swift; sourceTree = "<group>"; };
 		47DA3A5C28C587090035D42C /* SearchSuccessResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SearchSuccessResponse.json; sourceTree = "<group>"; };
 		47DA3A5D28C587090035D42C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		47FF0D6928D629B400B210DC /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		47FF0D6928D629B400B210DC /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = iTunes/Core/Resourses/R.generated.swift; sourceTree = SOURCE_ROOT; };
 		4A880C64C265AC5FCD104F19 /* Pods-iTunes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunes.debug.xcconfig"; path = "Target Support Files/Pods-iTunes/Pods-iTunes.debug.xcconfig"; sourceTree = "<group>"; };
 		6469CEE2EE371EFBC73357E5 /* Pods-iTunesTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesTestTests.debug.xcconfig"; path = "Target Support Files/Pods-iTunesTestTests/Pods-iTunesTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		692C947627FF64182A8316FE /* Pods_iTunesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iTunesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -289,6 +293,7 @@
 		4724E68828C833A6009DD73F /* UITableView */ = {
 			isa = PBXGroup;
 			children = (
+				4756EA3828E392420045CD25 /* CellTypeProtocol.swift */,
 				4724E69528CC0E71009DD73F /* ReuseIdentifier.swift */,
 				473DBC1528D48B4D008094F6 /* SectionProtocol.swift */,
 			);
@@ -329,6 +334,26 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		4756EA3528E391960045CD25 /* TableViewDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				47DA39D928C586FB0035D42C /* TableViewDataSource.swift */,
+				4756EA3628E391A10045CD25 /* SongsTableViewDataSource.swift */,
+			);
+			path = TableViewDataSource;
+			sourceTree = "<group>";
+		};
+		477DB07128D786540007533C /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				47DA39D528C586FB0035D42C /* Assets.xcassets */,
+				47DA39D628C586FB0035D42C /* Info.plist */,
+				47FF0D6928D629B400B210DC /* R.generated.swift */,
+				47D314A428D22CFB00CF813C /* Localization.strings */,
+			);
+			path = Resourses;
+			sourceTree = "<group>";
+		};
 		47D3147C28CECA0100CF813C /* SkeletonDisplayable */ = {
 			isa = PBXGroup;
 			children = (
@@ -367,14 +392,6 @@
 			path = UIViewController;
 			sourceTree = "<group>";
 		};
-		47D314A528D22D0B00CF813C /* Localization */ = {
-			isa = PBXGroup;
-			children = (
-				47D314A428D22CFB00CF813C /* Localization.strings */,
-			);
-			path = Localization;
-			sourceTree = "<group>";
-		};
 		47DA39AC28C586FA0035D42C /* iTunes */ = {
 			isa = PBXGroup;
 			children = (
@@ -394,6 +411,7 @@
 				47DA39AE28C586FA0035D42C /* Constants.swift */,
 				47DA39B928C586FA0035D42C /* Base Class */,
 				47DA39BC28C586FA0035D42C /* Protocol */,
+				477DB07128D786540007533C /* Resourses */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -519,10 +537,6 @@
 		47DA39D428C586FB0035D42C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				47DA39D528C586FB0035D42C /* Assets.xcassets */,
-				47FF0D6928D629B400B210DC /* R.generated.swift */,
-				47DA39D628C586FB0035D42C /* Info.plist */,
-				47D314A528D22D0B00CF813C /* Localization */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -543,7 +557,7 @@
 			isa = PBXGroup;
 			children = (
 				47D3149128D216CA00CF813C /* Section.swift */,
-				47DA39D928C586FB0035D42C /* TableViewDataSource.swift */,
+				4756EA3528E391960045CD25 /* TableViewDataSource */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -1005,6 +1019,7 @@
 				47DA3A2B28C586FB0035D42C /* ErrorProposerProtocol.swift in Sources */,
 				47DA3A4628C586FB0035D42C /* NSURLErrorDomainExtractor.swift in Sources */,
 				47DA3A2C28C586FB0035D42C /* ErrorExtractorProtocol.swift in Sources */,
+				4756EA3728E391A10045CD25 /* SongsTableViewDataSource.swift in Sources */,
 				47DA3A3728C586FB0035D42C /* ArtistModel.swift in Sources */,
 				47DA3A3128C586FB0035D42C /* TableViewDataSource.swift in Sources */,
 				47DA3A5628C586FB0035D42C /* SongTableViewCellModel.swift in Sources */,
@@ -1030,6 +1045,7 @@
 				47DA3A4128C586FB0035D42C /* ReactiveErrorDispatcher.swift in Sources */,
 				47DA3A3628C586FB0035D42C /* ITunesResponseModel.swift in Sources */,
 				47DA3A5028C586FB0035D42C /* GroupErrorExtractor.swift in Sources */,
+				4756EA3928E392420045CD25 /* CellTypeProtocol.swift in Sources */,
 				47D3148828D1A8B900CF813C /* TableViewViewModel.swift in Sources */,
 				4724E68C28C83458009DD73F /* UITableView+Reusable.swift in Sources */,
 				47DA3A1A28C586FB0035D42C /* UIView+AddToCenter.swift in Sources */,
@@ -1229,7 +1245,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3R8784ZA8P;
-				INFOPLIST_FILE = "$(SRCROOT)/iTunes/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/iTunes/Core/Resourses/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1249,7 +1265,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3R8784ZA8P;
-				INFOPLIST_FILE = "$(SRCROOT)/iTunes/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/iTunes/Core/Resourses/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

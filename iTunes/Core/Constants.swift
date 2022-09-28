@@ -10,8 +10,8 @@ import Foundation
 import CoreGraphics
 
 enum Constants {
-  static let songCellIdentifier = "SongCell"
-  static let noSearchResultsCellIdentifier = "NoSearchResultsCell"
+  static let songCellIdentifier = SongTableViewCell.reuseIdentifier
+  static let noSearchResultsCellIdentifier = NoSearchResultsCell.reuseIdentifier
 }
 
 // MARK: Persistent keys
