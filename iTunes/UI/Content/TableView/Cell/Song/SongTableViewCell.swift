@@ -17,10 +17,10 @@ class SongTableViewCell: UITableViewCell, Setupable {
   private typealias Sizes = Size.TableView.Cell
   
   // MARK: Outlets
-  @IBOutlet private var artistLabel: UILabel!
-  @IBOutlet private var albumLabel: UILabel!
-  @IBOutlet private var trackLabel: UILabel!
-  @IBOutlet private var albumImageView: UIImageView!
+  let artistLabel = UILabel()
+  let albumLabel = UILabel()
+  let trackLabel = UILabel()
+  let albumImageView = UIImageView()
 
   // MARK: Reactive
   private var prepareForReuseInvolved: Signal<(), NoError>!
@@ -30,12 +30,17 @@ class SongTableViewCell: UITableViewCell, Setupable {
   private let viewModel: SongTableViewCellModelProtocol = SongTableViewCellModel()
 
   // MARK: Lifecycle
-  override func awakeFromNib() {
+  override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     (prepareForReuseInvolved, prepareForReuseObserver) = Signal.pipe()
-    super.awakeFromNib()
+    super.init(style: style, reuseIdentifier: reuseIdentifier)
     setup()
   }
-
+  
+  @available(*, unavailable)
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  
   override func prepareForReuse() {
     prepareForReuseObserver.send(value: ())
   }
@@ -48,13 +53,42 @@ class SongTableViewCell: UITableViewCell, Setupable {
 // MARK: - Setup
 private extension SongTableViewCell {
   func setup() {
+    setupLayout()
     setupViews()
     bind()
   }
+  
+  func setupLayout() {
+    [artistLabel, albumLabel, trackLabel, albumImageView].forEach {
+      contentView.addSubview($0)
+      $0.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    NSLayoutConstraint.activate([
+      albumImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Sizes.Offset.halfDefault),
+      albumImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: Sizes.Offset.default),
+      albumImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Sizes.Offset.halfDefault),
+      albumImageView.heightAnchor.constraint(equalToConstant: Sizes.Size.image),
+      albumImageView.widthAnchor.constraint(equalTo: albumImageView.heightAnchor)
+      ])
+    
+    [artistLabel, albumLabel, trackLabel].forEach {
+      NSLayoutConstraint.activate([
+        $0!.leftAnchor.constraint(equalTo: albumImageView.rightAnchor, constant: Sizes.Offset.halfDefault),
+        $0!.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -Sizes.Offset.default)
+      ])
+    }
+    
+    NSLayoutConstraint.activate([
+      artistLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Sizes.Offset.halfDefault),
+      albumLabel.topAnchor.constraint(equalTo: artistLabel.bottomAnchor, constant: Sizes.Offset.halfDefault),
+      trackLabel.topAnchor.constraint(equalTo: albumLabel.bottomAnchor, constant: Sizes.Offset.halfDefault)
+    ])
+  }
 
   func setupViews() {
-    albumImageView.layer.cornerRadius = Sizes.imageCornerRadius
-    [artistLabel, albumLabel, trackLabel].forEach { $0?.layer.cornerRadius = Sizes.textCornerRadius }
+    albumImageView.layer.cornerRadius = Sizes.CornerRadius.image
+    [artistLabel, albumLabel, trackLabel].forEach { $0?.layer.cornerRadius = Sizes.CornerRadius.text }
   }
 }
 

@@ -50,6 +50,7 @@ private extension TableViewViewController {
     tableView.isScrollEnabled = false
     
     tableView.register(NoSearchResultsCell.self)
+    tableView.register(SongTableViewCell.self)
   }
   
   func updateState(by loading: Bool) {
