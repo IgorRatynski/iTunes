@@ -46,9 +46,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="searchBar" destination="SGI-ht-IWF" id="rIM-3K-e44"/>
                         <outlet property="searchBarContainerView" destination="hFx-b5-7u0" id="yN2-CR-46C"/>
-                        <outlet property="tableView" destination="SkD-8p-bi7" id="gkk-9r-VRg"/>
                         <outlet property="tableViewContainerView" destination="L3I-f2-22f" id="guk-ZQ-yof"/>
                     </connections>
                 </viewController>
@@ -67,64 +65,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SkD-8p-bi7">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="767"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SongCell" rowHeight="116" id="4Sf-wW-YAM" customClass="SongTableViewCell" customModule="iTunes" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="116"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Sf-wW-YAM" id="oc1-ds-p9Q">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="116"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b1C-Sw-WqS">
-                                                    <rect key="frame" x="16" y="8" width="100" height="100"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="100" id="ckT-iQ-opG"/>
-                                                        <constraint firstAttribute="height" constant="100" id="vLp-ZB-nAz"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qug-qA-hMS">
-                                                    <rect key="frame" x="124" y="8" width="274" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DoO-SB-VbU">
-                                                    <rect key="frame" x="124" y="37" width="274" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKD-zO-WqO">
-                                                    <rect key="frame" x="124" y="66" width="274" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="b1C-Sw-WqS" firstAttribute="leading" secondItem="oc1-ds-p9Q" secondAttribute="leading" constant="16" id="6dA-eN-HNj"/>
-                                                <constraint firstItem="DoO-SB-VbU" firstAttribute="top" secondItem="qug-qA-hMS" secondAttribute="bottom" constant="8" id="A6I-2I-h3Z"/>
-                                                <constraint firstItem="b1C-Sw-WqS" firstAttribute="top" secondItem="oc1-ds-p9Q" secondAttribute="top" constant="8" id="BWg-W2-u7z"/>
-                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="AKD-zO-WqO" secondAttribute="bottom" constant="8" id="Frh-rA-bne"/>
-                                                <constraint firstAttribute="trailing" secondItem="qug-qA-hMS" secondAttribute="trailing" constant="16" id="KTm-oL-dhB"/>
-                                                <constraint firstItem="qug-qA-hMS" firstAttribute="leading" secondItem="b1C-Sw-WqS" secondAttribute="trailing" constant="8" id="LXC-dp-nCp"/>
-                                                <constraint firstItem="AKD-zO-WqO" firstAttribute="leading" secondItem="b1C-Sw-WqS" secondAttribute="trailing" constant="8" id="Zqk-ot-1KD"/>
-                                                <constraint firstAttribute="trailing" secondItem="DoO-SB-VbU" secondAttribute="trailing" constant="16" id="cUp-7J-H7Z"/>
-                                                <constraint firstAttribute="trailing" secondItem="AKD-zO-WqO" secondAttribute="trailing" constant="16" id="iJT-zf-JPQ"/>
-                                                <constraint firstAttribute="bottom" secondItem="b1C-Sw-WqS" secondAttribute="bottom" constant="8" id="klf-pf-0l2"/>
-                                                <constraint firstItem="qug-qA-hMS" firstAttribute="top" secondItem="oc1-ds-p9Q" secondAttribute="top" constant="8" id="o00-af-GFJ"/>
-                                                <constraint firstItem="AKD-zO-WqO" firstAttribute="top" secondItem="DoO-SB-VbU" secondAttribute="bottom" constant="8" id="r1s-Sn-4JK"/>
-                                                <constraint firstItem="DoO-SB-VbU" firstAttribute="leading" secondItem="b1C-Sw-WqS" secondAttribute="trailing" constant="8" id="s63-rb-cOv"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="albumImageView" destination="b1C-Sw-WqS" id="g08-dT-X1X"/>
-                                            <outlet property="albumLabel" destination="DoO-SB-VbU" id="fqW-QP-ezQ"/>
-                                            <outlet property="artistLabel" destination="qug-qA-hMS" id="F0u-sG-Xfb"/>
-                                            <outlet property="trackLabel" destination="AKD-zO-WqO" id="RPu-Rb-ck6"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BKz-gf-7v6"/>
