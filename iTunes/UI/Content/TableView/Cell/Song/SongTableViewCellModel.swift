@@ -36,6 +36,7 @@ class SongTableViewCellModel: BaseViewModel, SongTableViewCellModelProtocol {
   // MARK: Private properties
   private var model: ArtistModelProtocol?
   private var networkProvider: MoyaProvider<ImageRequest>
+  private var request: Disposable?
   
   // MARK: - Lifecycle
   init(networkProvider: MoyaProvider<ImageRequest> = MoyaProvider<ImageRequest>()) {
@@ -57,6 +58,7 @@ class SongTableViewCellModel: BaseViewModel, SongTableViewCellModelProtocol {
 // MARK: Setup
 private extension SongTableViewCellModel {
   func clear() {
+    request?.dispose()
     model = nil
     albumImageObserver.send(value: nil)
     artistNameObserver.send(value: " ")
@@ -76,7 +78,7 @@ private extension SongTableViewCellModel {
 // MARK: Networking
 private extension SongTableViewCellModel {
   func getImage(url: URL) {
-    networkProvider
+    request = networkProvider
       .request(.getImage(url: url))
       .mapImage()
       .on(starting: { [weak self] in
