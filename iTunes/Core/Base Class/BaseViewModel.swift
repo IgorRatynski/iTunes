@@ -11,10 +11,10 @@ import ReactiveSwift
 open class BaseViewModel: ReactiveBase {
   
   // MARK: Properties
-  private(set) var errorDispatcher: ReactiveErrorDispatcher
+  private(set) var errorDispatcher: ReactiveErrorDispatcherProtocol
   
   // MARK: Lifecycle
-  init(dispatcher: ReactiveErrorDispatcher = ReactiveErrorDispatcher(proposer: Config.proposers, extractor: Config.extractors)) {
+  init(dispatcher: ReactiveErrorDispatcherProtocol = ReactiveErrorDispatcher(proposer: Config.proposers, extractor: Config.extractors)) {
     self.errorDispatcher = dispatcher
   }
 }

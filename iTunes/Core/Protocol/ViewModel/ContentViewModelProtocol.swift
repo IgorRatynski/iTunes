@@ -9,8 +9,8 @@
 import Result
 import ReactiveSwift
 
-protocol ReactiveErrorDispatcherProtocol {
-  var errorDispatcher: ReactiveErrorDispatcher { get }
+protocol ReactiveErrorDispatcherOwnerProtocol {
+  var errorDispatcher: ReactiveErrorDispatcherProtocol { get }
 }
 
 protocol ReactiveTableReloadable {
@@ -22,7 +22,7 @@ protocol ReactiveSearchDelegateProtocol {
   var searchStringChanged: BindingTarget<String?> { get }
 }
 
-protocol ContentViewModelProtocol: ReactiveTableReloadable, ReactiveSearchDelegateProtocol, ReactiveLoadable, ReactiveErrorDispatcherProtocol {
+protocol ContentViewModelProtocol: ReactiveTableReloadable, ReactiveSearchDelegateProtocol, ReactiveLoadable, ReactiveErrorDispatcherOwnerProtocol {
   var showIsAdultAlert: Bool { get }
   var adultAlertConfig: AlertConfigProtocol { get }
   var serverResponse: Signal<ITunesResponseModel, NoError> { get }

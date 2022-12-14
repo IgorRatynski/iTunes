@@ -9,7 +9,14 @@
 import ReactiveSwift
 import Result
 
-class ReactiveErrorDispatcher: ErrorDispatcher {
+protocol ReactiveErrorDispatcherProtocol {
+  var action: Signal<PropositionAction, NoError> { get }
+  
+  func execute(action: PropositionAction)
+  func handle(error: Error)
+}
+
+class ReactiveErrorDispatcher: ErrorDispatcher, ReactiveErrorDispatcherProtocol {
   
   // MARK: Reactive
   var action: Signal<PropositionAction, NoError>
